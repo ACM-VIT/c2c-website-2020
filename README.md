@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://github.com/ACM-VIT/c2c-website-2020">
-        <img src="./frontend/assets/logos/c-only-logo.svg" alt="Logo" width="80" height="80">
+        <img src="src/vectors/c-only-logo.svg" alt="Logo" width="80" height="80">
     </a>
     <h3 align="center">Code2Create Website</h3>
     <p align="center">
@@ -18,6 +18,7 @@
 ## Table of Contents
 
 -   [Design](#design)
+-   [General Instructions](#general-instructions)
 -   [Contributing](#contributing)
 -   [License](#license)
 
@@ -26,6 +27,32 @@
 ![Code2Create Design Screen Shot](https://i.imgur.com/xH4TNTs.jpg?)
 The design is available over [here](https://xd.adobe.com/view/e4b2599c-2633-4ee2-7675-c7fd5b668eb5-9283/ "c2c design"); consult the slack channel for any enquires.
 
+## General Instructions
+
+### Gulp Setup
+Gulp will be required for the productionbuild. Install it globally with the
+following command.
+
+```
+$ npm i gulp-cli -g
+```
+
+### Install Packages
+```
+$ npm i
+```
+
+### Build Script
+```
+$ gulp
+```
+
+### Watch Script
+```
+$ gulp watch
+```
+
+> It is advisable to use VS Code's live server extention for Hot Reloads and have gulp watch running during development.
 
 ## Contributing
 

@@ -1,0 +1,29 @@
+{
+  "name": "code2create",
+  "version": "1.0.0",
+  "description": "Website for Code2Create hosted by ACT-VIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ACM-VIT/c2c-website-2020.git"
+  },
+  "author": "multiple",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ACM-VIT/c2c-website-2020/issues"
+  },
+  "homepage": "https://github.com/ACM-VIT/c2c-website-2020#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-svgmin": "^2.2.0",
+    "gulp-uglify": "^3.0.2",
+    "node-sass": "^4.13.1"
+  }
+}
