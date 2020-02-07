@@ -63,7 +63,7 @@ $ gulp watch
 
 > It is advisable to use VS Code's live server extention for Hot Reloads and have gulp watch running during development.
 >
-> **You will need to hit save twice for your changes to show up on your live server. This is an active issue at the moment for the live-server extension.**
+> **You will need to hit save twice for html files your changes to show up on your live server. This is an active issue at the moment for the live-server extension.**
 
 ## Contributing
 

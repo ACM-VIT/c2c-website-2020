@@ -1,6 +1,16 @@
 $mainColor: #1E1E1E;
 $textColor: #FAFBFB;
 
+// Mixins
+@mixin fixed-top {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+// Base styling
 * {
   box-sizing: border-box;
 }
@@ -17,11 +27,7 @@ body {
 nav {
 
   & .fixed-top {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    @include fixed-top;
   }
 
   & .nav-bar {
@@ -54,5 +60,32 @@ nav {
         }
       }
     }
+  }
+}
+
+// Header
+header {
+  & .mask-group {
+    z-index: 0;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & .logo {
+    z-index: 1;
+    position: relative;
+    top: -40rem;
+    left: 0;
+
+    img {
+      position: relative;
+      left: 9rem;
+      height: auto;
+      width: 10rem;
+    }
+
   }
 }
