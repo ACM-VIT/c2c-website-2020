@@ -22,7 +22,7 @@ body {
   padding: 0;
   background-color: $mainColor;
 }
-
+ 
 // Navbar 
 nav {
 
@@ -63,8 +63,8 @@ nav {
   }
 }
 
-// Header
-header {
+// Logo
+main {
   & .mask-group {
     z-index: 0;
     width: 100%;
