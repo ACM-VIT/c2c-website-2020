@@ -1,5 +1,5 @@
-$mainColor: #1E1E1E;
-$textColor: #FAFBFB;
+$mainColor: #1e1e1e;
+$textColor: #fafbfb;
 
 @font-face {
   font-family: ITCRegular;
@@ -26,19 +26,32 @@ body {
   margin: 0;
   padding: 0;
   background-color: $mainColor;
-  overflow-x:hidden;
+  overflow-x: hidden;
 }
- 
-// Navbar 
+
+
+.landingPage {
+  height: 100vh;
+  width: 100%;
+  background: url('../vectors/mask-group.svg');
+}
+
+// Navbar
 header {
-  font-family: 'ITCRegular',sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0;
+  height: 20vh;
+  width: 100%;
+  background-color: gray;
+  font-family: 'ITCRegular', sans-serif;
 
   & .fixed-top {
     @include fixed-top;
   }
 
   & nav {
-    grid-area: links;
     margin: 0;
     padding: 1rem;
     // border: 1px solid red;
@@ -55,7 +68,6 @@ header {
       // border: 1px solid green;
       justify-content: space-evenly;
 
-
       & .nav-link {
         margin: 0;
         padding: 0;
@@ -71,29 +83,39 @@ header {
   }
 }
 
+.mask-group {
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 // Logo
 main {
-  & .mask-group {
-    z-index: 0;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  position: absolute;
+  top: 20vh;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+  height: 40vh;
+  background-color: red;
 
-  & .logo {
-    z-index: 1;
-    position: relative;
-    top: -40rem;
-    left: 0;
+  // & .logo {
+  //   z-index: 1;
+  //   position: relative;
+  //   top: -40rem;
+  //   left: 0;
 
-    img {
-      position: relative;
-      left: 9rem;
-      height: auto;
-      width: 10rem;
-    }
-
-  }
+  //   img {
+  //     position: relative;
+  //     left: 9rem;
+  //     height: auto;
+  //     width: 10rem;
+  //   }
+  // }
 }
