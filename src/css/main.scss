@@ -1,0 +1,58 @@
+$mainColor: #1E1E1E;
+$textColor: #FAFBFB;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  // font-family: "itc-avant-garde-std-md", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: $mainColor;
+}
+
+// Navbar 
+nav {
+
+  & .fixed-top {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  & .nav-bar {
+    margin: 0;
+    padding: 1rem;
+    // border: 1px solid red;
+    background-color: none;
+    display: flex;
+    justify-content: flex-end;
+
+    & .nav-links {
+      list-style: none;
+      padding: 0.5rem 2rem;
+      margin: 2.5rem 0 2rem 0;
+      width: 40%;
+      display: flex;
+      // border: 1px solid green;
+      justify-content: space-evenly;
+
+
+      & .nav-link {
+        margin: 0;
+        padding: 0;
+        // border: 1px solid blue;
+        font-size: 1.3rem;
+
+        a {
+          color: $textColor;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
