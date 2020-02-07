@@ -21,16 +21,18 @@ body {
   margin: 0;
   padding: 0;
   background-color: $mainColor;
+  overflow-x:hidden;
 }
  
 // Navbar 
-nav {
+header {
 
   & .fixed-top {
     @include fixed-top;
   }
 
-  & .nav-bar {
+  & nav {
+    grid-area: links;
     margin: 0;
     padding: 1rem;
     // border: 1px solid red;
