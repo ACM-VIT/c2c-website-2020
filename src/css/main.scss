@@ -1,6 +1,11 @@
 $mainColor: #1E1E1E;
 $textColor: #FAFBFB;
 
+@font-face {
+  font-family: ITCRegular;
+  src: url('../fonts/ITCAvantGardeStd-Bk.otf');
+}
+
 // Mixins
 @mixin fixed-top {
   display: flex;
@@ -26,6 +31,7 @@ body {
  
 // Navbar 
 header {
+  font-family: 'ITCRegular',sans-serif;
 
   & .fixed-top {
     @include fixed-top;
