@@ -2,6 +2,7 @@ $mainColor: #1e1e1e;
 $secondaryColor: #4BBA83;
 $textColor: #fafbfb;
 
+// Fonts
 @font-face {
   font-family: ITCRegular;
   src: url('../fonts/ITCAvantGardeStd-Bk.otf');
@@ -24,7 +25,6 @@ $textColor: #fafbfb;
 
 html,
 body {
-  // font-family: "itc-avant-garde-std-md", sans-serif;
   margin: 0;
   padding: 0;
   background-color: $mainColor;
@@ -81,7 +81,7 @@ body {
   }
 }
 
-// below header
+// Caption
 main {
   position: absolute;
   top: 20vh;
@@ -130,7 +130,7 @@ main {
         height: 100%;
 
         & .title {
-          font-size: 7.5rem;
+          font-size: 7.2rem;
           font-family: 'ITCMedium', sans-serif;
         }
 
@@ -247,4 +247,10 @@ footer {
   left: 0;
   // border: 1px solid blue;
   text-align: center;
+
+  & .white-arrow {
+    width: 3rem;
+    height: auto;
+    cursor: pointer;
+  }
 }
