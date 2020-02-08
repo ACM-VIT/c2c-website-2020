@@ -210,6 +210,7 @@ body {
 
             & .register-button:hover,
             & .register-button:focus {
+              opacity: 0.8;
               box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2),
                 0 4px 5px 0 rgba(0, 0, 0, 0.14),
                 0 1px 10px 0 rgba(0, 0, 0, 0.12);
@@ -270,6 +271,7 @@ body {
   }
 }
 
+// About Page
 .aboutPage {
   display: block;
   // border: 1px solid green;
@@ -322,6 +324,8 @@ body {
   }
 }
 
+
+// FAQ Page
 .faqPage {
   display: block;
   // border: 1px solid green;
@@ -358,7 +362,9 @@ body {
       margin: 3rem auto;
       grid-gap: 0.2rem 4rem;
 
-      & .q-a {
+      & .collapsible-header {
+        border: none;
+        outline: none;
         // border: 1px solid brown;
         font-size: 1.5rem;
         padding: 2rem 2rem;
@@ -368,6 +374,8 @@ body {
         font-family: 'ITCregular', sans-serif;
         line-height: 3rem;
         height: 6.5rem;
+        cursor: pointer;
+        transition: background 0.5s;
 
         & .question-group {
           width: 100%;
@@ -376,13 +384,35 @@ body {
           & .question {
             // border: 1px solid yellow;
             width: 92%;
+            cursor: pointer;
+            text-align: left;
           }
 
           & .arrow {
             // border: 1px solid skyblue;
             width: 8%;
             text-align: center;
+            cursor: pointer;
           }
+        }
+      }
+    }
+  }
+
+  footer {
+    text-align: center;
+    padding: 1rem;
+
+    & .contact {
+      color: $textColor;
+      font-family: 'ITCMedium', sans-serif;
+      font-size: 1.5rem;
+
+      & .link {
+        a {
+          color: $secondaryColor;
+          text-decoration: underline;
+          cursor: pointer;
         }
       }
     }
