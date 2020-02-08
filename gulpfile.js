@@ -44,7 +44,7 @@ gulp.task('concatAndMinify', () =>
   gulp
     .src('src/js/*.js')
     .pipe(concat('main.js'))
-    .pipe(minify())
+    .pipe(minify({ noSource: true }))
     .pipe(gulp.dest('dist/js'))
 );
 
