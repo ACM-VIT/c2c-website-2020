@@ -308,20 +308,16 @@ body {
       padding: 0 5rem;
       color: white;
       font-family: 'ITCRegular', sans-serif;
+
+      p {
+        margin: 2rem 0;
+      }
     }
-  }
 
-  footer {
-    // border: 1px solid skyblue;
-    display: block;
-    text-align: center;
-
-    & .footer-text {
-      // border: 1px solid indigo;
-      display: inline-block;
-      font-size: 2.5rem;
-      color: $fadedColor;
+    & .bottom-caption {
       font-family: 'ITCBold', sans-serif;
+      color: $fadedColor;
+      font-size: 2.4rem;
     }
   }
 }
