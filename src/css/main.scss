@@ -324,7 +324,6 @@ body {
   }
 }
 
-
 // FAQ Page
 .faqPage {
   display: block;
@@ -395,6 +394,11 @@ body {
             cursor: pointer;
           }
         }
+      }
+
+      & .collapsible-header:hover,
+      & .collapsible-header:focus {
+        opacity: 0.8;
       }
     }
   }

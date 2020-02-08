@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const imageMin = require('gulp-imagemin');
 const sass = require('gulp-sass');
+const autoPrefixer = require('gulp-autoprefixer');
 const cleanCss = require('gulp-clean-css');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
@@ -29,6 +30,11 @@ gulp.task('compileSass', () =>
   gulp
     .src('src/css/*.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(
+      autoPrefixer({
+        cascade: false
+      }1)
+    )
     .pipe(cleanCss({ compability: 'ie8' }))
     .pipe(gulp.dest('dist/css'))
 );
