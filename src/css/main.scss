@@ -1,6 +1,7 @@
 $mainColor: #1e1e1e;
 $secondaryColor: #4bba83;
 $textColor: #fafbfb;
+$fadedColor: #303030;
 
 // Fonts
 @font-face {
@@ -21,6 +22,8 @@ $textColor: #fafbfb;
 // Base styling
 * {
   box-sizing: border-box;
+  cursor: default;
+  z-index: 0;
 }
 
 html,
@@ -44,6 +47,7 @@ body {
 
   // Navbar
   header {
+    z-index: 2;
     position: fixed;
     top: 0;
     left: 0;
@@ -268,7 +272,7 @@ body {
 
 .aboutPage {
   display: block;
-  border: 1px solid green;
+  // border: 1px solid green;
 
   header {
     // border: 1px solid yellow;
@@ -294,17 +298,30 @@ body {
   }
 
   main {
-    border: 1px solid salmon;
+    // border: 1px solid salmon;
 
     & .information {
-      border: 1px solid gray;
-      margin: 4rem auto;
+      // border: 1px solid gray;
+      margin: 3rem auto;
       width: 50%;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       padding: 0 5rem;
       color: white;
-      opacity: 0.9;
       font-family: 'ITCRegular', sans-serif;
+    }
+  }
+
+  footer {
+    // border: 1px solid skyblue;
+    display: block;
+    text-align: center;
+
+    & .footer-text {
+      // border: 1px solid indigo;
+      display: inline-block;
+      font-size: 2.5rem;
+      color: $fadedColor;
+      font-family: 'ITCBold', sans-serif;
     }
   }
 }
