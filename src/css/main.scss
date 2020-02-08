@@ -321,3 +321,54 @@ body {
     }
   }
 }
+
+.faqPage {
+  display: block;
+  // border: 1px solid green;
+
+  header {
+    & .title-group {
+      position: relative;
+      left: -25rem;
+      display: flex;
+
+      img {
+        margin-right: 1rem;
+      }
+
+      & .title {
+        // border: 1px solid purple;
+        font-size: 5rem;
+        line-height: 5rem;
+        height: 4.3rem;
+        color: white;
+        font-family: 'ITCBold', sans-serif;
+      }
+    }
+  }
+
+  main {
+    // border: 1px solid blue;
+
+    & .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      // border: 1px solid brown;
+      width: 87%;
+      margin: 2rem auto;
+      grid-gap: 0.2rem 4rem;
+
+      & .q-a {
+        // border: 1px solid brown;
+        font-size: 1.5rem;
+        padding: 2rem 2rem;
+        background-color: $fadedColor;
+        color: $textColor;
+        width: 100%;
+        font-family: 'ITCregular', sans-serif;
+        line-height: 3rem;
+        height: 6.5rem;
+      }
+    }
+  }
+}
