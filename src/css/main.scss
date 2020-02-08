@@ -135,7 +135,7 @@ main {
         }
 
         & .sub-title {
-          font-size: 3.1rem;
+          font-size: 3rem;
           font-family: 'ITCRegular';
         }
 
@@ -161,6 +161,7 @@ main {
             font-size: 2rem;
             font-weight: 500;
             line-height: 2rem;
+            color: #fff;
             overflow: hidden;
             outline: none;
             cursor: pointer;
@@ -189,9 +190,10 @@ main {
             left: 50%;
             top: 50%;
             padding: 50%;
+            border-radius: 50%;
             width: 2rem;
             height: 2rem;
-            background-color: #317a56;
+            background-color: #1a3f2c;
             opacity: 0;
             transform: translate(-50%, -50%) scale(1);
             transition: opacity 1s, transform 0.5s;
