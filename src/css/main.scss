@@ -3,6 +3,20 @@ $secondaryColor: #4bba83;
 $textColor: #fafbfb;
 $fadedColor: #303030;
 
+// Mixins
+@mixin collapsible {
+  line-height: 3rem;
+  height: 6.5rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  padding: 2rem 2rem;
+  background-color: $fadedColor;
+  color: $textColor;
+  width: 100%;
+}
+
 // Fonts
 @font-face {
   font-family: ITCRegular;
@@ -362,19 +376,14 @@ body {
       grid-gap: 0.2rem 4rem;
 
       & .collapsible-header {
-        border: none;
-        outline: none;
-        // border: 1px solid brown;
-        font-size: 1.5rem;
-        padding: 2rem 2rem;
-        background-color: $fadedColor;
-        color: $textColor;
-        width: 100%;
+        @include collapsible;
         font-family: 'ITCregular', sans-serif;
-        line-height: 3rem;
-        height: 6.5rem;
-        cursor: pointer;
         transition: background 0.5s ease-in-out;
+        transition: transform 0.5s ease-in-out;
+
+        &:hover {
+          opacity: 0.8;
+        }
 
         & .question-group {
           width: 100%;
@@ -396,10 +405,6 @@ body {
         }
       }
 
-      & .collapsible-header:hover {
-        opacity: 0.8;
-      }
-
       & .collapsible-content {
         overflow: hidden;
         max-height: 0rem;
@@ -414,6 +419,32 @@ body {
       & .active {
         & .arrow {
           transform: rotate(180deg);
+        }
+      }
+
+      & .c-of-c-text {
+        @include collapsible;
+        font-family: 'ITCMedium', sans-serif;
+        text-align: left;
+
+        &:hover {
+          opacity: 0.8;
+        }
+
+        & .c-of-c-collection {
+          display: flex;
+
+          & .text {
+            width: 92%;
+          }
+          & .arrow {
+            width: 8%;
+            text-align: center;
+
+            img {
+              transform: rotate(270deg);
+            }
+          }
         }
       }
     }
