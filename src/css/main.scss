@@ -79,6 +79,7 @@ body {
           a {
             color: $textColor;
             text-decoration: none;
+            cursor: pointer;
           }
         }
       }
@@ -270,7 +271,7 @@ body {
   border: 1px solid green;
 
   header {
-    border: 1px solid yellow;
+    // border: 1px solid yellow;
 
     & .title-group {
       position: relative;
@@ -282,13 +283,28 @@ body {
       }
 
       & .title {
-        border: 1px solid purple;
+        // border: 1px solid purple;
         font-size: 5rem;
         line-height: 5rem;
         height: 4.3rem;
         color: white;
         font-family: 'ITCBold', sans-serif;
       }
+    }
+  }
+
+  main {
+    border: 1px solid salmon;
+
+    & .information {
+      border: 1px solid gray;
+      margin: 4rem auto;
+      width: 50%;
+      font-size: 1.5rem;
+      padding: 0 5rem;
+      color: white;
+      opacity: 0.9;
+      font-family: 'ITCRegular', sans-serif;
     }
   }
 }
