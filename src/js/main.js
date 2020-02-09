@@ -1,49 +1,49 @@
 // FAQs
 const FAQ_DATA = [
   {
-    q: "Lorem ipsum dolor sit amet, consectetur adipisicing?",
+    q: 'Lorem ipsum dolor sit amet, consectetur adipisicing?',
     a:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis soluta maxime officiis libero eaque ex."
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis soluta maxime officiis libero eaque ex.'
   },
   {
-    q: "Lorem ipsum dolor sit amet, consectetur adipisicing?",
+    q: 'Lorem ipsum dolor sit amet, consectetur adipisicing?',
     a:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis soluta maxime officiis libero eaque ex."
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis soluta maxime officiis libero eaque ex.'
   },
   {
-    q: "Lorem ipsum dolor sit amet consectetur?",
+    q: 'Lorem ipsum dolor sit amet consectetur?',
     a:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio."
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
   },
   {
-    q: "Lorem ipsum dolor sit amet consectetur?",
+    q: 'Lorem ipsum dolor sit amet consectetur?',
     a:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio."
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
   },
   {
-    q: "Lorem ipsum dolor sit?",
+    q: 'Lorem ipsum dolor sit?',
     a:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, quidem."
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, quidem.'
   },
   {
-    q: "Lorem ipsum dolor sit?",
+    q: 'Lorem ipsum dolor sit?',
     a:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, quidem."
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, quidem.'
   },
   {
-    q: "Lorem ipsum dolor sit amet consectetur?",
+    q: 'Lorem ipsum dolor sit amet consectetur?',
     a:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio."
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
   },
   {
-    q: "Lorem ipsum dolor sit amet consectetur?",
+    q: 'Lorem ipsum dolor sit amet consectetur?',
     a:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio."
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
   },
   {
-    q: "Lorem, ipsum dolor?",
+    q: 'Lorem, ipsum dolor?',
     a:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, quidem."
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, quidem.'
   }
 ];
 
@@ -55,74 +55,103 @@ class organizer {
   }
 }
 const ORGANIZER_DATA = [
+  new organizer('Kartik Soni', 'Chair', './images/kartikSoni.png'),
   new organizer(
-    "Kartik Soni",
-    "Chair",
-    "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-0/p160x160/66580013_151910975978322_1622938506160504832_n.jpg?_nc_cat=104&_nc_ohc=J4OuEGDhpuEAX_T_xKl&_nc_ht=scontent-frt3-1.xx&_nc_tp=6&oh=516fe782202871c95ae7da0a120e0eba&oe=5EBF89F2"
+    'Shubham Awasthi',
+    'Vice Chair - Technical',
+    './images/shubhamAwasthi.png'
   ),
   new organizer(
-    "Subham Awasthi",
-    "Vice Chair Technical",
-    "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-0/p160x160/66580013_151910975978322_1622938506160504832_n.jpg?_nc_cat=104&_nc_ohc=J4OuEGDhpuEAX_T_xKl&_nc_ht=scontent-frt3-1.xx&_nc_tp=6&oh=516fe782202871c95ae7da0a120e0eba&oe=5EBF89F2"
+    'Nimisha Bhatia',
+    'Vice Chair - Management',
+    './images/nimishaBhatia.png'
+  ),
+  new organizer('Fiza rasool', 'General Secretary', './images/fizaRasool.png'),
+  new organizer(
+    'Aditya Srivastava',
+    'Web Master',
+    './images/adityaSrivastava.png'
   ),
   new organizer(
-    "Nimisha Bhatia",
-    "Management",
-    "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-0/p160x160/66580013_151910975978322_1622938506160504832_n.jpg?_nc_cat=104&_nc_ohc=J4OuEGDhpuEAX_T_xKl&_nc_ht=scontent-frt3-1.xx&_nc_tp=6&oh=516fe782202871c95ae7da0a120e0eba&oe=5EBF89F2"
+    'Sarthak Dandotiya',
+    'UI UX Lead',
+    './images/sarthakDandotiya.png'
+  ),
+  new organizer('Sventansu Singh', 'Treasurer', './images/sventansuSingh.png'),
+  new organizer('Rajat Gupta', 'Competitive Lead', './images/rajatGupta.png'),
+  new organizer(
+    'Subhaditya Mukherjee',
+    'Research Lead',
+    './images/subhadityaMukherjee.png'
   ),
   new organizer(
-    "Fiza rasool",
-    "General Secretary",
-    "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-0/p160x160/66580013_151910975978322_1622938506160504832_n.jpg?_nc_cat=104&_nc_ohc=J4OuEGDhpuEAX_T_xKl&_nc_ht=scontent-frt3-1.xx&_nc_tp=6&oh=516fe782202871c95ae7da0a120e0eba&oe=5EBF89F2"
+    'Sparsh Srivastava',
+    'App Lead',
+    './images/sparshSrivastava.png'
   ),
   new organizer(
-    "Aditya Srivatsa",
-    "Web Master",
-    "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-0/p160x160/66580013_151910975978322_1622938506160504832_n.jpg?_nc_cat=104&_nc_ohc=J4OuEGDhpuEAX_T_xKl&_nc_ht=scontent-frt3-1.xx&_nc_tp=6&oh=516fe782202871c95ae7da0a120e0eba&oe=5EBF89F2"
+    'Shrey Sindher',
+    'Projects Lead - App',
+    './images/shreySindher.png'
   ),
   new organizer(
-    "Sarthak Dandotiya",
-    "UI UX Lead",
-    "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-0/p160x160/66580013_151910975978322_1622938506160504832_n.jpg?_nc_cat=104&_nc_ohc=J4OuEGDhpuEAX_T_xKl&_nc_ht=scontent-frt3-1.xx&_nc_tp=6&oh=516fe782202871c95ae7da0a120e0eba&oe=5EBF89F2"
-  )
+    'Shivank Sahai',
+    'Projects Lead - Web',
+    './images/shivankSahai.png'
+  ),
+  new organizer('Bhumij Gupta', 'Creative Head', './images/bhumijGupta.png'),
+  new organizer(
+    'Madhur Dixit',
+    'Projects Lead - Research',
+    './images/madhurDixit.png'
+  ),
+  new organizer(
+    'Hari Ram Vishvakarma',
+    'Faculty Organiser',
+    './images/white.png'
+  ),
+  new organizer('Divya Udayan', 'Faculty Organiser', './images/white.png'),
+  new organizer('Some Name', 'Faculty Organiser', './images/white.png'),
+  new organizer('Some Name', 'Faculty Organiser', './images/white.png')
 ];
 
 let docFrag = document.createDocumentFragment();
 
 window.onload = () => {
   // Collapsible
-  FAQ_DATA.map((qGroup) => {
+  FAQ_DATA.map(qGroup => {
     const tempNode = document
       .querySelector("div[data-type='collapsible-template']")
       .cloneNode(true);
-    tempNode.querySelector(".question").textContent = qGroup.q;
-    tempNode.querySelector(".collapsible-content p").textContent = qGroup.a;
-    tempNode.style.display = "block";
+    tempNode.querySelector('.question').textContent = qGroup.q;
+    tempNode.querySelector('.collapsible-content p').textContent = qGroup.a;
+    tempNode.style.display = 'block';
     docFrag.appendChild(tempNode);
   });
   document
-    .querySelector(".faq-grid")
-    .insertBefore(docFrag, document.querySelector(".code-of-conduct"));
+    .querySelector('.faq-grid')
+    .insertBefore(docFrag, document.querySelector('.code-of-conduct'));
   docFrag = null;
 
   // Collapsible actions
-  document.querySelectorAll(".collapsible-header").forEach((btn) =>
-    btn.addEventListener("click", () => {
+  document.querySelectorAll('.collapsible-header').forEach(btn =>
+    btn.addEventListener('click', () => {
       const collapsibleContent = btn.nextElementSibling;
-      btn.classList.toggle("active");
+      btn.classList.toggle('active');
 
-      if (btn.classList.contains("active")) {
+      if (btn.classList.contains('active')) {
         collapsibleContent.style.maxHeight =
-          collapsibleContent.scrollHeight + "rem";
+          collapsibleContent.scrollHeight + 'rem';
       } else {
         collapsibleContent.style.maxHeight = 0;
       }
     })
   );
 
-  let orgDisplay = document.querySelector(".organizers main");
-  let templateMain = "";
-  ORGANIZER_DATA.map((org) => {
+  // Organizers
+  let orgDisplay = document.querySelector('.organizers main');
+  let templateMain = '';
+  ORGANIZER_DATA.map(org => {
     let singleItem = `<div>
         <img
           src=${org.image}
@@ -134,6 +163,6 @@ window.onload = () => {
         </p>
       </div>`;
     templateMain += singleItem;
-    orgDisplay.innerHTML = templateMain;
   });
+  orgDisplay.innerHTML = templateMain;
 };
