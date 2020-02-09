@@ -61,18 +61,28 @@ const ORGANIZER_DATA = [
     "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-0/p160x160/66580013_151910975978322_1622938506160504832_n.jpg?_nc_cat=104&_nc_ohc=J4OuEGDhpuEAX_T_xKl&_nc_ht=scontent-frt3-1.xx&_nc_tp=6&oh=516fe782202871c95ae7da0a120e0eba&oe=5EBF89F2"
   ),
   new organizer(
-    "Subhaadthiya mukerjee",
-    "reasearch Lead",
+    "Subham Awasthi",
+    "Vice Chair Technical",
     "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-0/p160x160/66580013_151910975978322_1622938506160504832_n.jpg?_nc_cat=104&_nc_ohc=J4OuEGDhpuEAX_T_xKl&_nc_ht=scontent-frt3-1.xx&_nc_tp=6&oh=516fe782202871c95ae7da0a120e0eba&oe=5EBF89F2"
   ),
   new organizer(
-    "Subhaadthiya mukerjee",
-    "reasearch Lead",
+    "Nimisha Bhatia",
+    "Management",
     "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-0/p160x160/66580013_151910975978322_1622938506160504832_n.jpg?_nc_cat=104&_nc_ohc=J4OuEGDhpuEAX_T_xKl&_nc_ht=scontent-frt3-1.xx&_nc_tp=6&oh=516fe782202871c95ae7da0a120e0eba&oe=5EBF89F2"
   ),
   new organizer(
-    "Subhaadthiya mukerjee",
-    "reasearch Lead",
+    "Fiza rasool",
+    "General Secretary",
+    "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-0/p160x160/66580013_151910975978322_1622938506160504832_n.jpg?_nc_cat=104&_nc_ohc=J4OuEGDhpuEAX_T_xKl&_nc_ht=scontent-frt3-1.xx&_nc_tp=6&oh=516fe782202871c95ae7da0a120e0eba&oe=5EBF89F2"
+  ),
+  new organizer(
+    "Aditya Srivatsa",
+    "Web Master",
+    "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-0/p160x160/66580013_151910975978322_1622938506160504832_n.jpg?_nc_cat=104&_nc_ohc=J4OuEGDhpuEAX_T_xKl&_nc_ht=scontent-frt3-1.xx&_nc_tp=6&oh=516fe782202871c95ae7da0a120e0eba&oe=5EBF89F2"
+  ),
+  new organizer(
+    "Sarthak Dandotiya",
+    "UI UX Lead",
     "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-0/p160x160/66580013_151910975978322_1622938506160504832_n.jpg?_nc_cat=104&_nc_ohc=J4OuEGDhpuEAX_T_xKl&_nc_ht=scontent-frt3-1.xx&_nc_tp=6&oh=516fe782202871c95ae7da0a120e0eba&oe=5EBF89F2"
   )
 ];
