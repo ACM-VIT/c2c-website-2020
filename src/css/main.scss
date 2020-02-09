@@ -42,7 +42,9 @@ $fadedColor: #303030;
 
 @mixin grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  margin: 3rem 8rem;
+  grid-gap: 1rem;
 }
 
 // Fonts
@@ -484,4 +486,12 @@ body {
 
 .sponsors {
   @include header;
+
+  main {
+    @include grid;
+
+    & .grid-element {
+      background-color: $fadedColor;
+    }
+  }
 }
