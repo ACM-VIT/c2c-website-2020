@@ -4,7 +4,7 @@
   "description": "Website for Code2Create hosted by ACT-VIT",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp",
     "start": "gulp watch"
   },
   "repository": {
@@ -18,10 +18,12 @@
   },
   "homepage": "https://github.com/ACM-VIT/c2c-website-2020#readme",
   "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.2.0",
-    "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^7.1.0",
     "gulp-minify": "^3.1.0",
     "gulp-sass": "^4.0.2",

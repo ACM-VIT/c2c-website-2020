@@ -1,1 +1,1 @@
-document.querySelectorAll(".collapsible-header").forEach(e=>e.addEventListener("click",()=>{const t=e.nextElementSibling;e.classList.toggle("active"),e.classList.contains("active")?t.style.maxHeight=t.scrollHeight+"rem":t.style.maxHeight=0}));
+"use strict";document.querySelectorAll(".collapsible-header").forEach(function(e){return e.addEventListener("click",function(){var t=e.nextElementSibling;e.classList.toggle("active"),e.classList.contains("active")?t.style.maxHeight=t.scrollHeight+"rem":t.style.maxHeight=0})});
