@@ -5,6 +5,7 @@ class faq {
     this.answer = answer;
   }
 }
+
 const FAQ_DATA = [
   new faq(
     'Lorem ipsum dolor sit amet, consectetur adipisicing?',
@@ -44,6 +45,7 @@ const FAQ_DATA = [
   )
 ];
 
+// Organizers
 class organizer {
   constructor(name, designation, image) {
     this.name = name;
@@ -111,6 +113,46 @@ const ORGANIZER_DATA = [
   new organizer('Divya Udayan', 'Faculty Organiser', './images/white.png'),
   new organizer('Some Name', 'Faculty Organiser', './images/white.png'),
   new organizer('Some Name', 'Faculty Organiser', './images/white.png')
+];
+
+// Sponsors
+class sponsor {
+  constructor(name, logo) {
+    this.name = name;
+    this.logo = logo;
+  }
+}
+const SPONSOR_DATA = [
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', '')
 ];
 
 window.onload = () => {
@@ -181,4 +223,13 @@ window.onload = () => {
     templateMain += singleItem;
   });
   orgDisplay.innerHTML = templateMain;
+
+  // Sponsors
+  const sponDisplay = document.querySelector('.sponsors main');
+  templateMain = '';
+  SPONSOR_DATA.map(sponsor => {
+    const singleItem = `<div class="grid-element"></div>`;
+    templateMain += singleItem;
+  });
+  sponDisplay.innerHTML = templateMain;
 };
