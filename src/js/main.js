@@ -118,22 +118,42 @@ const ORGANIZER_DATA = [
 let docFrag = document.createDocumentFragment();
 
 window.onload = () => {
+  let templateMain = '';
+  const faqGrid = document.querySelector('.faqPage .faq-grid');
+  console.log(faqGrid);
   // Collapsible
   FAQ_DATA.map(qGroup => {
-    const tempNode = document
-      .querySelector("div[data-type='collapsible-template']")
-      .cloneNode(true);
-    tempNode.querySelector('.question').textContent = qGroup.q;
-    tempNode.querySelector('.collapsible-content p').textContent = qGroup.a;
-    tempNode.style.display = 'block';
-    docFrag.appendChild(tempNode);
+    const item = `<div
+      class="collapsible"
+      data-type="collapsible-template"
+    >
+    <button class="collapsible-header">
+      <div class="question-group">
+        <span class="question">${qGroup.q}</span>
+        <span class="arrow">
+          <img src="./vectors/arrow-green.svg" alt="FAQ Expand" />
+        </span>
+      </div>
+    </button>
+    <div class="collapsible-content">
+      <p>${qGroup.a}</p>
+    </div>
+  </div>`;
+    templateMain += item;
   });
-  document
-    .querySelector('.faq-grid')
-    .insertBefore(docFrag, document.querySelector('.code-of-conduct'));
-  docFrag = null;
+  templateMain += `<div class="code-of-conduct">
+    < button class="c-of-c-text" >
+      <div class="c-of-c-collection">
+        <span class="text">Code of Conduct</span>
+        <span class="arrow">
+          <img src="./vectors/arrow-green.svg" alt="Code of Conduct" />
+        </span>
+      </div>
+            </button >
+          </div >`;
+  faqGrid.innerHTML = templateMain;
 
-  // Collapsible actions
+  // Collapsible Actions
   document.querySelectorAll('.collapsible-header').forEach(btn =>
     btn.addEventListener('click', () => {
       const collapsibleContent = btn.nextElementSibling;
@@ -149,10 +169,10 @@ window.onload = () => {
   );
 
   // Organizers
-  let orgDisplay = document.querySelector('.organizers main');
-  let templateMain = '';
+  const orgDisplay = document.querySelector('.organizers main');
+  templateMain = '';
   ORGANIZER_DATA.map(org => {
-    let singleItem = `<div>
+    const singleItem = `<div>
         <img
           src=${org.image}
           alt="check"
