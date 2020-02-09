@@ -1,10 +1,11 @@
 const gulp = require('gulp');
 const imageMin = require('gulp-imagemin');
 const sass = require('gulp-sass');
+const autoPrefixer = require('gulp-autoprefixer');
 const cleanCss = require('gulp-clean-css');
-const uglify = require('gulp-uglify');
-const concat = require('gulp-concat');
+const minify = require('gulp-minify');
 const svgMin = require('gulp-svgmin');
+const babel = require('gulp-babel');
 
 sass.compiler = require('node-sass');
 
@@ -29,16 +30,21 @@ gulp.task('compileSass', () =>
   gulp
     .src('src/css/*.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(
+      autoPrefixer({
+        cascade: false
+      })
+    )
     .pipe(cleanCss({ compability: 'ie8' }))
     .pipe(gulp.dest('dist/css'))
 );
 
 // Minify Scripts
-gulp.task('concatAndMinify', () =>
+gulp.task('compileAndMinify', () =>
   gulp
     .src('src/js/*.js')
-    .pipe(concat('main.js'))
-    .pipe(uglify())
+    .pipe(babel({ presets: ['@babel/env'] }))
+    .pipe(minify({ noSource: true }))
     .pipe(gulp.dest('dist/js'))
 );
 
@@ -58,7 +64,7 @@ gulp.task(
     'copyHtml',
     'minifyImages',
     'compileSass',
-    'concatAndMinify',
+    'compileAndMinify',
     'minifySvg'
   ])
 );
@@ -68,6 +74,6 @@ gulp.task('watch', () => {
   gulp.watch('src/*.html', gulp.series('copyHtml'));
   gulp.watch('src/images/*', gulp.series('minifyImages'));
   gulp.watch('src/css/*.scss', gulp.series('compileSass'));
-  gulp.watch('src/js/*.js', gulp.series('concatAndMinify'));
+  gulp.watch('src/js/*.js', gulp.series('compileAndMinify'));
   gulp.watch('src/vectors/*.svg', gulp.series('minifySvg'));
 });

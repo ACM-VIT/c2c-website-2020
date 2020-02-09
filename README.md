@@ -27,6 +27,9 @@
 - [Contributing](#contributing)
 - [License](#license)
 
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Design
 
 ![Code2Create Design Screen Shot](https://i.imgur.com/xH4TNTs.jpg?)
@@ -52,18 +55,18 @@ $ npm i
 ### Build Script
 
 ```
-$ gulp
+$ npm run build
 ```
 
 ### Watch Script
 
 ```
-$ gulp watch
+$ npm start
 ```
 
 > It is advisable to use VS Code's live server extention for Hot Reloads and have gulp watch running during development.
 >
-> **You will need to hit save twice for html files your changes to show up on your live server. This is an active issue at the moment for the live-server extension.**
+> **You will need to hit save twice on html files for changes to show up on your live server. This is an active issue at the moment for the live-server extension.**
 
 ## Contributing
 

@@ -8,28 +8,122 @@
     <title>Code2Create</title>
   </head>
   <body>
-    <nav>
-      <div class="nav-bar fixed-top">
-        <ul class="nav-links">
-          <li class="nav-link"><a href="#about">About</a></li>
-          <li class="nav-link"><a href="#faqs">FAQs</a></li>
-          <li class="nav-link"><a href="#organisers">Organisers</a></li>
-          <li class="nav-link"><a href="#sponsors">Sponsors</a></li>
-        </ul>
-      </div>
-    </nav>
-    <header class="banner">
-      <div class="mask-group">
+    <section class="page landingPage">
+      <header>
+        <nav>
+          <ul class="nav-links">
+            <li class="nav-link"><a href="#about">About</a></li>
+            <li class="nav-link"><a href="#faqs">FAQs</a></li>
+            <li class="nav-link"><a href="#organisers">Organisers</a></li>
+            <li class="nav-link"><a href="#sponsors">Sponsors</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <div class="hero-section">
+          <div class="hero-title">
+            <img src="./vectors/c-only-logo.svg" alt="Mask Group" />
+            <div class="title-group">
+              <span class="title">Code2Create</span><br />
+              <span class="sub-title">March 7-9, 2020 </span><br />
+              <div class="button-container">
+                <button class="register-button">Register Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>
         <img
-          class="fixed-top"
-          src="./vectors/mask-group.svg"
-          alt="Mask Group"
+          class="white-arrow"
+          src="./vectors/arrow-white.svg"
+          alt="Next Section"
         />
-      </div>
-      <div class="logo">
-        <img src="./vectors/c-only-logo.svg" alt="Mask Group" />
-      </div>
-    </header>
-    <script src="./js/main.js"></script>
+      </footer>
+    </section>
+    <section class="page aboutPage" id="about">
+      <header>
+        <div class="title-group">
+          <img src="./vectors/tilted-lines.svg" alt="Tilted Lines" />
+          <span class="title">About</span>
+        </div>
+      </header>
+      <main>
+        <div class="information">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
+            delectus blanditiis nemo temporibus architecto harum suscipit aut
+            quod itaque eum earum, soluta dicta saepe?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+            commodi dolorem repudiandae deleniti dolorum perspiciatis assumenda,
+            itaque quas facere, autem magnam quidem deserunt? Assumenda suscipit
+            molestias voluptatem ab animi rerum at velit facilis inventore!
+            Eius, voluptatem, commodi aliquam et vero dolores voluptates qui
+            harum pariatur, quasi non ipsam voluptatum temporibus!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
+            explicabo eligendi cum quam. Culpa iure dicta molestias esse nam?
+            Quo quisquam dolores tenetur. Sit unde sed autem modi tempore
+            suscipit aliquam, exercitationem ad dicta, ipsam est ipsum.
+            Laboriosam incidunt aspernatur, itaque rerum sint est quidem quo
+            eligendi assumenda tempore vitae!
+          </p>
+          <div class="bottom-caption">
+            Computing change. Challenging reality.
+          </div>
+        </div>
+      </main>
+    </section>
+    <section class="page faqPage" id="faqs">
+      <header>
+        <div class="title-group">
+          <img src="./vectors/tilted-lines.svg" alt="Tilted Lines" />
+          <span class="title">FAQs</span>
+        </div>
+      </header>
+      <main>
+        <div class="faq-grid">
+          <div
+            class="collapsible"
+            data-type="collapsible-template"
+            style="display: none;"
+          >
+            <button class="collapsible-header">
+              <div class="question-group">
+                <span class="question"></span>
+                <span class="arrow">
+                  <img src="./vectors/arrow-green.svg" alt="FAQ Expand" />
+                </span>
+              </div>
+            </button>
+            <div class="collapsible-content">
+              <p></p>
+            </div>
+          </div>
+          <div class="code-of-conduct">
+            <button class="c-of-c-text">
+              <div class="c-of-c-collection">
+                <span class="text">Code of Conduct</span>
+                <span class="arrow">
+                  <img src="./vectors/arrow-green.svg" alt="Code of Conduct" />
+                </span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div class="contact">
+          For any more queries, feel free to reach us at
+          <span class="link">
+            <a href="https://outreach.acmvit.in">outreach.acmvit.in</a>
+          </span>
+        </div>
+      </footer>
+    </section>
+    <script src="./js/main-min.js"></script>
   </body>
 </html>
