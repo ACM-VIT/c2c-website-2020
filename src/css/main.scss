@@ -34,7 +34,7 @@ $fadedColor: #303030;
         line-height: 5rem;
         height: 4.3rem;
         color: white;
-        font-family: "ITCBold", sans-serif;
+        font-family: 'ITCBold', sans-serif;
       }
     }
   }
@@ -48,17 +48,17 @@ $fadedColor: #303030;
 // Fonts
 @font-face {
   font-family: ITCRegular;
-  src: url("../fonts/ITCAvantGardeStd-Bk.otf");
+  src: url('../fonts/ITCAvantGardeStd-Bk.otf');
 }
 
 @font-face {
   font-family: ITCBold;
-  src: url("../fonts/ITCAvantGardeStd-Bold.otf");
+  src: url('../fonts/ITCAvantGardeStd-Bold.otf');
 }
 
 @font-face {
   font-family: ITCMedium;
-  src: url("../fonts/ITCAvantGardeStd-Md.otf");
+  src: url('../fonts/ITCAvantGardeStd-Md.otf');
 }
 
 // Base styling
@@ -84,7 +84,7 @@ body {
   margin-top: 0;
   height: 100vh;
   width: 100%;
-  background: url("../vectors/landing-bg.svg");
+  background: url('../vectors/landing-bg.svg');
   background-size: cover;
 
   // Navbar
@@ -96,7 +96,7 @@ body {
     padding: 0;
     height: 20vh;
     width: 100%;
-    font-family: "ITCRegular", sans-serif;
+    font-family: 'ITCRegular', sans-serif;
 
     & nav {
       opacity: 0.9;
@@ -160,7 +160,7 @@ body {
         margin-left: 3.5rem;
         display: grid;
         grid-template-columns: repeat(auto, 1fr);
-        grid-template-areas: "logo title title title title";
+        grid-template-areas: 'logo title title title title';
         grid-gap: 3.5rem;
         align-items: start;
         justify-content: start;
@@ -182,12 +182,12 @@ body {
 
           & .title {
             font-size: 7.2rem;
-            font-family: "ITCMedium", sans-serif;
+            font-family: 'ITCMedium', sans-serif;
           }
 
           & .sub-title {
             font-size: 3rem;
-            font-family: "ITCRegular";
+            font-family: 'ITCRegular';
           }
 
           & .button-container {
@@ -208,7 +208,7 @@ body {
               text-overflow: ellipsis;
               color: $textColor;
               background-color: $secondaryColor;
-              font-family: "ITCMedium";
+              font-family: 'ITCMedium';
               font-size: 2rem;
               font-weight: 500;
               line-height: 2rem;
@@ -224,7 +224,7 @@ body {
             }
 
             & .register-button::before {
-              content: "";
+              content: '';
               position: absolute;
               top: 0;
               bottom: 0;
@@ -236,7 +236,7 @@ body {
             }
 
             & .register-button::after {
-              content: "";
+              content: '';
               position: absolute;
               left: 50%;
               top: 50%;
@@ -336,7 +336,7 @@ body {
         line-height: 5rem;
         height: 4.3rem;
         color: white;
-        font-family: "ITCBold", sans-serif;
+        font-family: 'ITCBold', sans-serif;
       }
     }
   }
@@ -351,7 +351,7 @@ body {
       font-size: 1.2rem;
       padding: 0 5rem;
       color: white;
-      font-family: "ITCRegular", sans-serif;
+      font-family: 'ITCRegular', sans-serif;
 
       p {
         margin: 2rem 0;
@@ -359,7 +359,7 @@ body {
     }
 
     & .bottom-caption {
-      font-family: "ITCBold", sans-serif;
+      font-family: 'ITCBold', sans-serif;
       color: $fadedColor;
       font-size: 2.4rem;
     }
@@ -384,7 +384,7 @@ body {
 
       & .collapsible-header {
         @include collapsible;
-        font-family: "ITCregular", sans-serif;
+        font-family: 'ITCregular', sans-serif;
         transition: background 0.5s ease-in-out;
         transition: transform 0.5s ease-in-out;
 
@@ -416,7 +416,7 @@ body {
         overflow: hidden;
         max-height: 0rem;
         transition: max-height 0.3s;
-        font-family: "ITCregular", sans-serif;
+        font-family: 'ITCregular', sans-serif;
         background-color: #232323;
         color: $textColor;
         font-size: 1.5rem;
@@ -431,7 +431,7 @@ body {
 
       & .c-of-c-text {
         @include collapsible;
-        font-family: "ITCMedium", sans-serif;
+        font-family: 'ITCMedium', sans-serif;
         text-align: left;
 
         &:hover {
@@ -464,7 +464,7 @@ body {
 
     & .contact {
       color: $textColor;
-      font-family: "ITCMedium", sans-serif;
+      font-family: 'ITCMedium', sans-serif;
       font-size: 1.5rem;
 
       & .link {
@@ -486,4 +486,8 @@ body {
       background-color: red;
     }
   }
+}
+
+.sponsors {
+  @include header;
 }
