@@ -1,50 +1,47 @@
 // FAQs
-const FAQ_DATA = [
-  {
-    q: 'Lorem ipsum dolor sit amet, consectetur adipisicing?',
-    a:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis soluta maxime officiis libero eaque ex.'
-  },
-  {
-    q: 'Lorem ipsum dolor sit amet, consectetur adipisicing?',
-    a:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis soluta maxime officiis libero eaque ex.'
-  },
-  {
-    q: 'Lorem ipsum dolor sit amet consectetur?',
-    a:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
-  },
-  {
-    q: 'Lorem ipsum dolor sit amet consectetur?',
-    a:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
-  },
-  {
-    q: 'Lorem ipsum dolor sit?',
-    a:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, quidem.'
-  },
-  {
-    q: 'Lorem ipsum dolor sit?',
-    a:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, quidem.'
-  },
-  {
-    q: 'Lorem ipsum dolor sit amet consectetur?',
-    a:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
-  },
-  {
-    q: 'Lorem ipsum dolor sit amet consectetur?',
-    a:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
-  },
-  {
-    q: 'Lorem, ipsum dolor?',
-    a:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, quidem.'
+class faq {
+  constructor(question, answer) {
+    this.question = question;
+    this.answer = answer;
   }
+}
+const FAQ_DATA = [
+  new faq(
+    'Lorem ipsum dolor sit amet, consectetur adipisicing?',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis soluta maxime officiis libero eaque ex.'
+  ),
+  new faq(
+    'Lorem ipsum dolor sit amet, consectetur adipisicing?',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis soluta maxime officiis libero eaque ex.'
+  ),
+  new faq(
+    'Lorem ipsum dolor sit amet consectetur?',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
+  ),
+  new faq(
+    'Lorem ipsum dolor sit amet consectetur?',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
+  ),
+  new faq(
+    'Lorem ipsum dolor sit?',
+    'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, quidem.'
+  ),
+  new faq(
+    'Lorem ipsum dolor sit?',
+    'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, quidem.'
+  ),
+  new faq(
+    'Lorem ipsum dolor sit amet consectetur?',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
+  ),
+  new faq(
+    'Lorem ipsum dolor sit amet consectetur?',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
+  ),
+  new faq(
+    'Lorem, ipsum dolor?',
+    'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, quidem.'
+  )
 ];
 
 class organizer {
@@ -54,6 +51,7 @@ class organizer {
     this.designation = designation;
   }
 }
+
 const ORGANIZER_DATA = [
   new organizer('Kartik Soni', 'Chair', './images/kartikSoni.png'),
   new organizer(
@@ -115,25 +113,43 @@ const ORGANIZER_DATA = [
   new organizer('Some Name', 'Faculty Organiser', './images/white.png')
 ];
 
-let docFrag = document.createDocumentFragment();
-
 window.onload = () => {
+  let templateMain = '';
+  const faqGrid = document.querySelector('.faqPage .faq-grid');
+  console.log(faqGrid);
   // Collapsible
   FAQ_DATA.map(qGroup => {
-    const tempNode = document
-      .querySelector("div[data-type='collapsible-template']")
-      .cloneNode(true);
-    tempNode.querySelector('.question').textContent = qGroup.q;
-    tempNode.querySelector('.collapsible-content p').textContent = qGroup.a;
-    tempNode.style.display = 'block';
-    docFrag.appendChild(tempNode);
+    const item = `<div
+      class="collapsible"
+      data-type="collapsible-template"
+    >
+    <button class="collapsible-header">
+      <div class="question-group">
+        <span class="question">${qGroup.question}</span>
+        <span class="arrow">
+          <img src="./vectors/arrow-green.svg" alt="FAQ Expand" />
+        </span>
+      </div>
+    </button>
+    <div class="collapsible-content">
+      <p>${qGroup.answer}</p>
+    </div>
+  </div>`;
+    templateMain += item;
   });
-  document
-    .querySelector('.faq-grid')
-    .insertBefore(docFrag, document.querySelector('.code-of-conduct'));
-  docFrag = null;
+  templateMain += `<div class="code-of-conduct">
+    <button class="c-of-c-text">
+      <div class="c-of-c-collection">
+        <span class="text">Code of Conduct</span>
+        <span class="arrow">
+          <img src="./vectors/arrow-green.svg" alt="Code of Conduct" />
+        </span>
+      </div>
+    </button >
+  </div >`;
+  faqGrid.innerHTML = templateMain;
 
-  // Collapsible actions
+  // Collapsible Actions
   document.querySelectorAll('.collapsible-header').forEach(btn =>
     btn.addEventListener('click', () => {
       const collapsibleContent = btn.nextElementSibling;
@@ -149,10 +165,10 @@ window.onload = () => {
   );
 
   // Organizers
-  let orgDisplay = document.querySelector('.organizers main');
-  let templateMain = '';
+  const orgDisplay = document.querySelector('.organizers main');
+  templateMain = '';
   ORGANIZER_DATA.map(org => {
-    let singleItem = `<div>
+    const singleItem = `<div>
         <img
           src=${org.image}
           alt="check"
