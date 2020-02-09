@@ -496,7 +496,7 @@ body {
     & p {
       margin-left: 1rem;
       color: $secondaryColor;
-      font-family: "ITCRegular", sans-serif;
+      font-family: 'ITCRegular', sans-serif;
       & strong {
         color: white;
       }
@@ -512,9 +512,7 @@ body {
 
     & .grid-element {
       background-color: $fadedColor;
-    }
-    img {
-      height: 40rem;
+      height: 18rem;
     }
   }
 }
