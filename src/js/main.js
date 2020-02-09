@@ -1,50 +1,47 @@
 // FAQs
-const FAQ_DATA = [
-  {
-    q: 'Lorem ipsum dolor sit amet, consectetur adipisicing?',
-    a:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis soluta maxime officiis libero eaque ex.'
-  },
-  {
-    q: 'Lorem ipsum dolor sit amet, consectetur adipisicing?',
-    a:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis soluta maxime officiis libero eaque ex.'
-  },
-  {
-    q: 'Lorem ipsum dolor sit amet consectetur?',
-    a:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
-  },
-  {
-    q: 'Lorem ipsum dolor sit amet consectetur?',
-    a:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
-  },
-  {
-    q: 'Lorem ipsum dolor sit?',
-    a:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, quidem.'
-  },
-  {
-    q: 'Lorem ipsum dolor sit?',
-    a:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, quidem.'
-  },
-  {
-    q: 'Lorem ipsum dolor sit amet consectetur?',
-    a:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
-  },
-  {
-    q: 'Lorem ipsum dolor sit amet consectetur?',
-    a:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
-  },
-  {
-    q: 'Lorem, ipsum dolor?',
-    a:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, quidem.'
+class faq {
+  constructor(question, answer) {
+    this.question = question;
+    this.answer = answer;
   }
+}
+const FAQ_DATA = [
+  new faq(
+    'Lorem ipsum dolor sit amet, consectetur adipisicing?',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis soluta maxime officiis libero eaque ex.'
+  ),
+  new faq(
+    'Lorem ipsum dolor sit amet, consectetur adipisicing?',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis soluta maxime officiis libero eaque ex.'
+  ),
+  new faq(
+    'Lorem ipsum dolor sit amet consectetur?',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
+  ),
+  new faq(
+    'Lorem ipsum dolor sit amet consectetur?',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
+  ),
+  new faq(
+    'Lorem ipsum dolor sit?',
+    'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, quidem.'
+  ),
+  new faq(
+    'Lorem ipsum dolor sit?',
+    'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, quidem.'
+  ),
+  new faq(
+    'Lorem ipsum dolor sit amet consectetur?',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
+  ),
+  new faq(
+    'Lorem ipsum dolor sit amet consectetur?',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
+  ),
+  new faq(
+    'Lorem, ipsum dolor?',
+    'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, quidem.'
+  )
 ];
 
 class organizer {
@@ -54,6 +51,7 @@ class organizer {
     this.designation = designation;
   }
 }
+
 const ORGANIZER_DATA = [
   new organizer('Kartik Soni', 'Chair', './images/kartikSoni.png'),
   new organizer(
@@ -115,8 +113,6 @@ const ORGANIZER_DATA = [
   new organizer('Some Name', 'Faculty Organiser', './images/white.png')
 ];
 
-let docFrag = document.createDocumentFragment();
-
 window.onload = () => {
   let templateMain = '';
   const faqGrid = document.querySelector('.faqPage .faq-grid');
@@ -129,28 +125,28 @@ window.onload = () => {
     >
     <button class="collapsible-header">
       <div class="question-group">
-        <span class="question">${qGroup.q}</span>
+        <span class="question">${qGroup.question}</span>
         <span class="arrow">
           <img src="./vectors/arrow-green.svg" alt="FAQ Expand" />
         </span>
       </div>
     </button>
     <div class="collapsible-content">
-      <p>${qGroup.a}</p>
+      <p>${qGroup.answer}</p>
     </div>
   </div>`;
     templateMain += item;
   });
   templateMain += `<div class="code-of-conduct">
-    < button class="c-of-c-text" >
+    <button class="c-of-c-text">
       <div class="c-of-c-collection">
         <span class="text">Code of Conduct</span>
         <span class="arrow">
           <img src="./vectors/arrow-green.svg" alt="Code of Conduct" />
         </span>
       </div>
-            </button >
-          </div >`;
+    </button >
+  </div >`;
   faqGrid.innerHTML = templateMain;
 
   // Collapsible Actions
