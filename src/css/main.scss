@@ -73,6 +73,7 @@ $fadedColor: #303030;
   box-sizing: border-box;
   cursor: default;
   z-index: 0;
+  scroll-behavior: smooth;
 }
 
 html,
@@ -123,6 +124,7 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
   background-color: white;
   z-index: 1000;
+
   & main {
     margin-top: 2rem;
     text-decoration: none;
@@ -130,6 +132,7 @@ body::-webkit-scrollbar-thumb {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
     & span {
       margin: 1rem;
       display: block;
@@ -137,13 +140,18 @@ body::-webkit-scrollbar-thumb {
   }
 
   color: white;
-  font-family: "ITCRegular", sans-serif;
+  font-family: "ITCRegular",
+  sans-serif;
   background: $fadedColor;
   font-size: 3rem;
 }
 
+br {
+  height: 0;
+}
+
 .page {
-  margin: 15rem 0;
+  margin: 8rem 0;
 }
 
 .landingPage {
@@ -441,6 +449,7 @@ body::-webkit-scrollbar-thumb {
   @include header;
 
   main {
+
     // border: 1px solid blue;
     & .faq-grid {
       display: grid;
