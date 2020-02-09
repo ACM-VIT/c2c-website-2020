@@ -59,6 +59,11 @@ $fadedColor: #303030;
 }
 
 @font-face {
+  font-family: ITCDemi;
+  src: url('../fonts/ITCAvantGardeStd-Demi.otf');
+}
+
+@font-face {
   font-family: ITCMedium;
   src: url('../fonts/ITCAvantGardeStd-Md.otf');
 }
@@ -494,10 +499,14 @@ body {
     }
 
     & p {
+      padding: 1rem;
       margin-left: 1rem;
       color: $secondaryColor;
-      font-family: 'ITCRegular', sans-serif;
-      & strong {
+      font-family: 'ITCDemi', sans-serif;
+      font-size: 0.7rem;
+      & span {
+        font-size: 1rem;
+        font-family: 'ITCRegular', sans-serif;
         color: white;
       }
     }
@@ -514,5 +523,20 @@ body {
       background-color: $fadedColor;
       height: 18rem;
     }
+  }
+}
+
+footer {
+  width: 100%;
+  height: 20vh;
+  background-color: $fadedColor;
+  color: white;
+  position: relative;
+  font-size: 3rem;
+  & span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }

@@ -119,7 +119,7 @@ window.onload = () => {
           alt="check"
         />
         <p>
-          <strong> ${org.name}</strong><br />
+          <span> ${org.name}</span><br />
           ${org.designation}
         </p>
       </div>`;
