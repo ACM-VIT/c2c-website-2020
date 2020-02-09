@@ -483,6 +483,9 @@ body {
 .organizers {
   @include header;
   main {
+    img {
+      width: 100%;
+    }
     @include grid;
     & div {
       background-color: red;
@@ -498,6 +501,9 @@ body {
 
     & .grid-element {
       background-color: $fadedColor;
+    }
+    img {
+      height: 40rem;
     }
   }
 }
