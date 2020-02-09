@@ -42,7 +42,7 @@ $fadedColor: #303030;
 
 @mixin grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
 }
 
 // Fonts
@@ -480,4 +480,10 @@ body {
 
 .organizers {
   @include header;
+  main {
+    @include grid;
+    & div {
+      background-color: red;
+    }
+  }
 }

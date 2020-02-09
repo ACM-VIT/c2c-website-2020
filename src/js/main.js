@@ -58,7 +58,22 @@ const ORGANIZER_DATA = [
   new organizer(
     "Kartik Soni",
     "Chair",
-    "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fbeauty%2F&psig=AOvVaw1pDEfN8r6I-Pe4967zLzRD&ust=1581333437301000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKDA0qCsxOcCFQAAAAAdAAAAABAD"
+    "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-0/p160x160/66580013_151910975978322_1622938506160504832_n.jpg?_nc_cat=104&_nc_ohc=J4OuEGDhpuEAX_T_xKl&_nc_ht=scontent-frt3-1.xx&_nc_tp=6&oh=516fe782202871c95ae7da0a120e0eba&oe=5EBF89F2"
+  ),
+  new organizer(
+    "Subhaadthiya mukerjee",
+    "reasearch Lead",
+    "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-0/p160x160/66580013_151910975978322_1622938506160504832_n.jpg?_nc_cat=104&_nc_ohc=J4OuEGDhpuEAX_T_xKl&_nc_ht=scontent-frt3-1.xx&_nc_tp=6&oh=516fe782202871c95ae7da0a120e0eba&oe=5EBF89F2"
+  ),
+  new organizer(
+    "Subhaadthiya mukerjee",
+    "reasearch Lead",
+    "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-0/p160x160/66580013_151910975978322_1622938506160504832_n.jpg?_nc_cat=104&_nc_ohc=J4OuEGDhpuEAX_T_xKl&_nc_ht=scontent-frt3-1.xx&_nc_tp=6&oh=516fe782202871c95ae7da0a120e0eba&oe=5EBF89F2"
+  ),
+  new organizer(
+    "Subhaadthiya mukerjee",
+    "reasearch Lead",
+    "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-0/p160x160/66580013_151910975978322_1622938506160504832_n.jpg?_nc_cat=104&_nc_ohc=J4OuEGDhpuEAX_T_xKl&_nc_ht=scontent-frt3-1.xx&_nc_tp=6&oh=516fe782202871c95ae7da0a120e0eba&oe=5EBF89F2"
   )
 ];
 
@@ -94,4 +109,21 @@ window.onload = () => {
       }
     })
   );
+
+  let orgDisplay = document.querySelector(".organizers main");
+  let templateMain = "";
+  ORGANIZER_DATA.map((org) => {
+    let singleItem = `<div>
+        <img
+          src=${org.image}
+          alt="check"
+        />
+        <p>
+          <strong> ${org.name}</strong><br />
+          ${org.designation}
+        </p>
+      </div>`;
+    templateMain += singleItem;
+    orgDisplay.innerHTML = templateMain;
+  });
 };
