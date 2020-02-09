@@ -490,7 +490,16 @@ body {
     @include grid;
     & div {
       overflow: hidden;
-      background-color: red;
+      background-color: $fadedColor;
+    }
+
+    & p {
+      margin-left: 1rem;
+      color: $secondaryColor;
+      font-family: "ITCRegular", sans-serif;
+      & strong {
+        color: white;
+      }
     }
   }
 }
