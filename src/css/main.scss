@@ -365,6 +365,7 @@ body {
   }
 
   main {
+
     // border: 1px solid blue;
     & .faq-grid {
       display: grid;
@@ -436,6 +437,7 @@ body {
           & .text {
             width: 92%;
           }
+
           & .arrow {
             width: 8%;
             text-align: center;
