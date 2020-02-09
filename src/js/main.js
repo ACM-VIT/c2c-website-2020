@@ -50,6 +50,7 @@ const FAQ_DATA = [
 let docFrag = document.createDocumentFragment();
 
 window.onload = () => {
+  // Collapsible
   FAQ_DATA.map(qGroup => {
     const tempNode = document
       .querySelector("div[data-type='collapsible-template']")
@@ -63,6 +64,8 @@ window.onload = () => {
     .querySelector('.faq-grid')
     .insertBefore(docFrag, document.querySelector('.code-of-conduct'));
   docFrag = null;
+
+  // Collapsible actions
   document.querySelectorAll('.collapsible-header').forEach(btn =>
     btn.addEventListener('click', () => {
       const collapsibleContent = btn.nextElementSibling;
