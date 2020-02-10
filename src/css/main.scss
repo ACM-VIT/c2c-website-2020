@@ -441,18 +441,19 @@ br {
     // border: 1px solid blue;
     & .faq-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
       // border: 1px solid brown;
       width: 85.5%;
       margin: 2.5vw auto;
       margin-bottom: 2.92vw;
       grid-gap: 0.17vw 3.34vw;
-
+      overflow: hidden;
       & .collapsible-header {
         @include collapsible;
         font-family: 'ITCRegular', sans-serif;
         transition: background 0.5s ease-in-out;
         transition: transform 0.5s ease-in-out;
+        white-space: nowrap;
 
         &:hover {
           opacity: 0.8;
@@ -486,12 +487,12 @@ br {
         background-color: #232323;
         color: $textColor;
         font-size: 1.25vw;
-        padding: 0 1.67vw;
-      }
-
-      & .active {
-        & .arrow {
-          transform: rotate(180deg);
+        padding: 0 2rem;
+        & .active {
+          padding: 1.5rem;
+          & .arrow {
+            transform: rotate(180deg);
+          }
         }
       }
 
