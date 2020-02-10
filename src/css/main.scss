@@ -26,6 +26,8 @@ $fadedColor: #303030;
 
       img {
         margin-right: 0.84vw;
+        height: 3.4vw;
+        width: auto;
       }
 
       & .title {
@@ -158,7 +160,7 @@ br {
   background: url('../vectors/landing-bg.svg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: right;
   overflow-x: hidden;
 
   // Navbar
@@ -216,7 +218,7 @@ br {
     height: 40vh;
 
     & .hero-section {
-      overflow-x: hidden;
+      overflow: hidden;
       // border: 1px solid gray;
       width: 80vw;
       height: 70vh;
@@ -402,6 +404,8 @@ br {
       display: flex;
 
       img {
+        height: 3.4vw;
+        width: auto;
         margin-right: 0.83vw;
       }
 
@@ -561,7 +565,8 @@ br {
   main {
     img {
       width: 100%;
-      height: 13.34vw;
+      height: auto;
+      min-height: 16rem;
     }
 
     @include grid;
@@ -572,14 +577,13 @@ br {
     }
 
     & p {
-      padding: 0.17vw 0.67vw;
-      margin-left: 0.84vw;
+      padding: 1rem 1rem;
       color: $secondaryColor;
       font-family: 'ITCDemi', sans-serif;
-      font-size: 0.84vw;
+      font-size: 0.7rem;
 
       & span {
-        font-size: 1vw;
+        font-size: 1.2rem;
         font-family: 'ITCRegular', sans-serif;
         color: white;
         white-space: nowrap;
