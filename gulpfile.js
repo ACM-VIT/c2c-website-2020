@@ -44,6 +44,12 @@ gulp.task('compileAndMinify', () =>
   gulp
     .src('src/js/*.js')
     .pipe(babel({ presets: ['@babel/env'] }))
+    // .pipe(
+    //   webpack({
+    //     entry: 'dist/js/main.js',
+    //     mode: 'production'
+    //   })
+    // )
     .pipe(minify({ noSource: true }))
     .pipe(gulp.dest('dist/js'))
 );

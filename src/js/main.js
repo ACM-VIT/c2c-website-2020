@@ -156,10 +156,16 @@ const SPONSOR_DATA = [
 ];
 
 window.onload = () => {
+  // Landing Arrow
+  const goBelow = document.querySelector('#go-below');
+  console.log(goBelow);
+  goBelow.addEventListener('click', () =>
+    document.querySelector('#about').scrollIntoView(true)
+  );
+
+  // Collapsible
   let templateMain = '';
   const faqGrid = document.querySelector('.faqPage .faq-grid');
-  console.log(faqGrid);
-  // Collapsible
   FAQ_DATA.map(qGroup => {
     const item = `<div
       class="collapsible"
