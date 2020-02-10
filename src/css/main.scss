@@ -74,7 +74,6 @@ $fadedColor: #303030;
 * {
   box-sizing: border-box;
   cursor: default;
-  z-index: 0;
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
@@ -97,6 +96,7 @@ body::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: $fadedColor;
   z-index: 2;
+  display: block;
 }
 
 body::-webkit-scrollbar {
@@ -104,6 +104,7 @@ body::-webkit-scrollbar {
   min-width: 1rem;
   background-color: #f5f5f5;
   z-index: 2;
+  display: block;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -111,37 +112,82 @@ body::-webkit-scrollbar-thumb {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: $secondaryColor;
   z-index: 2;
+  display: block;
 }
 
-.menu {
+// Hamburger menu
+.hamburger {
   display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  margin: 0;
+  background-color: $secondaryColor;
   height: 100vh;
+  color: none;
   width: 100%;
-  background-color: white;
-  z-index: 1000;
+  z-index: 1;
+  font-family: 'ITCBold', sans-serif;
+  position: fixed;
+  clip-path: circle(10% at 0% 0%);
+  transition: clip-path 0.5s ease-in-out;
 
-  & main {
-    margin-top: 1.67vw;
-    text-decoration: none;
+  span {
+    position: relative;
+    top: 0.1rem;
+    left: 0.5rem;
+    display: inline-block;
+
+    &.line {
+      width: 5%;
+      height: 0.3rem;
+      background-color: #ecf0f1;
+      display: block;
+      margin: 1vw 0;
+      margin-right: auto;
+      -webkit-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  #hamburger-12.is-active .line:nth-child(1) {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+
+  #hamburger-12.is-active .line:nth-child(3) {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+
+  & .nav-links {
+    text-align: center;
+    list-style: none;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    & span {
-      margin: 0.83vw;
-      display: block;
+    & .nav-link {
+      margin: 0;
+      padding: 0;
+      padding: 4vw;
+
+      a {
+        color: $textColor;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 10vw;
+      }
     }
   }
 
-  color: white;
-  font-family: 'ITCRegular', sans-serif;
-  background: $fadedColor;
-  font-size: 2.5vw;
+  &.active {
+    clip-path: circle(200% at 0% 0%);
+  }
 }
 
 br {
@@ -153,10 +199,10 @@ br {
 }
 
 .landingPage {
+  z-index: -1;
   margin-top: 0;
   height: 100vh;
   width: 100%;
-  z-index: -1;
   background: url('../vectors/landing-bg.svg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -165,7 +211,7 @@ br {
 
   // Navbar
   header {
-    z-index: 2;
+    z-index: 1;
     position: fixed;
     top: 0;
     left: 0;
@@ -213,7 +259,6 @@ br {
     top: 20vh;
     left: 0;
     right: 0;
-    z-index: 1;
     width: 100%;
     height: 40vh;
 
@@ -375,9 +420,8 @@ br {
     background: none;
     width: 100%;
     height: 5vh;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    position: relative;
+    top: 90vh;
     // border: 1px solid blue;
     text-align: center;
 
@@ -462,6 +506,7 @@ br {
       margin-bottom: 2.92vw;
       grid-gap: 0.17vw 3.34vw;
       overflow: hidden;
+
       & .collapsible-header {
         @include collapsible;
         font-family: 'ITCRegular', sans-serif;
@@ -502,8 +547,10 @@ br {
         color: $textColor;
         font-size: 1.25vw;
         padding: 0 2rem;
+
         & .active {
           padding: 1.5rem;
+
           & .arrow {
             transform: rotate(180deg);
           }
@@ -621,7 +668,25 @@ footer {
 
 // Tablet
 @media screen and (max-width: 768px) {
-  * {
+  .landingPage {
+    header {
+      display: none;
+    }
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  body::-webkit-scrollbar-track {
+    display: none;
+  }
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+  body::-webkit-scrollbar-thumb {
     display: none;
   }
 }
