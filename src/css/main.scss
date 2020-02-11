@@ -131,6 +131,18 @@ body::-webkit-scrollbar-thumb {
   transition: clip-path 0.5s ease-in-out;
   overflow: hidden;
 
+  & .icon {
+    &.is-active .line:nth-child(1) {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+
+    &.is-active .line:nth-child(3) {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+
   span {
     position: relative;
     top: 0.1rem;
@@ -146,27 +158,11 @@ body::-webkit-scrollbar-thumb {
       border: none;
       margin: none;
       margin-right: auto;
-      -webkit-transition: all 0.3s ease-in-out;
-      -o-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out;
     }
   }
 
-  #hamburger-12.is-active .line:nth-child(1) {
-    opacity: 0;
-    -webkit-transform: translateX(-100%);
-    -ms-transform: translateX(-100%);
-    -o-transform: translateX(-100%);
-    transform: translateX(-100%);
-  }
 
-  #hamburger-12.is-active .line:nth-child(3) {
-    opacity: 0;
-    -webkit-transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    -o-transform: translateX(100%);
-    transform: translateX(100%);
-  }
 
   & .nav-links {
     text-align: center;
@@ -179,13 +175,13 @@ body::-webkit-scrollbar-thumb {
     & .nav-link {
       margin: 0;
       padding: 0;
-      padding: 4vw;
+      padding: 1vw;
 
       a {
         color: $textColor;
         text-decoration: none;
         cursor: pointer;
-        font-size: 10vw;
+        font-size: 8vw;
       }
     }
   }
@@ -501,6 +497,7 @@ br {
   @include header;
 
   main {
+
     // border: 1px solid blue;
     & .faq-grid {
       display: grid;
@@ -556,7 +553,7 @@ br {
       }
 
       & .active {
-        & + .collapsible-content {
+        &+.collapsible-content {
           padding: 1.63vw;
         }
 

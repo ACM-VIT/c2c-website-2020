@@ -165,7 +165,6 @@ window.onload = () => {
 
   // Landing Arrow
   const goBelow = document.querySelector('#go-below');
-  console.log(goBelow);
   goBelow.addEventListener('click', () =>
     document.querySelector('#about').scrollIntoView(true)
   );
@@ -202,8 +201,8 @@ window.onload = () => {
   </div >`;
   faqGrid.innerHTML = templateMain;
 
+  // FAQ Section
   const colGrp = document.querySelectorAll('.collapsible');
-
   colGrp.forEach(collapsible => {
     const children = collapsible.children;
     //chlidren 0 is the button at the top
