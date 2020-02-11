@@ -162,8 +162,6 @@ body::-webkit-scrollbar-thumb {
     }
   }
 
-
-
   & .nav-links {
     text-align: center;
     list-style: none;
@@ -497,7 +495,6 @@ br {
   @include header;
 
   main {
-
     // border: 1px solid blue;
     & .faq-grid {
       display: grid;
@@ -529,8 +526,6 @@ br {
             cursor: pointer;
             text-align: left;
           }
-
-
         }
       }
 
@@ -547,7 +542,7 @@ br {
       }
 
       & .active {
-        &+.collapsible-content {
+        & + .collapsible-content {
           padding: 1.63vw;
         }
 
@@ -733,8 +728,6 @@ footer {
     }
   }
 
-
-
   & footer {
     background: none;
     text-align: center;
@@ -754,7 +747,6 @@ footer {
       }
     }
   }
-}
 }
 
 // Mobile
