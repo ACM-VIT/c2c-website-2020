@@ -121,12 +121,15 @@ body::-webkit-scrollbar-thumb {
   background-color: $secondaryColor;
   height: 100vh;
   color: none;
+  border: none;
+  outline: none;
   width: 100%;
   z-index: 1;
   font-family: 'ITCBold', sans-serif;
   position: fixed;
   clip-path: circle(10% at 0% 0%);
   transition: clip-path 0.5s ease-in-out;
+  overflow: hidden;
 
   span {
     position: relative;
@@ -140,6 +143,8 @@ body::-webkit-scrollbar-thumb {
       background-color: #ecf0f1;
       display: block;
       margin: 1vw 0;
+      border: none;
+      margin: none;
       margin-right: auto;
       -webkit-transition: all 0.3s ease-in-out;
       -o-transition: all 0.3s ease-in-out;
@@ -541,19 +546,22 @@ br {
       & .collapsible-content {
         overflow: hidden;
         max-height: 0;
-        transition: max-height 0.3s;
+        transition: max-height 0.3s ease-in-out;
+        transition: padding 0.3s ease-in-out;
         font-family: 'ITCregular', sans-serif;
         background-color: #232323;
         color: $textColor;
         font-size: 1.25vw;
-        padding: 0 2rem;
+        padding: 0 1.63vw;
+      }
 
-        & .active {
-          padding: 1.5rem;
+      & .active {
+        & + .collapsible-content {
+          padding: 1.63vw;
+        }
 
-          & .arrow {
-            transform: rotate(180deg);
-          }
+        & .arrow {
+          transform: rotate(180deg);
         }
       }
 
