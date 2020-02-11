@@ -214,7 +214,7 @@ window.onload = () => {
       colGrp.forEach(collInner => {
         collInner.style.gridColumn = 'span 2';
       });
-      document.querySelector('.c-of-c-collection').style.gridColumn = 'span 2';
+      document.querySelector('.code-of-conduct').style.gridColumn = 'span 2';
       if (children[0].classList.contains('active')) {
         children[1].style.maxHeight = children[1].scrollHeight + 'rem';
       } else {
