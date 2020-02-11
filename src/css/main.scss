@@ -5,13 +5,13 @@ $fadedColor: #303030;
 
 // Mixins
 @mixin collapsible {
-  line-height: 2.5rem;
-  height: 5.5rem;
+  line-height: 2.08vw;
+  height: 4.58vw;
   cursor: pointer;
   border: none;
   outline: none;
-  font-size: 1.5rem;
-  padding: 1.8rem;
+  font-size: 1.25vw;
+  padding: 1.5vw;
   background-color: $fadedColor;
   color: $textColor;
   width: 100%;
@@ -21,18 +21,20 @@ $fadedColor: #303030;
   header {
     & .title-group {
       position: relative;
-      left: -45rem;
+      left: -37.5vw;
       display: flex;
 
       img {
-        margin-right: 1rem;
+        margin-right: 0.84vw;
+        height: 3.4vw;
+        width: auto;
       }
 
       & .title {
         // border: 1px solid purple;
-        font-size: 5rem;
-        line-height: 5rem;
-        height: 4.3rem;
+        font-size: 4.17vw;
+        line-height: 4.17vw;
+        height: 3.58vw;
         color: white;
         font-family: 'ITCBold', sans-serif;
       }
@@ -43,8 +45,8 @@ $fadedColor: #303030;
 @mixin grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  margin: 5rem 8rem;
-  grid-gap: 1rem;
+  margin: 4.17vw 6.67vw;
+  grid-gap: 0.84vw;
 }
 
 // Fonts
@@ -72,84 +74,167 @@ $fadedColor: #303030;
 * {
   box-sizing: border-box;
   cursor: default;
-  z-index: 0;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 
 html,
 body {
+  position: relative;
   margin: 0;
   padding: 0;
   background-color: $mainColor;
   overflow-x: hidden;
 }
 
-.scrollbar {
-  margin-left: 30px;
-  float: left;
-  height: 300px;
-  width: 65px;
-  background: #f5f5f5;
-  overflow-y: scroll;
-  margin-bottom: 25px;
-
-  & .force-overflow {
-    min-height: 450px;
-  }
+body {
+  display: block;
 }
 
 body::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: $fadedColor;
+  z-index: 2;
+  display: block;
 }
 
 body::-webkit-scrollbar {
   width: 1vw;
+  min-width: 1rem;
   background-color: #f5f5f5;
+  z-index: 2;
+  display: block;
 }
 
 body::-webkit-scrollbar-thumb {
   border-radius: 10px;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: $secondaryColor;
+  z-index: 2;
+  display: block;
+}
+
+// Hamburger menu
+.hamburger {
+  display: none;
+  background-color: $secondaryColor;
+  height: 100vh;
+  color: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  z-index: 1;
+  font-family: 'ITCDemi', sans-serif;
+  position: fixed;
+  clip-path: circle(10% at 0% 0%);
+  transition: clip-path 0.5s ease-in-out;
+  overflow: hidden;
+
+  & .icon {
+    &.is-active .line:nth-child(1) {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+
+    &.is-active .line:nth-child(3) {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+
+  span {
+    position: relative;
+    top: 0.1rem;
+    left: 0.5rem;
+    display: inline-block;
+
+    &.line {
+      width: 5%;
+      height: 0.3rem;
+      background-color: #ecf0f1;
+      display: block;
+      margin: 1vw 0;
+      border: none;
+      margin: none;
+      margin-right: auto;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+
+
+  & .nav-links {
+    text-align: center;
+    list-style: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    & .nav-link {
+      margin: 0;
+      padding: 0;
+      padding: 1vw;
+
+      a {
+        color: $textColor;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 8vw;
+      }
+    }
+  }
+
+  &.active {
+    clip-path: circle(200% at 0% 0%);
+  }
+}
+
+br {
+  height: 0;
 }
 
 .page {
-  margin: 15rem 0;
+  margin: 6.67vw 0;
 }
 
 .landingPage {
+  z-index: -1;
   margin-top: 0;
   height: 100vh;
   width: 100%;
   background: url('../vectors/landing-bg.svg');
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  overflow-x: hidden;
 
   // Navbar
   header {
-    z-index: 2;
+    z-index: 1;
     position: fixed;
     top: 0;
     left: 0;
     padding: 0;
     height: 20vh;
-    width: 100%;
+    width: 100vw;
     font-family: 'ITCRegular', sans-serif;
 
     & nav {
       opacity: 0.9;
       margin: 0;
-      padding: 3rem 4rem;
+      padding: 2.5vw 3.34vw;
       // border: 1px solid red;
       background-color: none;
-      display: flex;
-      justify-content: flex-end;
 
       & .nav-links {
         list-style: none;
-        padding: 0.5rem 0;
-        margin: 2.5rem 0 2rem 0;
+        padding: 0.42vw 0;
+        margin: 2.08vw 0 1.67vw 0;
         width: 40%;
         display: flex;
+        margin-left: auto;
         // border: 1px solid green;
         justify-content: space-evenly;
 
@@ -157,7 +242,7 @@ body::-webkit-scrollbar-thumb {
           margin: 0;
           padding: 0;
           // border: 1px solid blue;
-          font-size: 1.5rem;
+          font-size: 1.25vw;
 
           a {
             color: $textColor;
@@ -175,61 +260,61 @@ body::-webkit-scrollbar-thumb {
     top: 20vh;
     left: 0;
     right: 0;
-    z-index: 1;
     width: 100%;
     height: 40vh;
 
     & .hero-section {
+      overflow: hidden;
       // border: 1px solid gray;
-      width: 100%;
+      width: 80vw;
       height: 70vh;
-      padding: 1rem 5rem;
+      padding: 0.84vw 4.17vw;
       display: flex;
       justify-content: flex-start;
       align-items: center;
 
       & .hero-title {
         // border: 1px solid purple;
-        margin-top: 12rem;
+        margin-top: auto;
         width: 80%;
         height: 70%;
         padding: 0;
-        margin-left: 3.5rem;
+        margin-left: 2.92vw;
         display: grid;
         grid-template-columns: repeat(auto, 1fr);
         grid-template-areas: 'logo title title title title';
-        grid-gap: 3.5rem;
+        grid-gap: 2.92vw;
         align-items: start;
         justify-content: start;
 
         img {
           grid-area: logo;
-          width: 11.5rem;
+          width: 10vw;
           height: auto;
         }
 
         & .title-group {
           // border: 1px solid green;
-          padding: 3.8rem 0;
+          padding: 3.17vw 0;
           grid-area: title;
           color: white;
           text-align: right;
-          line-height: 3rem;
+          line-height: 2.5vw;
           height: 100%;
 
           & .title {
-            font-size: 7.2rem;
+            font-size: 6vw;
             font-family: 'ITCMedium', sans-serif;
           }
 
           & .sub-title {
-            font-size: 3rem;
-            font-family: 'ITCRegular';
+            font-size: 2.4vw;
+            font-family: 'ITCMedium';
           }
 
           & .button-container {
             // border: 1px solid steelblue;
-            margin-top: 8rem;
+            margin-top: 6.53vw;
             margin-left: auto;
             width: 45%;
             display: flex;
@@ -239,16 +324,16 @@ body::-webkit-scrollbar-thumb {
               position: relative;
               display: inline-block;
               border: none;
-              padding: 1.7rem 3rem;
+              padding: 1.42vw 2.5vw;
               vertical-align: middle;
               text-align: center;
               text-overflow: ellipsis;
               color: $textColor;
               background-color: $secondaryColor;
               font-family: 'ITCMedium';
-              font-size: 2rem;
+              font-size: 1.67vw;
               font-weight: 500;
-              line-height: 2rem;
+              line-height: 1.67vw;
               color: #fff;
               overflow: hidden;
               outline: none;
@@ -279,8 +364,8 @@ body::-webkit-scrollbar-thumb {
               top: 50%;
               padding: 50%;
               border-radius: 50%;
-              width: 2rem;
-              height: 2rem;
+              width: 1.67vw;
+              height: 1.67vw;
               background-color: #1a3f2c;
               opacity: 0;
               transform: translate(-50%, -50%) scale(1);
@@ -336,15 +421,14 @@ body::-webkit-scrollbar-thumb {
     background: none;
     width: 100%;
     height: 5vh;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    position: relative;
+    top: 90vh;
     // border: 1px solid blue;
     text-align: center;
 
     & .white-arrow {
-      width: 2.4rem;
-      height: 1.3rem;
+      width: 2vw;
+      height: 1.08vw;
       cursor: pointer;
       opacity: 0.7;
     }
@@ -361,18 +445,20 @@ body::-webkit-scrollbar-thumb {
 
     & .title-group {
       position: relative;
-      left: -19rem;
+      left: -15.83vw;
       display: flex;
 
       img {
-        margin-right: 1rem;
+        height: 3.4vw;
+        width: auto;
+        margin-right: 0.83vw;
       }
 
       & .title {
         // border: 1px solid purple;
-        font-size: 5rem;
-        line-height: 5rem;
-        height: 4.3rem;
+        font-size: 4.17vw;
+        line-height: 4.17vw;
+        height: 3.58vw;
         color: white;
         font-family: 'ITCBold', sans-serif;
       }
@@ -384,22 +470,22 @@ body::-webkit-scrollbar-thumb {
 
     & .information {
       // border: 1px solid gray;
-      margin: 3rem auto;
+      margin: 2.5vw auto;
       width: 50%;
-      font-size: 1.2rem;
-      padding: 0 5rem;
+      font-size: 1vw;
+      padding: 0 4.17vw;
       color: white;
       font-family: 'ITCRegular', sans-serif;
 
       p {
-        margin: 2rem 0;
+        margin: 1.67vw 0;
       }
     }
 
     & .bottom-caption {
       font-family: 'ITCBold', sans-serif;
       color: $fadedColor;
-      font-size: 2.4rem;
+      font-size: 2vw;
     }
   }
 }
@@ -415,12 +501,13 @@ body::-webkit-scrollbar-thumb {
     // border: 1px solid blue;
     & .faq-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
       // border: 1px solid brown;
       width: 85.5%;
-      margin: 3rem auto;
-      margin-bottom: 3.5rem;
-      grid-gap: 0.2rem 4rem;
+      margin: 2.5vw auto;
+      margin-bottom: 2.92vw;
+      grid-gap: 0.17vw 3.34vw;
+      overflow: hidden;
 
       & .collapsible-header {
         @include collapsible;
@@ -443,27 +530,27 @@ body::-webkit-scrollbar-thumb {
             text-align: left;
           }
 
-          & .arrow {
-            // border: 1px solid skyblue;
-            width: 8%;
-            text-align: center;
-            cursor: pointer;
-          }
+
         }
       }
 
       & .collapsible-content {
         overflow: hidden;
-        max-height: 0rem;
-        transition: max-height 0.3s;
+        max-height: 0;
+        transition: max-height 0.3s ease-in-out;
+        transition: padding 0.3s ease-in-out;
         font-family: 'ITCregular', sans-serif;
         background-color: #232323;
         color: $textColor;
-        font-size: 1.5rem;
-        padding: 0 2rem;
+        font-size: 1.25vw;
+        padding: 0 1.63vw;
       }
 
       & .active {
+        &+.collapsible-content {
+          padding: 1.63vw;
+        }
+
         & .arrow {
           transform: rotate(180deg);
         }
@@ -498,15 +585,26 @@ body::-webkit-scrollbar-thumb {
     }
   }
 
+  & .arrow {
+    // border: 1px solid skyblue;
+    width: 8%;
+    text-align: center;
+    cursor: pointer;
+
+    img {
+      width: 1.27vw;
+    }
+  }
+
   & footer {
     background: none;
     text-align: center;
-    padding: 1rem;
+    padding: 0.84vw;
 
     & .contact {
       color: $textColor;
       font-family: 'ITCMedium', sans-serif;
-      font-size: 1.5rem;
+      font-size: 1.25vw;
 
       & .link {
         a {
@@ -525,7 +623,8 @@ body::-webkit-scrollbar-thumb {
   main {
     img {
       width: 100%;
-      height: 16rem;
+      height: auto;
+      min-height: 16rem;
     }
 
     @include grid;
@@ -536,11 +635,10 @@ body::-webkit-scrollbar-thumb {
     }
 
     & p {
-      padding: 0.2rem 0.8rem;
-      margin-left: 1rem;
+      padding: 1rem 1rem;
       color: $secondaryColor;
       font-family: 'ITCDemi', sans-serif;
-      font-size: 1rem;
+      font-size: 0.7rem;
 
       & span {
         font-size: 1.2rem;
@@ -567,13 +665,101 @@ body::-webkit-scrollbar-thumb {
 
 footer {
   width: 100%;
-  height: 20rem;
+  height: 16.67vw;
   background-color: $fadedColor;
   color: white;
   position: relative;
-  font-size: 2.5rem;
+  font-size: 2.8vw;
   font-family: 'ITCRegular', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+// Tablet
+@media screen and (max-width: 768px) {
+  .landingPage {
+    header {
+      display: none;
+    }
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  body::-webkit-scrollbar-track {
+    display: none;
+  }
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    display: none;
+  }
+
+  // About Page
+  .aboutPage {
+    header {
+      // border: 1px solid yellow;
+
+      & .title-group {
+        left: -20rem;
+
+        img {
+          height: 2rem;
+          margin-right: 1rem;
+        }
+
+        & .title {
+          font-size: 2rem;
+          line-height: 2rem;
+          height: 1.5rem;
+        }
+      }
+    }
+
+    main {
+      & .information {
+        width: 70%;
+        font-size: 0.8rem;
+      }
+
+      & .bottom-caption {
+        font-size: 3vw;
+      }
+    }
+  }
+
+
+
+  & footer {
+    background: none;
+    text-align: center;
+    padding: 0.84vw;
+
+    & .contact {
+      color: $textColor;
+      font-family: 'ITCMedium', sans-serif;
+      font-size: 1.25vw;
+
+      & .link {
+        a {
+          color: $secondaryColor;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+}
+
+// Mobile
+@media screen and (max-width: 425px) {
+  * {
+    display: none;
+  }
 }

@@ -5,6 +5,7 @@ class faq {
     this.answer = answer;
   }
 }
+
 const FAQ_DATA = [
   new faq(
     'Lorem ipsum dolor sit amet, consectetur adipisicing?',
@@ -44,6 +45,7 @@ const FAQ_DATA = [
   )
 ];
 
+// Organizers
 class organizer {
   constructor(name, designation, image) {
     this.name = name;
@@ -113,16 +115,66 @@ const ORGANIZER_DATA = [
   new organizer('Some Name', 'Faculty Organiser', './images/white.png')
 ];
 
+// Sponsors
+class sponsor {
+  constructor(name, logo) {
+    this.name = name;
+    this.logo = logo;
+  }
+}
+const SPONSOR_DATA = [
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', ''),
+  new sponsor('', '')
+];
+
 window.onload = () => {
+  // Hamburger Menu
+  const hamburger = document.querySelector('.hamburger');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    document.querySelector('#hamburger-12').classList.toggle('is-active');
+  });
+
+  // Landing Arrow
+  const goBelow = document.querySelector('#go-below');
+  goBelow.addEventListener('click', () =>
+    document.querySelector('#about').scrollIntoView(true)
+  );
+
+  // Collapsible
   let templateMain = '';
   const faqGrid = document.querySelector('.faqPage .faq-grid');
-  console.log(faqGrid);
-  // Collapsible
   FAQ_DATA.map(qGroup => {
     const item = `<div
-      class="collapsible"
-      data-type="collapsible-template"
-    >
+      class="collapsible" >
     <button class="collapsible-header">
       <div class="question-group">
         <span class="question">${qGroup.question}</span>
@@ -149,20 +201,27 @@ window.onload = () => {
   </div >`;
   faqGrid.innerHTML = templateMain;
 
-  // Collapsible Actions
-  document.querySelectorAll('.collapsible-header').forEach(btn =>
-    btn.addEventListener('click', () => {
-      const collapsibleContent = btn.nextElementSibling;
-      btn.classList.toggle('active');
-
-      if (btn.classList.contains('active')) {
-        collapsibleContent.style.maxHeight =
-          collapsibleContent.scrollHeight + 'rem';
+  // FAQ Section
+  const colGrp = document.querySelectorAll('.collapsible');
+  colGrp.forEach(collapsible => {
+    const children = collapsible.children;
+    //chlidren 0 is the button at the top
+    //chldren 1 is the collapisible at the button
+    children[0].addEventListener('click', () => {
+      children[0].classList.toggle('active');
+      collapsible.setAttribute('data-active', 'yes');
+      //re-render faqs
+      colGrp.forEach(collInner => {
+        collInner.style.gridColumn = 'span 2';
+      });
+      document.querySelector('.code-of-conduct').style.gridColumn = 'span 2';
+      if (children[0].classList.contains('active')) {
+        children[1].style.maxHeight = children[1].scrollHeight + 'rem';
       } else {
-        collapsibleContent.style.maxHeight = 0;
+        children[1].style.maxHeight = 0;
       }
-    })
-  );
+    });
+  });
 
   // Organizers
   const orgDisplay = document.querySelector('.organizers main');
@@ -181,4 +240,13 @@ window.onload = () => {
     templateMain += singleItem;
   });
   orgDisplay.innerHTML = templateMain;
+
+  // Sponsors
+  const sponDisplay = document.querySelector('.sponsors main');
+  templateMain = '';
+  SPONSOR_DATA.map(sponsor => {
+    const singleItem = `<div class="grid-element"></div>`;
+    templateMain += singleItem;
+  });
+  sponDisplay.innerHTML = templateMain;
 };

@@ -29,5 +29,6 @@
     "gulp-sass": "^4.0.2",
     "gulp-svgmin": "^2.2.0",
     "node-sass": "^4.13.1"
-  }
+  },
+  "dependencies": {}
 }
