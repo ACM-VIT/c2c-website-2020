@@ -125,7 +125,7 @@ body::-webkit-scrollbar-thumb {
   outline: none;
   width: 100%;
   z-index: 1;
-  font-family: 'ITCBold', sans-serif;
+  font-family: 'ITCDemi', sans-serif;
   position: fixed;
   clip-path: circle(10% at 0% 0%);
   transition: clip-path 0.5s ease-in-out;
@@ -693,6 +693,38 @@ footer {
 
   body::-webkit-scrollbar-thumb {
     display: none;
+  }
+
+  .aboutPage {
+    header {
+      // border: 1px solid yellow;
+
+      & .title-group {
+        left: -20rem;
+
+        img {
+          height: 2rem;
+          margin-right: 1rem;
+        }
+
+        & .title {
+          font-size: 2rem;
+          line-height: 2rem;
+          height: 1.5rem;
+        }
+      }
+    }
+
+    main {
+      & .information {
+        width: 70%;
+        font-size: 0.8rem;
+      }
+
+      & .bottom-caption {
+        font-size: 3vw;
+      }
+    }
   }
 }
 
