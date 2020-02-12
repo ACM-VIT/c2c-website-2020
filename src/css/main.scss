@@ -137,6 +137,8 @@ body::-webkit-scrollbar-thumb {
   overflow: hidden;
 
   & .icon {
+    cursor: pointer;
+
     &.is-active .line:nth-child(1) {
       opacity: 0;
       transform: translateX(-100%);
@@ -182,8 +184,8 @@ body::-webkit-scrollbar-thumb {
 
       a {
         color: $textColor;
-        text-decoration: none;
         cursor: pointer;
+        text-decoration: none;
         font-size: 8vw;
       }
     }
@@ -543,13 +545,19 @@ br {
     // border: 1px solid blue;
     & .faq-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
       // border: 1px solid brown;
       width: 85.5%;
       margin: 2.5vw auto;
       margin-bottom: 2.92vw;
       grid-gap: 0.17vw 3.34vw;
       overflow: hidden;
+
+      & .collapsible {
+        &.active {
+          grid-column: span 2;
+        }
+      }
 
       & .collapsible-header {
         @include collapsible;
@@ -587,6 +595,7 @@ br {
       }
 
       & .active {
+
         &+.collapsible-content {
           padding: 1.63vw;
         }

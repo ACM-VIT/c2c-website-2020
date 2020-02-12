@@ -8,39 +8,39 @@ class faq {
 
 const FAQ_DATA = [
   new faq(
-    'Lorem ipsum dolor sit amet, consectetur adipisicing?',
+    '1Lorem ipsum dolor sit amet, consectetur adipisicing?',
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis soluta maxime officiis libero eaque ex.'
   ),
   new faq(
-    'Lorem ipsum dolor sit amet, consectetur adipisicing?',
+    '2Lorem ipsum dolor sit amet, consectetur adipisicing?',
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis soluta maxime officiis libero eaque ex.'
   ),
   new faq(
-    'Lorem ipsum dolor sit amet consectetur?',
+    '3Lorem ipsum dolor sit amet consectetur?',
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
   ),
   new faq(
-    'Lorem ipsum dolor sit amet consectetur?',
+    '4Lorem ipsum dolor sit amet consectetur?',
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
   ),
   new faq(
-    'Lorem ipsum dolor sit?',
+    '5Lorem ipsum dolor sit?',
     'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, quidem.'
   ),
   new faq(
-    'Lorem ipsum dolor sit?',
+    '6Lorem ipsum dolor sit?',
     'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, quidem.'
   ),
   new faq(
-    'Lorem ipsum dolor sit amet consectetur?',
+    '7Lorem ipsum dolor sit amet consectetur?',
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
   ),
   new faq(
-    'Lorem ipsum dolor sit amet consectetur?',
+    '8Lorem ipsum dolor sit amet consectetur?',
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
   ),
   new faq(
-    'Lorem, ipsum dolor?',
+    '9Lorem, ipsum dolor?',
     'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, quidem.'
   )
 ];
@@ -172,8 +172,9 @@ window.onload = () => {
     }
 
     // Active Navbar Links
-    let position = document.documentElement.scrollTop;
-    let navHeight =
+    const position = document.documentElement.scrollTop;
+    const pos = document.body.scrollTop;
+    const navHeight =
       document.querySelector('.landingPage nav').offsetHeight + 100;
     const pages = document.querySelectorAll('.page');
     const navLinks = document.querySelectorAll('.indicator');
@@ -181,7 +182,10 @@ window.onload = () => {
       if (page.offsetTop === 0) {
         navLinks.forEach(link => link.classList.remove('active'));
       } else {
-        if (position + navHeight >= pages[index].offsetTop) {
+        if (
+          position + navHeight >= pages[index].offsetTop ||
+          pos + navHeight >= pages[index].offsetTop
+        ) {
           navLinks.forEach(link => link.classList.remove('active'));
           navLinks[index - 1].classList.add('active');
         }
@@ -204,7 +208,7 @@ window.onload = () => {
 
   // Collapsible
   let templateMain = '';
-  const faqGrid = document.querySelector('.faqPage .faq-grid');
+  const faqGrid = document.querySelector('.faq-grid');
   FAQ_DATA.map(qGroup => {
     const item = `<div
       class="collapsible" >
@@ -236,19 +240,26 @@ window.onload = () => {
 
   // FAQ Section
   const colGrp = document.querySelectorAll('.collapsible');
-  colGrp.forEach(collapsible => {
+  colGrp.forEach((collapsible, index) => {
     const children = collapsible.children;
-    //chlidren 0 is the button at the top
-    //chldren 1 is the collapisible at the button
+    let firstNode;
+    console.log(firstNode);
+    //chlidren 0 is the button
+    //chldren 1 is the content
     children[0].addEventListener('click', () => {
+      firstNode = document.querySelector('.collapsible');
       children[0].classList.toggle('active');
-      collapsible.setAttribute('data-active', 'yes');
-      //re-render faqs
-      colGrp.forEach(collInner => {
-        collInner.style.gridColumn = 'span 2';
-      });
-      document.querySelector('.code-of-conduct').style.gridColumn = 'span 2';
+      if (
+        window
+          .getComputedStyle(faqGrid)
+          .getPropertyValue('grid-template-columns')
+          .split(' ').length > 1
+      ) {
+        // colGrp[index].parentElement.insertBefore(colGrp[index], colGrp[0]);
+        children[1].parentElement.classList.toggle('active');
+      }
       if (children[0].classList.contains('active')) {
+        swapNodes(firstNode, colGrp[index]);
         children[1].style.maxHeight = children[1].scrollHeight + 'rem';
       } else {
         children[1].style.maxHeight = 0;
@@ -277,9 +288,16 @@ window.onload = () => {
   // Sponsors
   const sponDisplay = document.querySelector('.sponsors main');
   templateMain = '';
-  SPONSOR_DATA.map(sponsor => {
+  SPONSOR_DATA.map(() => {
     const singleItem = `<div class="grid-element"></div>`;
     templateMain += singleItem;
   });
   sponDisplay.innerHTML = templateMain;
+
+  // Functions
+  const swapNodes = (node1, node2) => {
+    node2.nextSibling === node1
+      ? node1.parentElement.insertBefore(node2, node1.nextSibling)
+      : node1.parentElement.insertBefore(node2, node1);
+  };
 };
