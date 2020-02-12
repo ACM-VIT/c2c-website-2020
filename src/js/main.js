@@ -156,6 +156,7 @@ const SPONSOR_DATA = [
 ];
 
 window.onload = () => {
+  // Navbar Scrolling
   window.onscroll = () => {
     if (
       document.body.scrollTop >= 0 ||
@@ -169,7 +170,25 @@ window.onload = () => {
     ) {
       document.querySelector('nav').classList.remove('scrolled');
     }
+
+    // Active Navbar Links
+    let position = document.documentElement.scrollTop;
+    let navHeight =
+      document.querySelector('.landingPage nav').offsetHeight + 100;
+    const pages = document.querySelectorAll('.page');
+    const navLinks = document.querySelectorAll('.indicator');
+    pages.forEach((page, index) => {
+      if (page.offsetTop === 0) {
+        navLinks.forEach(link => link.classList.remove('active'));
+      } else {
+        if (position + navHeight >= pages[index].offsetTop) {
+          navLinks.forEach(link => link.classList.remove('active'));
+          navLinks[index - 1].classList.add('active');
+        }
+      }
+    });
   };
+
   // Hamburger Menu
   const hamburger = document.querySelector('.hamburger');
   hamburger.addEventListener('click', () => {

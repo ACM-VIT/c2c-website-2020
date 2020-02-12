@@ -270,11 +270,19 @@ br {
         width: 40%;
         display: flex;
         margin-left: auto;
-        // border: 1px solid green;
         justify-content: space-evenly;
+        // border: 1px solid green;
+
+        & .active {
+          &.nav-link {
+            a {
+              color: $secondaryColor;
+              text-decoration: underline;
+            }
+          }
+        }
 
         & .nav-link {
-          margin: 0;
           padding: 0;
           // border: 1px solid blue;
 
