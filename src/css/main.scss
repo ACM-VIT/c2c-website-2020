@@ -71,6 +71,8 @@ $fadedColor: #303030;
 }
 
 // Base styling
+
+
 * {
   box-sizing: border-box;
   cursor: default;
@@ -118,16 +120,19 @@ body::-webkit-scrollbar-thumb {
 // Hamburger menu
 .hamburger {
   display: none;
-  background-color: $secondaryColor;
+  background: url('../vectors/hamburger-bg.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
   height: 100vh;
   color: none;
   border: none;
   outline: none;
   width: 100%;
-  z-index: 1;
   font-family: 'ITCDemi', sans-serif;
   position: fixed;
   clip-path: circle(10% at 0% 0%);
+  z-index: 5;
   transition: clip-path 0.5s ease-in-out;
   overflow: hidden;
 
@@ -162,8 +167,6 @@ body::-webkit-scrollbar-thumb {
     }
   }
 
-
-
   & .nav-links {
     text-align: center;
     list-style: none;
@@ -197,6 +200,7 @@ br {
 
 .page {
   margin: 6.67vw 0;
+  min-height: 1vh;
 }
 
 .landingPage {
@@ -216,6 +220,7 @@ br {
     position: fixed;
     top: 0;
     left: 0;
+    font-size: 1.25vw;
     padding: 0;
     height: 20vh;
     width: 100vw;
@@ -227,6 +232,36 @@ br {
       padding: 2.5vw 3.34vw;
       // border: 1px solid red;
       background-color: none;
+
+      &.scrolled {
+        background-color: $mainColor;
+        opacity: 1;
+        border-bottom: 1px solid $secondaryColor;
+        padding: 1.6vw 3.34vw;
+        font-size: 1.5vw;
+        opacity: 0.9;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & .logo {
+          opacity: 1;
+        }
+
+        & .nav-links {
+          margin: 0;
+          padding: 0;
+        }
+      }
+
+      & .logo {
+        opacity: 0;
+
+        img {
+          width: 3vw;
+          height: auto;
+        }
+      }
 
       & .nav-links {
         list-style: none;
@@ -242,7 +277,6 @@ br {
           margin: 0;
           padding: 0;
           // border: 1px solid blue;
-          font-size: 1.25vw;
 
           a {
             color: $textColor;
@@ -529,8 +563,6 @@ br {
             cursor: pointer;
             text-align: left;
           }
-
-
         }
       }
 
@@ -733,8 +765,6 @@ footer {
     }
   }
 
-
-
   & footer {
     background: none;
     text-align: center;
@@ -754,7 +784,6 @@ footer {
       }
     }
   }
-}
 }
 
 // Mobile

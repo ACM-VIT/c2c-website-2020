@@ -156,11 +156,25 @@ const SPONSOR_DATA = [
 ];
 
 window.onload = () => {
+  window.onscroll = () => {
+    if (
+      document.body.scrollTop >= 0 ||
+      document.documentElement.scrollTop >= 0
+    ) {
+      document.querySelector('nav').classList.add('scrolled');
+    }
+    if (
+      document.body.scrollTop === 0 &&
+      document.documentElement.scrollTop === 0
+    ) {
+      document.querySelector('nav').classList.remove('scrolled');
+    }
+  };
   // Hamburger Menu
   const hamburger = document.querySelector('.hamburger');
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
-    document.querySelector('#hamburger-12').classList.toggle('is-active');
+    document.querySelector('.icon').classList.toggle('is-active');
   });
 
   // Landing Arrow
