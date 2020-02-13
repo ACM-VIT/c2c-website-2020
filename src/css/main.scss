@@ -2,6 +2,10 @@ $mainColor: #1e1e1e;
 $secondaryColor: #4bba83;
 $textColor: #fafbfb;
 $fadedColor: #303030;
+$facebook-color: #3B5998;
+$twitter-color: #50ABF1;
+$instagram-color: #DE2B7C;
+$github-color: #333333;
 
 // Mixins
 @mixin collapsible {
@@ -464,20 +468,82 @@ br {
   & footer {
     background: none;
     width: 100%;
-    height: 5vh;
+    height: 5rem;
     position: relative;
     top: 90vh;
-    // border: 1px solid blue;
     text-align: center;
+    cursor: pointer;
 
     & .white-arrow {
-      width: 2vw;
-      height: 1.08vw;
-      cursor: pointer;
-      opacity: 0.7;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+
+      & .chevron {
+        position: absolute;
+        width: 28px;
+        height: 8px;
+        opacity: 0;
+        transform: scale3d(0.5, 0.5, 0.5);
+        animation: move 3s ease-out infinite;
+      }
+
+      & .chevron:first-child {
+        animation: move 3s ease-out 1s infinite;
+      }
+
+      & .chevron:nth-child(2) {
+        animation: move 3s ease-out 2s infinite;
+      }
+
+      & .chevron:before,
+      & .chevron:after {
+        content: ' ';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 51%;
+        background: #fff;
+      }
+
+      & .chevron:before {
+        left: 0;
+        transform: skew(0deg, 30deg);
+      }
+
+      & .chevron:after {
+        right: 0;
+        width: 50%;
+        transform: skew(0deg, -30deg);
+      }
     }
   }
 }
+
+// Animation
+@keyframes move {
+  25% {
+    opacity: 0.8;
+
+  }
+
+  33% {
+    opacity: 0.8;
+    transform: translateY(30px);
+  }
+
+  67% {
+    opacity: 0.8;
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+  }
+}
+
 
 // About Page
 .aboutPage {
@@ -554,6 +620,8 @@ br {
       overflow: hidden;
 
       & .collapsible {
+        transition: all 0.5s ease-in-out;
+
         &.active {
           grid-column: span 2;
         }
@@ -562,8 +630,7 @@ br {
       & .collapsible-header {
         @include collapsible;
         font-family: 'ITCRegular', sans-serif;
-        transition: background 0.5s ease-in-out;
-        transition: transform 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
 
         &:hover {
           opacity: 0.8;
@@ -718,11 +785,135 @@ footer {
   background-color: $fadedColor;
   color: white;
   position: relative;
-  font-size: 2.8vw;
+  font-size: 1.2vw;
   font-family: 'ITCRegular', sans-serif;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+
+  & .footer-content {
+    text-align: center;
+    // border: 1px solid red;
+    width: 30%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .social-handler-group {
+      padding: 1vw 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      color: $textColor;
+      // border: 1px solid blue;
+      height: 100%;
+
+      & .line {
+        height: 2px;
+        width: 100%;
+        background-color: $secondaryColor;
+      }
+
+      & .social-handles {
+        display: inline-block;
+        background: $mainColor;
+        padding: 1.02vw;
+        padding-bottom: 0.25vw;
+        border-radius: 10px;
+        text-align: center;
+        margin: 1vw 0.5vw;
+
+        a,
+        a:hover,
+        a:focus,
+        a:active {
+          text-decoration: none;
+        }
+
+        & .social-margin {
+          margin-right: 0.75vw;
+        }
+
+        & .social-icon {
+          margin-bottom: 0.76vw;
+          box-sizing: border-box;
+          border-radius: 138px;
+          border: 5px solid;
+          text-align: center;
+          width: 2.55vw;
+          height: 2.55vw;
+          display: inline-block;
+          line-height: 0.045vw;
+          padding-top: 0.56vw;
+          transition: all 0.5s;
+
+          &:hover {
+            transform: rotate(360deg)scale(1.3);
+          }
+
+          &.facebook {
+            font-size: 1.12vw;
+            padding-top: 0.45vw;
+            border-color: $facebook-color;
+            background-color: $facebook-color;
+            color: #ffffff;
+
+            &:hover {
+              background-color: #ffffff;
+              color: $facebook-color;
+            }
+          }
+
+          &.twitter {
+            font-size: 1.12vw;
+            padding-top: 0.4vw;
+            padding-left: 0.1vw;
+            border-color: $twitter-color;
+            background-color: $twitter-color;
+            color: #ffffff;
+
+            &:hover {
+              background-color: #ffffff;
+              color: $twitter-color;
+            }
+          }
+
+          &.instagram {
+            font-size: 1.12vw;
+            padding-top: 0.4vw;
+            padding-left: 0.1vw;
+            border-color: $instagram-color;
+            background-color: $instagram-color;
+            color: #ffffff;
+
+            &:hover {
+              background-color: #ffffff;
+              color: $instagram-color;
+            }
+          }
+
+          &.github {
+            font-size: 1.12vw;
+            padding-top: 0.4vw;
+            background-color: $github-color;
+            color: #ffffff;
+            border-color: $github-color;
+
+            &:hover {
+              background-color: #ffffff;
+              color: $github-color;
+            }
+          }
+        }
+      }
+    }
+
+    img {
+      width: 60%;
+      height: auto;
+    }
+  }
 }
 
 // Tablet

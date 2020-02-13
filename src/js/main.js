@@ -8,39 +8,39 @@ class faq {
 
 const FAQ_DATA = [
   new faq(
-    '1Lorem ipsum dolor sit amet, consectetur adipisicing?',
+    'Lorem ipsum dolor sit amet, consectetur adipisicing?',
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis soluta maxime officiis libero eaque ex.'
   ),
   new faq(
-    '2Lorem ipsum dolor sit amet, consectetur adipisicing?',
+    'Lorem ipsum dolor sit amet, consectetur adipisicing?',
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis soluta maxime officiis libero eaque ex.'
   ),
   new faq(
-    '3Lorem ipsum dolor sit amet consectetur?',
+    'Lorem ipsum dolor sit amet consectetur?',
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
   ),
   new faq(
-    '4Lorem ipsum dolor sit amet consectetur?',
+    'Lorem ipsum dolor sit amet consectetur?',
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
   ),
   new faq(
-    '5Lorem ipsum dolor sit?',
+    'Lorem ipsum dolor sit?',
     'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, quidem.'
   ),
   new faq(
-    '6Lorem ipsum dolor sit?',
+    'Lorem ipsum dolor sit?',
     'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, quidem.'
   ),
   new faq(
-    '7Lorem ipsum dolor sit amet consectetur?',
+    'Lorem ipsum dolor sit amet consectetur?',
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
   ),
   new faq(
-    '8Lorem ipsum dolor sit amet consectetur?',
+    'Lorem ipsum dolor sit amet consectetur?',
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptate praesentium voluptatem debitis nesciunt officiis ullam animi. Optio.'
   ),
   new faq(
-    '9Lorem, ipsum dolor?',
+    'Lorem, ipsum dolor?',
     'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, quidem.'
   )
 ];
@@ -243,7 +243,6 @@ window.onload = () => {
   colGrp.forEach((collapsible, index) => {
     const children = collapsible.children;
     let firstNode;
-    console.log(firstNode);
     //chlidren 0 is the button
     //chldren 1 is the content
     children[0].addEventListener('click', () => {
@@ -255,7 +254,6 @@ window.onload = () => {
           .getPropertyValue('grid-template-columns')
           .split(' ').length > 1
       ) {
-        // colGrp[index].parentElement.insertBefore(colGrp[index], colGrp[0]);
         children[1].parentElement.classList.toggle('active');
       }
       if (children[0].classList.contains('active')) {
