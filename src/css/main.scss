@@ -161,7 +161,7 @@ body::-webkit-scrollbar-thumb {
     display: inline-block;
 
     &.line {
-      width: 2rem;
+      width: 1.6rem;
       height: 0.3rem;
       background-color: #ecf0f1;
       display: block;
@@ -205,7 +205,7 @@ br {
 }
 
 .page {
-  margin: 6.67vw 0;
+  margin: 2rem 0;
   min-height: 1vh;
 }
 
@@ -785,6 +785,7 @@ br {
   }
 }
 
+// Website Footer
 footer {
   width: 100%;
   height: 16.67vw;
@@ -937,6 +938,10 @@ footer {
         grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
       }
     }
+
+    footer {
+      height: 10rem;
+    }
   }
 
   .organizers {
@@ -944,6 +949,16 @@ footer {
       grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
 
       img {
+        min-height: 10rem;
+      }
+    }
+  }
+
+  .sponsors {
+    main {
+      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+
+      & .grid-element {
         min-height: 10rem;
       }
     }
@@ -1178,9 +1193,122 @@ footer {
   }
 }
 
-// Mobile
+// Portrait Devices
 @media screen and (max-width: 600px) {
-  * {
-    display: none;
+
+  // Landing Page
+  .landingPage {
+    main {
+      & .hero-section {
+        width: 100%;
+
+        & .hero-title {
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+
+          img {
+            width: 3rem;
+          }
+
+          & .title-group {
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            line-height: 1rem;
+            height: auto;
+
+            & .title {
+              font-size: 2rem;
+            }
+
+            & .sub-title {
+              font-size: 1rem;
+            }
+
+            & .button-container {
+              display: block;
+              margin-top: 0;
+              margin-left: 0;
+              width: 80%;
+              height: 2rem;
+
+              & .register-button {
+                width: 100%;
+                height: 100%;
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // faqPage
+  .faqPage {
+    & .arrow {
+      img {
+        width: 1rem;
+        height: auto;
+      }
+    }
+
+    main {
+      & .faq-grid {
+        margin-top: 1rem;
+        grid-gap: 0.15rem;
+
+        & .collapsible-header {
+          height: auto;
+          line-height: 1rem;
+          padding: 0.6rem;
+        }
+
+        & .c-of-c-text {
+          height: auto;
+          line-height: 1rem;
+          padding: 0.6rem;
+        }
+      }
+    }
+  }
+
+  // Organizers 
+  .organizers {
+    main {
+      grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+    }
+  }
+
+  // Footer
+  footer {
+    font-size: 1rem;
+    height: 30rem;
+    flex-direction: column;
+
+    & .footer-content {
+      width: 80%;
+      margin: 0 auto;
+
+      & .social-handler-group {
+        width: 60%;
+
+        & .social-handles {
+          & .social-icon {
+            width: 2rem;
+            height: 2rem;
+
+            & i {
+              font-size: 1.4rem;
+            }
+          }
+        }
+      }
+    }
   }
 }

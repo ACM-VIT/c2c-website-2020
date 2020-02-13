@@ -246,6 +246,7 @@ window.onload = () => {
     //chlidren 0 is the button
     //chldren 1 is the content
     children[0].addEventListener('click', () => {
+      document.querySelector('.faqPage').scrollIntoView(true);
       firstNode = document.querySelector('.collapsible');
       children[0].classList.toggle('active');
       if (
