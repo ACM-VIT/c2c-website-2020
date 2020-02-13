@@ -48,7 +48,7 @@ $github-color: #333333;
 
 @mixin grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(13vw, 1fr));
   margin: 4.17vw 6.67vw;
   grid-gap: 0.84vw;
 }
@@ -472,7 +472,6 @@ br {
     position: relative;
     top: 90vh;
     text-align: center;
-    cursor: pointer;
 
     & .white-arrow {
       width: 100%;
@@ -481,6 +480,7 @@ br {
       justify-content: center;
 
       & .chevron {
+        cursor: pointer;
         position: absolute;
         width: 28px;
         height: 8px;
@@ -740,7 +740,7 @@ br {
     img {
       width: 100%;
       height: auto;
-      min-height: 16rem;
+      min-height: 13vw;
     }
 
     @include grid;
@@ -754,10 +754,10 @@ br {
       padding: 1rem 1rem;
       color: $secondaryColor;
       font-family: 'ITCDemi', sans-serif;
-      font-size: 0.7rem;
+      font-size: 0.8vw;
 
       & span {
-        font-size: 1.2rem;
+        font-size: 1.2vw;
         font-family: 'ITCRegular', sans-serif;
         color: white;
         white-space: nowrap;
@@ -774,7 +774,7 @@ br {
 
     & .grid-element {
       background-color: $fadedColor;
-      height: 18rem;
+      height: 13vw;
     }
   }
 }
