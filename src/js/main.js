@@ -55,64 +55,78 @@ class organizer {
 }
 
 const ORGANIZER_DATA = [
-  new organizer('Kartik Soni', 'Chair', './images/kartikSoni.png'),
+  new organizer('Kartik Soni', 'Chair', './images/organizer/kartikSoni.png'),
   new organizer(
     'Shubham Awasthi',
     'Vice Chair - Technical',
-    './images/shubhamAwasthi.png'
+    './images/organizer/shubhamAwasthi.png'
   ),
   new organizer(
     'Nimisha Bhatia',
     'Vice Chair - Management',
-    './images/nimishaBhatia.png'
+    './images/organizer/nimishaBhatia.png'
   ),
-  new organizer('Fiza Rasool', 'General Secretary', './images/fizaRasool.png'),
+  new organizer(
+    'Fiza Rasool',
+    'General Secretary',
+    './images/organizer/fizaRasool.png'
+  ),
   new organizer(
     'Aditya Srivastava',
     'Web Master',
-    './images/adityaSrivastava.png'
+    './images/organizer/adityaSrivastava.png'
   ),
   new organizer(
     'Sarthak Dandotiya',
     'UI UX Lead',
-    './images/sarthakDandotiya.png'
+    './images/organizer/sarthakDandotiya.png'
   ),
-  new organizer('Sventansu Singh', 'Treasurer', './images/sventansuSingh.png'),
-  new organizer('Rajat Gupta', 'Competitive Lead', './images/rajatGupta.png'),
+  new organizer(
+    'Sventansu Singh',
+    'Treasurer',
+    './images/organizer/sventansuSingh.png'
+  ),
+  new organizer(
+    'Rajat Gupta',
+    'Competitive Lead',
+    './images/organizer/rajatGupta.png'
+  ),
   new organizer(
     'Subhaditya Mukherjee',
     'Research Lead',
-    './images/subhadityaMukherjee.png'
+    './images/organizer/subhadityaMukherjee.png'
   ),
   new organizer(
     'Sparsh Srivastava',
     'App Lead',
-    './images/sparshSrivastava.png'
+    './images/organizer/sparshSrivastava.png'
   ),
   new organizer(
     'Shrey Sindher',
     'Projects Lead - App',
-    './images/shreySindher.png'
+    './images/organizer/shreySindher.png'
   ),
   new organizer(
     'Shivank Sahai',
     'Projects Lead - Web',
-    './images/shivankSahai.png'
+    './images/organizer/shivankSahai.png'
   ),
-  new organizer('Bhumij Gupta', 'Creative Head', './images/bhumijGupta.png'),
+  new organizer(
+    'Bhumij Gupta',
+    'Creative Head',
+    './images/organizer/bhumijGupta.png'
+  ),
   new organizer(
     'Madhur Dixit',
     'Projects Lead - Research',
-    './images/madhurDixit.png'
+    './images/organizer/madhurDixit.png'
   ),
   new organizer(
     'Hari Ram Vishvakarma',
     'Faculty Organiser',
     './images/white.png'
   ),
-  new organizer('Divya Udayan', 'Faculty Organiser', './images/white.png'),
-  new organizer('Some Name', 'Faculty Organiser', './images/white.png'),
-  new organizer('Some Name', 'Faculty Organiser', './images/white.png')
+  new organizer('Divya Udayan', 'Faculty Organiser', './images/white.png')
 ];
 
 // Sponsors
@@ -202,9 +216,9 @@ window.onload = () => {
 
   // Landing Arrow
   const goBelow = document.querySelector('#go-below');
-  goBelow.addEventListener('click', () =>
-    document.querySelector('#about').scrollIntoView(true)
-  );
+  goBelow.addEventListener('click', () => {
+    document.querySelector('#about').scrollIntoView(true);
+  });
 
   // Collapsible
   let templateMain = '';
