@@ -66,7 +66,7 @@ const ORGANIZER_DATA = [
     'Vice Chair - Management',
     './images/nimishaBhatia.png'
   ),
-  new organizer('Fiza rasool', 'General Secretary', './images/fizaRasool.png'),
+  new organizer('Fiza Rasool', 'General Secretary', './images/fizaRasool.png'),
   new organizer(
     'Aditya Srivastava',
     'Web Master',
