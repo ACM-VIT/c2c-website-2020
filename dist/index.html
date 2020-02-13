@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="css/main.css" />
+    <script
+      src="https://kit.fontawesome.com/f26a23afb9.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="icon" type="image/png" href="./vectors/c-only-logo.svg" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link
       rel="apple-touch-icon"
       type="image/png"
@@ -23,10 +28,18 @@
       </div>
       <main class="link-group">
         <ul class="nav-links">
-          <li class="nav-link"><a href="#about">About</a></li>
-          <li class="nav-link"><a href="#faqs">FAQs</a></li>
-          <li class="nav-link"><a href="#organisers">Organisers</a></li>
-          <li class="nav-link"><a href="#sponsors">Sponsors</a></li>
+          <li class="nav-link">
+            <a href="#about">About</a>
+          </li>
+          <li class="nav-link">
+            <a href="#faqs">FAQs</a>
+          </li>
+          <li class="nav-link">
+            <a href="#organisers">Organisers</a>
+          </li>
+          <li class="nav-link">
+            <a href="#sponsors">Sponsors</a>
+          </li>
         </ul>
       </main>
     </div>
@@ -34,21 +47,42 @@
     <section class="page landingPage">
       <header>
         <nav>
+          <span class="logo">
+            <a href="https://c2c.acmvit.in">
+              <img src="./vectors/c-only-logo.svg" alt="logo" />
+            </a>
+          </span>
           <ul class="nav-links">
-            <li class="nav-link"><a href="#about">About</a></li>
-            <li class="nav-link"><a href="#faqs">FAQs</a></li>
-            <li class="nav-link"><a href="#organisers">Organisers</a></li>
-            <li class="nav-link"><a href="#sponsors">Sponsors</a></li>
+            <li class="nav-link indicator">
+              <a href="#about">About</a>
+            </li>
+            <li class="nav-link indicator">
+              <a href="#faqs">FAQs</a>
+            </li>
+            <li class="nav-link indicator">
+              <a href="#organisers">Organisers</a>
+            </li>
+            <li class="nav-link indicator"><a href="#sponsors">Sponsors</a></li>
           </ul>
         </nav>
       </header>
       <main>
         <div class="hero-section">
           <div class="hero-title">
-            <img src="./vectors/c-only-logo.svg" alt="Mask Group" />
-            <div class="title-group">
+            <img
+              src="./vectors/c-only-logo.svg"
+              alt="Mask Group"
+              data-aos="slide-left"
+              data-aos-easing="ease-in-cubic"
+            />
+            <div
+              class="title-group"
+              data-aos="slide-right"
+              data-aos-easing="ease-in-out"
+            >
               <span class="title">Code2Create</span><br />
-              <span class="sub-title">March 7-9, 2020 </span><br />
+              <span class="sub-title">March 7-9, 2020</span>
+              <br />
               <div class="button-container">
                 <button class="register-button">Register Now</button>
               </div>
@@ -56,17 +90,15 @@
           </div>
         </div>
       </main>
-      <footer>
-        <img
-          class="white-arrow"
-          src="./vectors/arrow-white.svg"
-          alt="Next Section"
-          id="go-below"
-        />
+      <footer id="go-below">
+        <div class="white-arrow">
+          <div class="chevron"></div>
+          <div class="chevron"></div>
+          <div class="chevron"></div>
+        </div>
       </footer>
     </section>
-    <br id="about" />
-
+    <div id="about" class="bookmark"></div>
     <!-- About Page -->
     <section class="page aboutPage">
       <header>
@@ -104,7 +136,7 @@
         </div>
       </main>
     </section>
-    <br id="faqs" />
+    <div id="faqs" class="bookmark"><</div>
 
     <!-- FAQ Page -->
     <section class="page faqPage">
@@ -126,7 +158,7 @@
         </div>
       </footer>
     </section>
-    <br id="organisers" />
+    <div id="organisers" class="bookmark"></div>
 
     <!-- Organizers -->
     <section class="organizers page">
@@ -138,7 +170,7 @@
       </header>
       <main></main>
     </section>
-    <br id="sponsors" />
+    <div id="sponsors" class="bookmark"></div>
 
     <!-- Sponsors -->
     <section class="sponsors page">
@@ -153,8 +185,68 @@
 
     <!-- Footer -->
     <footer class="footer">
-      <span>Footer</span>
+      <div class="acm-logo footer-content">
+        <a href="https://acmvit.in/" target="_blank">
+          <img src="./images/acmVit.png" alt="ACM VIT" />
+        </a>
+      </div>
+      <div class="social-handlers footer-content">
+        <div class="social-handler-group">
+          <div class="social-handles">
+            <a
+              href="https://www.facebook.com/ACM.VITU"
+              target="_blank"
+              class="social-margin"
+            >
+              <span class="social-icon facebook">
+                <i class="fab fa-facebook-f"></i>
+              </span>
+            </a>
+            <a
+              href="https://twitter.com/ACM_VIT"
+              target="_blank"
+              class="social-margin"
+            >
+              <span class="social-icon twitter">
+                <i class="fab fa-twitter"></i>
+              </span>
+            </a>
+            <a
+              href="https://www.instagram.com/c2c.acmvit/"
+              target="_blank"
+              class="social-margin"
+            >
+              <span class="social-icon instagram">
+                <i class="fab fa-instagram"></i>
+              </span>
+            </a>
+            <a
+              href="https://github.com/ACM-VIT"
+              target="_blank"
+              class="social-margin"
+            >
+              <span class="social-icon github">
+                <i class="fab fa-github-alt"></i>
+              </span>
+            </a>
+          </div>
+          <div class="line"></div>
+          <div class="text">Follow us for latest updates</div>
+        </div>
+      </div>
+      <div class="vit-logo footer-content">
+        <a href="https://vit.ac.in/" target="_blank">
+          <img src="./images/vitLogo.png" alt="ACM VIT" />
+        </a>
+      </div>
     </footer>
     <script src="./js/main-min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

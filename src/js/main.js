@@ -55,64 +55,78 @@ class organizer {
 }
 
 const ORGANIZER_DATA = [
-  new organizer('Kartik Soni', 'Chair', './images/kartikSoni.png'),
+  new organizer('Kartik Soni', 'Chair', './images/organizer/kartikSoni.png'),
   new organizer(
     'Shubham Awasthi',
     'Vice Chair - Technical',
-    './images/shubhamAwasthi.png'
+    './images/organizer/shubhamAwasthi.png'
   ),
   new organizer(
     'Nimisha Bhatia',
     'Vice Chair - Management',
-    './images/nimishaBhatia.png'
+    './images/organizer/nimishaBhatia.png'
   ),
-  new organizer('Fiza rasool', 'General Secretary', './images/fizaRasool.png'),
+  new organizer(
+    'Fiza Rasool',
+    'General Secretary',
+    './images/organizer/fizaRasool.png'
+  ),
   new organizer(
     'Aditya Srivastava',
     'Web Master',
-    './images/adityaSrivastava.png'
+    './images/organizer/adityaSrivastava.png'
   ),
   new organizer(
     'Sarthak Dandotiya',
     'UI UX Lead',
-    './images/sarthakDandotiya.png'
+    './images/organizer/sarthakDandotiya.png'
   ),
-  new organizer('Sventansu Singh', 'Treasurer', './images/sventansuSingh.png'),
-  new organizer('Rajat Gupta', 'Competitive Lead', './images/rajatGupta.png'),
+  new organizer(
+    'Sventansu Singh',
+    'Treasurer',
+    './images/organizer/sventansuSingh.png'
+  ),
+  new organizer(
+    'Rajat Gupta',
+    'Competitive Lead',
+    './images/organizer/rajatGupta.png'
+  ),
   new organizer(
     'Subhaditya Mukherjee',
     'Research Lead',
-    './images/subhadityaMukherjee.png'
+    './images/organizer/subhadityaMukherjee.png'
   ),
   new organizer(
     'Sparsh Srivastava',
     'App Lead',
-    './images/sparshSrivastava.png'
+    './images/organizer/sparshSrivastava.png'
   ),
   new organizer(
     'Shrey Sindher',
     'Projects Lead - App',
-    './images/shreySindher.png'
+    './images/organizer/shreySindher.png'
   ),
   new organizer(
     'Shivank Sahai',
     'Projects Lead - Web',
-    './images/shivankSahai.png'
+    './images/organizer/shivankSahai.png'
   ),
-  new organizer('Bhumij Gupta', 'Creative Head', './images/bhumijGupta.png'),
+  new organizer(
+    'Bhumij Gupta',
+    'Creative Head',
+    './images/organizer/bhumijGupta.png'
+  ),
   new organizer(
     'Madhur Dixit',
     'Projects Lead - Research',
-    './images/madhurDixit.png'
+    './images/organizer/madhurDixit.png'
   ),
   new organizer(
     'Hari Ram Vishvakarma',
     'Faculty Organiser',
     './images/white.png'
   ),
-  new organizer('Divya Udayan', 'Faculty Organiser', './images/white.png'),
-  new organizer('Some Name', 'Faculty Organiser', './images/white.png'),
-  new organizer('Some Name', 'Faculty Organiser', './images/white.png')
+  new organizer('Divya Udayan', 'Faculty Organiser', './images/white.png')
 ];
 
 // Sponsors
@@ -156,22 +170,59 @@ const SPONSOR_DATA = [
 ];
 
 window.onload = () => {
+  // Navbar Scrolling
+  window.onscroll = () => {
+    if (
+      document.body.scrollTop >= 0 ||
+      document.documentElement.scrollTop >= 0
+    ) {
+      document.querySelector('nav').classList.add('scrolled');
+    }
+    if (
+      document.body.scrollTop === 0 &&
+      document.documentElement.scrollTop === 0
+    ) {
+      document.querySelector('nav').classList.remove('scrolled');
+    }
+
+    // Active Navbar Links
+    const position = document.documentElement.scrollTop;
+    const pos = document.body.scrollTop;
+    const navHeight =
+      document.querySelector('.landingPage nav').offsetHeight + 100;
+    const pages = document.querySelectorAll('.page');
+    const navLinks = document.querySelectorAll('.indicator');
+    pages.forEach((page, index) => {
+      if (page.offsetTop === 0) {
+        navLinks.forEach(link => link.classList.remove('active'));
+      } else {
+        if (
+          position + navHeight >= pages[index].offsetTop ||
+          pos + navHeight >= pages[index].offsetTop
+        ) {
+          navLinks.forEach(link => link.classList.remove('active'));
+          navLinks[index - 1].classList.add('active');
+        }
+      }
+    });
+  };
+
   // Hamburger Menu
   const hamburger = document.querySelector('.hamburger');
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
-    document.querySelector('#hamburger-12').classList.toggle('is-active');
+    document.querySelector('.icon').classList.toggle('is-active');
   });
 
   // Landing Arrow
   const goBelow = document.querySelector('#go-below');
-  goBelow.addEventListener('click', () =>
-    document.querySelector('#about').scrollIntoView(true)
-  );
+  goBelow.addEventListener('click', () => {
+    document.querySelector('#about').scrollIntoView(true);
+  });
 
   // Collapsible
   let templateMain = '';
-  const faqGrid = document.querySelector('.faqPage .faq-grid');
+  const faqGrid = document.querySelector('.faq-grid');
   FAQ_DATA.map(qGroup => {
     const item = `<div
       class="collapsible" >
@@ -203,19 +254,25 @@ window.onload = () => {
 
   // FAQ Section
   const colGrp = document.querySelectorAll('.collapsible');
-  colGrp.forEach(collapsible => {
+  colGrp.forEach((collapsible, index) => {
     const children = collapsible.children;
-    //chlidren 0 is the button at the top
-    //chldren 1 is the collapisible at the button
+    let firstNode;
+    //chlidren 0 is the button
+    //chldren 1 is the content
     children[0].addEventListener('click', () => {
+      document.querySelector('.faqPage').scrollIntoView(true);
+      firstNode = document.querySelector('.collapsible');
       children[0].classList.toggle('active');
-      collapsible.setAttribute('data-active', 'yes');
-      //re-render faqs
-      colGrp.forEach(collInner => {
-        collInner.style.gridColumn = 'span 2';
-      });
-      document.querySelector('.code-of-conduct').style.gridColumn = 'span 2';
+      if (
+        window
+          .getComputedStyle(faqGrid)
+          .getPropertyValue('grid-template-columns')
+          .split(' ').length > 1
+      ) {
+        children[1].parentElement.classList.toggle('active');
+      }
       if (children[0].classList.contains('active')) {
+        swapNodes(firstNode, colGrp[index]);
         children[1].style.maxHeight = children[1].scrollHeight + 'rem';
       } else {
         children[1].style.maxHeight = 0;
@@ -244,9 +301,16 @@ window.onload = () => {
   // Sponsors
   const sponDisplay = document.querySelector('.sponsors main');
   templateMain = '';
-  SPONSOR_DATA.map(sponsor => {
+  SPONSOR_DATA.map(() => {
     const singleItem = `<div class="grid-element"></div>`;
     templateMain += singleItem;
   });
   sponDisplay.innerHTML = templateMain;
+
+  // Functions
+  const swapNodes = (node1, node2) => {
+    node2.nextSibling === node1
+      ? node1.parentElement.insertBefore(node2, node1.nextSibling)
+      : node1.parentElement.insertBefore(node2, node1);
+  };
 };
