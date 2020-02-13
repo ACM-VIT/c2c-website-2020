@@ -204,7 +204,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .page {
-  margin: 7rem 0;
+  margin: 5rem 0;
   min-height: 1vh;
 }
 
@@ -231,14 +231,10 @@ body::-webkit-scrollbar-thumb {
     width: 100vw;
     font-family: 'ITCRegular', sans-serif;
 
-    & nav {
-      opacity: 0.9;
-      margin: 0;
-      padding: 2.5vw 3.34vw;
-      // border: 1px solid red;
-      background-color: none;
+    &.scrolled {
+      height: auto;
 
-      &.scrolled {
+      nav {
         background-color: $mainColor;
         opacity: 1;
         border-bottom: 1px solid $secondaryColor;
@@ -262,6 +258,14 @@ body::-webkit-scrollbar-thumb {
           padding: 0;
         }
       }
+    }
+
+    & nav {
+      opacity: 0.9;
+      margin: 0;
+      padding: 2.5vw 3.34vw;
+      // border: 1px solid red;
+      background-color: none;
 
       & .logo {
         opacity: 0;
@@ -767,7 +771,6 @@ body::-webkit-scrollbar-thumb {
         font-size: 1.1vw;
         font-family: 'ITCRegular', sans-serif;
         color: white;
-        white-space: nowrap;
       }
     }
   }
@@ -781,8 +784,28 @@ body::-webkit-scrollbar-thumb {
     grid-template-columns: repeat(auto-fit, minmax(13vw, 1fr));
 
     & .grid-element {
-      background-color: $fadedColor;
       height: 13vw;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+
+      &.title-sponsor {
+        grid-column: 1/-1;
+
+        img {
+          max-height: 10rem;
+        }
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        max-height: 10rem;
+        margin: 0 auto;
+        cursor: pointer;
+      }
     }
   }
 }
