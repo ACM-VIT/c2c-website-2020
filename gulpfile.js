@@ -16,6 +16,7 @@ gulp.task('buildText', async () => {
 
 // Copy html files over
 gulp.task('copyHtml', () => gulp.src('src/*.html').pipe(gulp.dest('dist')));
+gulp.task('copyPages', () => gulp.src('src/*.html').pipe(gulp.dest('dist')));
 
 // Optimize images
 gulp.task('minifyImages', () =>
@@ -78,6 +79,7 @@ gulp.task(
 // Watch task
 gulp.task('watch', () => {
   gulp.watch('src/*.html', gulp.series('copyHtml'));
+  gulp.watch('src/pages/*.html', gulp.series('copyPages'));
   gulp.watch('src/images/*', gulp.series('minifyImages'));
   gulp.watch('src/css/*.scss', gulp.series('compileSass'));
   gulp.watch('src/js/*.js', gulp.series('compileAndMinify'));

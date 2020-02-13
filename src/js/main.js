@@ -225,15 +225,13 @@ window.onload = () => {
       document.body.scrollTop >= 0 ||
       document.documentElement.scrollTop >= 0
     ) {
-      document.querySelector('.landingPage header').classList.add('scrolled');
+      document.querySelector('header').classList.add('scrolled');
     }
     if (
       document.body.scrollTop === 0 &&
       document.documentElement.scrollTop === 0
     ) {
-      document
-        .querySelector('.landingPage header')
-        .classList.remove('scrolled');
+      document.querySelector('header').classList.remove('scrolled');
     }
 
     // Active Navbar Links
@@ -291,16 +289,18 @@ window.onload = () => {
   </div>`;
     templateMain += item;
   });
-  templateMain += `<div class="code-of-conduct">
-    <button class="c-of-c-text">
-      <div class="c-of-c-collection">
-        <span class="text">Code of Conduct</span>
-        <span class="arrow">
-          <img src="./vectors/arrow-green.svg" alt="Code of Conduct" />
-        </span>
-      </div>
-    </button >
-  </div >`;
+  templateMain += `<a href="pages/code-of-conduct.html">
+    <div class="code-of-conduct">
+      <button class="c-of-c-text">
+        <div class="c-of-c-collection">
+          <span class="text">Code of Conduct</span>
+          <span class="arrow">
+            <img src="./vectors/arrow-green.svg" alt="Code of Conduct" />
+          </span>
+        </div>
+      </button>
+    </div >
+  </a>`;
   faqGrid.innerHTML = templateMain;
 
   // FAQ Section
