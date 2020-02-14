@@ -1105,10 +1105,70 @@ footer {
     }
   }
 
-  & footer {
-    background: none;
-    text-align: center;
-    padding: 0.84vw;
+  // FAQ Page
+  .faqPage {
+    header {
+      & .title-group {
+        left: -20rem;
+
+        img {
+          height: 2rem;
+          margin-right: 1rem;
+        }
+
+        & .title {
+          font-size: 2rem;
+          line-height: 2rem;
+          height: 1.5rem;
+        }
+      }
+    }
+
+    main {
+      & .faq-grid {
+        width: 70%;
+        margin: 0 auto;
+        grid-template-columns: auto;
+
+        & .collapsible-header {
+          font-size: 0.8rem;
+        }
+
+        & .collapsible-content {
+          font-size: 0.8rem;
+        }
+
+        & .c-of-c-text {
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    & footer {
+      & .contact {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  // Organizers
+  .organizers {
+    header {
+      & .title-group {
+        left: -20rem;
+
+        img {
+          height: 2rem;
+          margin-right: 1rem;
+        }
+
+        & .title {
+          font-size: 2rem;
+          line-height: 2rem;
+          height: 1.5rem;
+        }
+      }
+    }
 
     main {
       width: 70%;

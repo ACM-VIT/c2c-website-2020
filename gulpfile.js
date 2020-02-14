@@ -6,7 +6,6 @@ const cleanCss = require('gulp-clean-css');
 const minify = require('gulp-minify');
 const svgMin = require('gulp-svgmin');
 const babel = require('gulp-babel');
-const ghPages = require('gulp-gh-pages');
 
 sass.compiler = require('node-sass');
 
@@ -76,8 +75,6 @@ gulp.task(
     'minifySvg'
   ])
 );
-
-gulp.task('deploy', () => gulp.src('./dist/**/*').pipe(ghPages()));
 
 // Watch task
 gulp.task('watch', () => {
