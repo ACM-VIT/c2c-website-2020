@@ -237,8 +237,7 @@ window.onload = () => {
     // Active Navbar Links
     const position = document.documentElement.scrollTop;
     const pos = document.body.scrollTop;
-    const navHeight =
-      document.querySelector('.landingPage nav').offsetHeight + 100;
+    const navHeight = document.querySelector('nav').offsetHeight + 100;
     const pages = document.querySelectorAll('.page');
     const navLinks = document.querySelectorAll('.indicator');
     pages.forEach((page, index) => {
@@ -357,8 +356,7 @@ window.onload = () => {
       </a>
     </div>`;
   SPONSOR_DATA.map(sponsor => {
-    console.log(sponsor.logo);
-    const singleItem = `<div class="grid-element">
+    const singleItem = ` <div class="grid-element">
       <a href="${sponsor.link}" target="_blank">
         <img src="${sponsor.logo}" alt="Sponsor" />
       </a>
