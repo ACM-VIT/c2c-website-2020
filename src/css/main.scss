@@ -379,24 +379,28 @@ header.nav-bar {
             justify-content: flex-start;
 
             & .register-button {
-              position: relative;
-              display: inline-block;
+              display: flex;
               border: none;
-              padding: 1.42vw 2.5vw;
-              vertical-align: middle;
               text-align: center;
               text-overflow: ellipsis;
+              padding: 0.81vw;
               color: $textColor;
               background-color: $secondaryColor;
               font-family: 'ITCMedium';
-              font-size: 1.67vw;
-              font-weight: 500;
-              line-height: 1.67vw;
+              justify-content: center;
+              vertical-align: center;
+              align-items: center;
+              font-size: 1.25vw;
               color: #fff;
               overflow: hidden;
               outline: none;
               cursor: pointer;
               transition: box-shadow 0.2s;
+
+              & .logo {
+                height: 100%;
+                width: auto;
+              }
             }
 
             & .register-button::-moz-focus-inner {
@@ -645,6 +649,7 @@ header.nav-bar {
   @include header;
 
   main {
+
     // border: 1px solid blue;
     & .faq-grid {
       display: grid;
@@ -699,7 +704,7 @@ header.nav-bar {
       }
 
       & .active {
-        & + .collapsible-content {
+        &+.collapsible-content {
           padding: 1.63vw;
         }
 
@@ -1243,6 +1248,7 @@ footer {
 
 // Portrait Devices
 @media screen and (max-width: 600px) {
+
   // Hamburger
   .hamburger {
     & .nav-links {
@@ -1310,9 +1316,10 @@ footer {
               height: 2rem;
 
               & .register-button {
+                padding: 0.2rem;
                 width: 100%;
                 height: 100%;
-                font-size: 1rem;
+                font-size: 0.7rem;
               }
             }
           }
