@@ -21,7 +21,7 @@ gulp.task('copyPages', () => gulp.src('src/*.html').pipe(gulp.dest('dist')));
 // Optimize images
 gulp.task('minifyImages', () =>
   gulp
-    .src('src/images/*')
+    .src('src/images/*/*')
     .pipe(imageMin())
     .pipe(gulp.dest('dist/images'))
 );
