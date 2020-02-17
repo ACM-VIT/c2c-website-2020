@@ -608,10 +608,29 @@ header.nav-bar {
   }
 }
 
+.go-back {
+  color: $secondaryColor;
+  width: 80%;
+  margin: 1em auto;
+  font-family: 'ITCRegular', sans-serif;
+  cursor: pointer;
+
+  a {
+    color: $secondaryColor;
+    text-decoration: none;
+    display: flex;
+  }
+
+  i {
+    font-size: 30px;
+    margin-right: 5px;
+  }
+}
+
 #code-of-conduct {
   background-color: $fadedColor;
   width: 80%;
-  margin: 15vw auto;
+  margin: 0 auto;
   border: 1px solid $secondaryColor;
 
   h1 {
@@ -1328,6 +1347,19 @@ footer {
         a {
           font-size: 2rem;
         }
+      }
+    }
+  }
+
+  .go-back {
+    a {
+      h1 {
+        font-size: 1em;
+
+      }
+
+      i {
+        font-size: 15px;
       }
     }
   }
