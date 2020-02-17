@@ -344,37 +344,26 @@ header.nav-bar {
     height: auto;
 
     nav {
-      background-color: $mainColor;
       opacity: 1;
       border-bottom: 1px solid $secondaryColor;
-      padding: 10px 3.34vw;
-      font-size: 1.25vw;
-      opacity: 0.9;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      & .nav-links {
-        transform: translateX(10%);
-      }
+      background-color: $mainColor;
 
       & .logo {
         opacity: 1;
-      }
-
-      & .nav-links {
-        margin: 0;
-        padding: 0;
       }
     }
   }
 
   & nav {
-    opacity: 0.9;
     margin: 0;
-    padding: 2.5vw 3.34vw;
     // border: 1px solid red;
     background-color: none;
+    padding: 10px 3.34vw;
+    font-size: 1.25vw;
+    opacity: 0.9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     & .logo {
       opacity: 0;
@@ -390,13 +379,14 @@ header.nav-bar {
 
     & .nav-links {
       list-style: none;
-      padding: 0.42vw 0;
-      margin: 2.08vw 0 1.67vw 0;
       width: 40%;
       display: flex;
       margin-left: auto;
       justify-content: space-evenly;
       // border: 1px solid green;
+      transform: translateX(10%);
+      margin: 0;
+      padding: 0;
 
       & .active {
         &.nav-link {
@@ -705,7 +695,7 @@ header.nav-bar {
     & .bottom-caption {
       font-family: 'ITCBold', sans-serif;
       color: $fadedColor;
-      font-size: 1.25vw;
+      font-size: 2vw;
     }
   }
 }
@@ -849,7 +839,6 @@ header.nav-bar {
     img {
       width: 100%;
       height: auto;
-      min-height: 13vw;
     }
 
     @include grid;
@@ -983,7 +972,7 @@ footer {
 
           &.facebook {
             font-size: 1.12vw;
-            padding-top: 0.45vw;
+            padding-top: 0.47vw;
             border-color: $facebook-color;
             background-color: $facebook-color;
             color: #ffffff;
@@ -996,7 +985,7 @@ footer {
 
           &.twitter {
             font-size: 1.12vw;
-            padding-top: 0.4vw;
+            padding-top: 0.42vw;
             padding-left: 0.1vw;
             border-color: $twitter-color;
             background-color: $twitter-color;
@@ -1010,8 +999,7 @@ footer {
 
           &.instagram {
             font-size: 1.12vw;
-            padding-top: 0.4vw;
-            padding-left: 0.1vw;
+            padding-top: 0.42vw;
             border-color: $instagram-color;
             background-color: $instagram-color;
             color: #ffffff;
@@ -1297,6 +1285,10 @@ footer {
 // Portrait Devices
 @media screen and (max-width: 600px) {
 
+  .page {
+    margin: 5rem 0;
+  }
+
   // Hamburger
   .hamburger {
     & .nav-links {
@@ -1337,6 +1329,11 @@ footer {
 
   // Landing Page
   .landingPage {
+
+    & footer {
+      top: 60%;
+    }
+
     main {
       top: 10vh;
 
@@ -1344,6 +1341,7 @@ footer {
         width: 100%;
 
         & .hero-title {
+          height: 60%;
           margin: 0 auto;
           display: flex;
           flex-direction: column;
