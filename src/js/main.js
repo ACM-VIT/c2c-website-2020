@@ -262,24 +262,26 @@ window.onload = () => {
     }
 
     // Active Navbar Links
-    const position = document.documentElement.scrollTop;
-    const pos = document.body.scrollTop;
-    const navHeight = document.querySelector('nav').offsetHeight + 100;
-    const pages = document.querySelectorAll('.page');
-    const navLinks = document.querySelectorAll('.indicator');
-    pages.forEach((page, index) => {
-      if (page.offsetTop === 0) {
-        navLinks.forEach(link => link.classList.remove('active'));
-      } else {
-        if (
-          position + navHeight >= pages[index].offsetTop ||
-          pos + navHeight >= pages[index].offsetTop
-        ) {
+    if (window.innerWidth >= '768') {
+      const position = document.documentElement.scrollTop;
+      const pos = document.body.scrollTop;
+      const navHeight = document.querySelector('nav').offsetHeight + 100;
+      const pages = document.querySelectorAll('.page');
+      const navLinks = document.querySelectorAll('.indicator');
+      pages.forEach((page, index) => {
+        if (page.offsetTop === 0) {
           navLinks.forEach(link => link.classList.remove('active'));
-          navLinks[index - 1].classList.add('active');
+        } else {
+          if (
+            position + navHeight >= pages[index].offsetTop ||
+            pos + navHeight >= pages[index].offsetTop
+          ) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            navLinks[index - 1].classList.add('active');
+          }
         }
-      }
-    });
+      });
+    }
   };
 
   // Hamburger Menu
