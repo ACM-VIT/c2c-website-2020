@@ -94,7 +94,7 @@ const ORGANIZER_DATA = [
   new organizer(
     'Aditya Srivastava',
     'Web Master',
-    './images/organizer/aditya.jpg'
+    './images/organizer/aditya.png'
   ),
   new organizer(
     'Sarthak Dandotiya',
