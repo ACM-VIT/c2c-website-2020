@@ -171,6 +171,7 @@ class sponsor {
   }
 }
 const SPONSOR_DATA = [
+  new sponsor('./images/sponsors/github.png', 'https://www.github.com/'),
   new sponsor('./images/sponsors/jetbrains.png', 'https://www.jetbrains.com/'),
   new sponsor('./images/sponsors/devfolio.png', 'https://devfolio.co/'),
   new sponsor('./images/sponsors/fold.png', 'https://fold.money/'),
@@ -376,11 +377,7 @@ window.onload = () => {
 
   // Sponsors
   const sponDisplay = document.querySelector('.sponsors main');
-  templateMain = `<div class="grid-element title-sponsor">
-      <a href="http://www.github.com" target="_blank">
-        <img src="./images/sponsors/github.png" alt="Title Sponsor" />
-      </a>
-    </div>`;
+  templateMain = '';
   SPONSOR_DATA.map(sponsor => {
     const singleItem = ` <div class="grid-element">
       <a href="${sponsor.link}" target="_blank">
