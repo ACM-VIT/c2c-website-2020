@@ -96,29 +96,6 @@ body {
   display: block;
 }
 
-body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: $fadedColor;
-  z-index: 2;
-  display: block;
-}
-
-body::-webkit-scrollbar {
-  width: 1vw;
-  min-width: 1rem;
-  background-color: #f5f5f5;
-  z-index: 2;
-  display: block;
-}
-
-body::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: $secondaryColor;
-  z-index: 2;
-  display: block;
-}
-
 // Preloader
 .pre-loader-wrapper {
   position: fixed;
@@ -332,7 +309,7 @@ body::-webkit-scrollbar-thumb {
         color: $textColor;
         cursor: pointer;
         text-decoration: none;
-        font-size: 4vw;
+        font-size: 1.25vw;
       }
     }
   }
@@ -371,7 +348,7 @@ header.nav-bar {
       opacity: 1;
       border-bottom: 1px solid $secondaryColor;
       padding: 10px 3.34vw;
-      font-size: 1.5vw;
+      font-size: 1.25vw;
       opacity: 0.9;
       display: flex;
       justify-content: space-between;
@@ -480,7 +457,7 @@ header.nav-bar {
         width: 80%;
         height: 70%;
         padding: 0;
-        margin-left: 2.92vw;
+        margin-left: 8.92vw;
         display: grid;
         grid-template-columns: repeat(auto, 1fr);
         grid-template-areas: 'logo title title title title';
@@ -504,7 +481,7 @@ header.nav-bar {
           height: 100%;
 
           & .title {
-            font-size: 6vw;
+            font-size: 4.5vw;
             font-family: 'ITCMedium', sans-serif;
           }
 
@@ -556,7 +533,7 @@ header.nav-bar {
     width: 100%;
     height: 10%;
     position: relative;
-    top: 80vh;
+    top: 84vh;
     text-align: center;
     overflow: hidden;
 
@@ -645,7 +622,7 @@ header.nav-bar {
     margin: 2rem;
     font-family: 'ITCRegular', sans-serif;
     color: $textColor;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     line-height: 2rem;
 
     a {
@@ -715,7 +692,7 @@ header.nav-bar {
       // border: 1px solid gray;
       margin: 2.5vw auto;
       width: 50%;
-      font-size: 1vw;
+      font-size: 1.25vw;
       padding: 0 4.17vw;
       color: white;
       font-family: 'ITCRegular', sans-serif;
@@ -728,7 +705,7 @@ header.nav-bar {
     & .bottom-caption {
       font-family: 'ITCBold', sans-serif;
       color: $fadedColor;
-      font-size: 2vw;
+      font-size: 1.25vw;
     }
   }
 }
@@ -887,10 +864,10 @@ header.nav-bar {
       padding: 0.82vw;
       color: $secondaryColor;
       font-family: 'ITCDemi', sans-serif;
-      font-size: 0.8vw;
+      font-size: 1.25vw;
 
       & span {
-        font-size: 1.1vw;
+        font-size: 1.25vw;
         font-family: 'ITCRegular', sans-serif;
         color: white;
       }
@@ -931,7 +908,7 @@ footer {
   background-color: $fadedColor;
   color: white;
   position: relative;
-  font-size: 1.2vw;
+  font-size: 1.25vw;
   font-family: 'ITCRegular', sans-serif;
   display: flex;
   justify-content: space-evenly;
@@ -1150,18 +1127,6 @@ footer {
     display: block;
   }
 
-  body::-webkit-scrollbar-track {
-    display: none;
-  }
-
-  body::-webkit-scrollbar {
-    display: none;
-  }
-
-  body::-webkit-scrollbar-thumb {
-    display: none;
-  }
-
   // About Page
   .aboutPage {
     header {
@@ -1346,7 +1311,7 @@ footer {
   .go-back {
     a {
       h1 {
-        font-size: 1em;
+        font-size: 1rem;
 
       }
 
@@ -1365,7 +1330,7 @@ footer {
 
     ul {
       margin: 1rem;
-      font-size: 0.8rem;
+      font-size: 1rem;
       line-height: 1rem;
     }
   }
