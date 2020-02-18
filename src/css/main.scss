@@ -116,39 +116,22 @@ body {
 }
 
 // Hamburger menu
-.hamburger {
-  opacity: 0.99;
+
+.icon {
   display: none;
-  // background-color: red;
-  background: url('../vectors/hamburger-bg.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: right;
-  height: 100vh;
-  color: none;
-  border: none;
-  outline: none;
-  width: 100%;
-  font-family: 'ITCDemi', sans-serif;
+  z-index: 6;
   position: fixed;
-  clip-path: circle(10% at 0% 0%);
-  z-index: 5;
-  transition: clip-path 0.5s ease-in-out;
-  overflow: hidden;
+  cursor: pointer;
+  transform: translate(15px, 15px);
 
-  & .icon {
-    cursor: pointer;
-    transform: translate(10px, 10px);
+  &.is-active .line:nth-child(1) {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
 
-    &.is-active .line:nth-child(1) {
-      opacity: 0;
-      transform: translateX(-100%);
-    }
-
-    &.is-active .line:nth-child(3) {
-      opacity: 0;
-      transform: translateX(100%);
-    }
+  &.is-active .line:nth-child(3) {
+    opacity: 0;
+    transform: translateX(100%);
   }
 
   span {
@@ -169,6 +152,30 @@ body {
       transition: all 0.3s ease-in-out;
     }
   }
+}
+
+
+
+.hamburger {
+  opacity: 0.99;
+  display: none;
+  // background-color: red;
+  // background: url('../vectors/hamburger-bg.svg');
+  background-color: $secondaryColor;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 100vh;
+  color: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-family: 'ITCDemi', sans-serif;
+  position: fixed;
+  clip-path: inset(0 100% 0 0);
+  z-index: 5;
+  transition: clip-path 0.5s ease-in-out;
+  overflow: hidden;
 
   & .nav-links {
     text-align: center;
@@ -193,7 +200,7 @@ body {
   }
 
   &.active {
-    clip-path: circle(200% at 0% 0%);
+    clip-path: inset(0 0 0 0);
   }
 }
 
@@ -599,7 +606,6 @@ header.nav-bar {
       overflow: hidden;
 
       & .collapsible {
-        transition: all 0.5s ease-in-out;
 
         &.active {
           grid-column: span 2;
@@ -609,7 +615,6 @@ header.nav-bar {
       & .collapsible-header {
         @include collapsible;
         font-family: 'ITCRegular', sans-serif;
-        transition: all 0.5s ease-in-out;
 
         &:hover {
           opacity: 0.8;
@@ -631,8 +636,6 @@ header.nav-bar {
       & .collapsible-content {
         overflow: hidden;
         max-height: 0;
-        transition: max-height 0.3s ease-in-out;
-        transition: padding 0.3s ease-in-out;
         font-family: 'ITCregular', sans-serif;
         background-color: #232323;
         color: $textColor;
@@ -982,6 +985,10 @@ footer {
     }
   }
 
+  .icon {
+    display: block;
+  }
+
   .hamburger {
     display: block;
   }
@@ -1235,6 +1242,15 @@ footer {
             }
           }
         }
+      }
+    }
+  }
+
+  // aboutPage 
+  .aboutPage {
+    main {
+      & .bottom-caption {
+        font-size: 6vw;
       }
     }
   }

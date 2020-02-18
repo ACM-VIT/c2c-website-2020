@@ -263,8 +263,9 @@ window.onload = () => {
 
     // Active Navbar Links
     if (window.innerWidth >= '768') {
-      const position = document.documentElement.scrollTop;
+      document.querySelector('.icon').style.display = 'none';
       const pos = document.body.scrollTop;
+      const position = document.documentElement.scrollTop;
       const navHeight = document.querySelector('nav').offsetHeight + 100;
       const pages = document.querySelectorAll('.page');
       const navLinks = document.querySelectorAll('.indicator');
@@ -286,6 +287,11 @@ window.onload = () => {
 
   // Hamburger Menu
   const hamburger = document.querySelector('.hamburger');
+  const hamIcon = document.querySelector('.icon');
+  hamIcon.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    document.querySelector('.icon').classList.toggle('is-active');
+  });
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     document.querySelector('.icon').classList.toggle('is-active');
