@@ -90,7 +90,8 @@ gulp.task(
 );
 
 // Watch task
-gulp.task('watch', gulp.series('compileSass', 'browserSync'), () => {
+gulp.task('watch', gulp.series('compileSass', 'copyPages', 'minifyImages', 
+'compileSass', 'compileAndMinify', 'minifySvg', 'browserSync'), () => {
   gulp.watch('src/*.html', gulp.series('copyHtml'));
   gulp.watch('src/pages/*.html', gulp.series('copyPages'));
   gulp.watch('src/images/*', gulp.series('minifyImages'));
