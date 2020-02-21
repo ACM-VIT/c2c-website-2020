@@ -6,7 +6,7 @@ const cleanCss = require('gulp-clean-css');
 const minify = require('gulp-minify');
 const svgMin = require('gulp-svgmin');
 const babel = require('gulp-babel');
-var browserSync = require('browser-sync').create();
+const browserSync = require('browser-sync').create();
 
 sass.compiler = require('node-sass');
 
@@ -51,13 +51,13 @@ gulp.task('minifySvg', () =>
 );
 
 // browsersync server
-gulp.task('browserSync', function() {
-  browserSync.init({
-    server: {
-      baseDir: 'dist'
-    },
-  })
-});
+// gulp.task('browserSync', function() {
+  // browserSync.init({
+  //   server: {
+  //     baseDir: 'dist'
+  //   },
+  // })
+// });
 
 // Sass compiling
 gulp.task('compileSass', () =>
@@ -89,13 +89,27 @@ gulp.task(
   ])
 );
 
+// gulp
+
+// gulp.task('reload', () => {
+//   gulp.series('default');
+//   browserSync.reload;
+// })
+// const reload = browserSync.reload;
+
+const reload = gulp.series(['default',browserSync.reload]);
+
 // Watch task
-gulp.task('watch', gulp.series('compileSass', 'copyPages', 'minifyImages', 
-'compileSass', 'compileAndMinify', 'minifySvg', 'browserSync'), () => {
-  gulp.watch('src/*.html', gulp.series('copyHtml'));
-  gulp.watch('src/pages/*.html', gulp.series('copyPages'));
-  gulp.watch('src/images/*', gulp.series('minifyImages'));
+gulp.task('watch', () => {
+  browserSync.init({
+    server: {
+      baseDir: 'dist'
+    }
+  });
   gulp.watch('src/css/*.scss', gulp.series('compileSass'));
-  gulp.watch('src/js/*.js', gulp.series('compileAndMinify'));
-  gulp.watch('src/vectors/*.svg', gulp.series('minifySvg'));
+  gulp.watch('src/*.html').on('change',reload);
+  gulp.watch('src/pages/*.html').on('change',reload);
+  gulp.watch('src/images/*').on('change',reload);
+  gulp.watch('src/js/*.js').on('change',reload);
+  gulp.watch('src/vectors/*.svg').on('change',reload);
 });
