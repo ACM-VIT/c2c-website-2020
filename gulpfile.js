@@ -6,6 +6,7 @@ const cleanCss = require('gulp-clean-css');
 const minify = require('gulp-minify');
 const svgMin = require('gulp-svgmin');
 const babel = require('gulp-babel');
+var browserSync = require('browser-sync').create();
 
 sass.compiler = require('node-sass');
 
@@ -24,20 +25,6 @@ gulp.task('minifyImages', () =>
     .src('src/images/*/*')
     .pipe(imageMin())
     .pipe(gulp.dest('dist/images'))
-);
-
-// Sass compiling
-gulp.task('compileSass', () =>
-  gulp
-    .src('src/css/*.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(
-      autoPrefixer({
-        cascade: false
-      })
-    )
-    .pipe(cleanCss({ compability: 'ie8' }))
-    .pipe(gulp.dest('dist/css'))
 );
 
 // Minify Scripts
@@ -63,6 +50,32 @@ gulp.task('minifySvg', () =>
     .pipe(gulp.dest('dist/vectors'))
 );
 
+// browsersync server
+gulp.task('browserSync', function() {
+  browserSync.init({
+    server: {
+      baseDir: 'dist'
+    },
+  })
+});
+
+// Sass compiling
+gulp.task('compileSass', () =>
+  gulp
+    .src('src/css/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(
+      autoPrefixer({
+        cascade: false
+      })
+    )
+    .pipe(cleanCss({ compability: 'ie8' }))
+    .pipe(gulp.dest('dist/css'))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+);
+
 // Build task
 gulp.task(
   'default',
@@ -77,7 +90,7 @@ gulp.task(
 );
 
 // Watch task
-gulp.task('watch', () => {
+gulp.task('watch', gulp.series('compileSass', 'browserSync'), () => {
   gulp.watch('src/*.html', gulp.series('copyHtml'));
   gulp.watch('src/pages/*.html', gulp.series('copyPages'));
   gulp.watch('src/images/*', gulp.series('minifyImages'));
