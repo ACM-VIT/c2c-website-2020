@@ -7,19 +7,23 @@ $twitter-color: #50abf1;
 $instagram-color: #de2b7c;
 $github-color: #333333;
 
+// button .collapsible-header {
+//   margin: 5px 10px !important;
+// }
+
 // Mixins
-@mixin collapsible {
-  line-height: 2.08vw;
-  height: 4.58vw;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  font-size: 1.25vw;
-  padding: 1.5vw;
-  background-color: $fadedColor;
-  color: $textColor;
-  width: 100%;
-}
+// @mixin collapsible {
+//   line-height: 2.08vw;
+//   height: 4.58vw;
+//   cursor: pointer;
+//   border: none;
+//   outline: none;
+//   font-size: 1.25vw;
+//   padding: 1.5vw;
+//   background-color: $fadedColor;
+//   color: $textColor;
+//   width: 100%;
+// }
 
 @mixin header {
   header {
@@ -615,6 +619,9 @@ header.nav-bar {
       & .collapsible-header {
         @include collapsible;
         font-family: 'ITCRegular', sans-serif;
+        margin: auto;
+        border-left-style: outset !important;
+        border-color: #4bba83 !important;
 
         &:hover {
           opacity: 0.8;
@@ -634,13 +641,14 @@ header.nav-bar {
       }
 
       & .collapsible-content {
-        overflow: hidden;
+        overflow: auto;
         max-height: 0;
         font-family: 'ITCregular', sans-serif;
         background-color: #232323;
         color: $textColor;
         font-size: 1.25vw;
         padding: 0 1.63vw;
+        margin: 
       }
 
       & .active {
