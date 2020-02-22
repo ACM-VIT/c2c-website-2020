@@ -172,19 +172,13 @@ class sponsor {
 }
 const SPONSOR_DATA = [
   new sponsor('./images/sponsors/github.png', 'https://www.github.com/'),
-  new sponsor('./images/sponsors/jetbrains.png', 'https://www.jetbrains.com/'),
   new sponsor('./images/sponsors/devfolio.png', 'https://devfolio.co/'),
+  new sponsor('./images/sponsors/jetbrains.png', 'https://www.jetbrains.com/'),
+  new sponsor('./images/sponsors/slack.png', 'https://slack.com/intl/en-in/'),
   new sponsor('./images/sponsors/fold.png', 'https://fold.money/'),
   new sponsor('./images/sponsors/matic.png', 'https://matic.network/'),
-  new sponsor('./images/sponsors/dottech.png', 'https://get.tech/'),
-  new sponsor('./images/sponsors/SlangLabs.png', 'https://slanglabs.in/'),
-  new sponsor(
-    './images/sponsors/indriya.png',
-    'https://www.linkedin.com/company/indriya-constructions-company'
-  ),
-  new sponsor('./images/sponsors/SlangLabs.png', 'https://slanglabs.in/'),
-  new sponsor('./images/sponsors/bala.png', 'https://balsamiq.com/'),
-  new sponsor('./images/sponsors/ibm.png', 'https://www.ibm.com/in-en'),
+  new sponsor('./images/sponsors/gfg.png', 'https://www.geeksforgeeks.org/'),
+  new sponsor('./images/sponsors/cblogo.png', 'https://codingblocks.com/'),
   new sponsor(
     './images/sponsors/wolfram.png',
     'https://www.wolfram.com/language/'
@@ -193,30 +187,16 @@ const SPONSOR_DATA = [
     './images/sponsors/digitalocean.png',
     'https://www.digitalocean.com/'
   ),
-  new sponsor('./images/sponsors/acm_int.png', 'https://www.acm.org/'),
-  new sponsor('./images/sponsors/tim.png', 'https://www.creative-tim.com/'),
-  new sponsor(
-    './images/sponsors/stickermule.png',
-    'https://www.stickermule.com/'
-  ),
-  new sponsor('./images/sponsors/sketch.png', 'https://www.sketch.com/'),
-  new sponsor('./images/sponsors/invision.png', 'https://www.invisionapp.com/'),
-  new sponsor('./images/sponsors/anitaborg.jpeg', 'https://anitab.org/'),
-  new sponsor('./images/sponsors/bgse.png', 'https://www.bugsee.com/'),
-  new sponsor('./images/sponsors/taskade.png', 'https://www.taskade.com/'),
+  new sponsor('./images/sponsors/cldsplt.png', 'https://cloudsploit.com/'),
+  new sponsor('./images/sponsors/axure.png', 'https://www.axure.com/'),
+  new sponsor('./images/sponsors/rsn.png', 'https://rosenfeldmedia.com/'),
+  new sponsor('./images/sponsors/hackerrank.png', 'https://www.hackerrank.com/'),
+  new sponsor('./images/sponsors/orient.png', 'https://www.orientelectric.com/'),
   new sponsor(
     './images/sponsors/hackereath.png',
     'https://www.hackerearth.com/'
   ),
-  new sponsor('./images/sponsors/custombaba.png', 'https://custombaba.com/'),
-  new sponsor('./images/sponsors/maxtherm.png', '#'),
-  new sponsor('./images/sponsors/foxmula.jpg', 'https://foxmula.com/'),
-  new sponsor('./images/sponsors/shift.png', 'https://tryshift.com/'),
-  new sponsor('./images/sponsors/axure.png', 'https://www.axure.com/'),
-  new sponsor('./images/sponsors/cblogo.png', 'https://codingblocks.com/'),
-  new sponsor('./images/sponsors/rsn.png', 'https://rosenfeldmedia.com/'),
-  new sponsor('./images/sponsors/cldsplt.png', 'https://cloudsploit.com/'),
-  new sponsor('./images/sponsors/hasura.png', 'https://hasura.io/')
+  new sponsor('./images/sponsors/glamstud.png', 'https://www.glamstudios.in/'),
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
