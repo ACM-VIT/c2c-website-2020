@@ -106,7 +106,7 @@ gulp.task('watch', () => {
       baseDir: 'dist'
     }
   });
-  gulp.watch('src/css/*.scss', gulp.series('compileSass'));
+  gulp.watch('src/css/*.scss').on('change',reload);
   gulp.watch('src/*.html').on('change',reload);
   gulp.watch('src/pages/*.html').on('change',reload);
   gulp.watch('src/images/*').on('change',reload);
