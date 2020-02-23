@@ -41,7 +41,7 @@ $github-color: #333333;
         line-height: 4.17vw;
         height: 3.58vw;
         color: white;
-        font-family: 'ITCBold', sans-serif;
+        font-family: "ITCBold", sans-serif;
       }
     }
   }
@@ -55,23 +55,23 @@ $github-color: #333333;
 
 // Fonts
 @font-face {
-  font-family: 'ITCRegular';
-  src: url('../fonts/ITCAvantGardeStd-Bk.otf');
+  font-family: "ITCRegular";
+  src: url("../fonts/ITCAvantGardeStd-Bk.otf");
 }
 
 @font-face {
-  font-family: 'ITCBold';
-  src: url('../fonts/ITCAvantGardeStd-Bold.otf');
+  font-family: "ITCBold";
+  src: url("../fonts/ITCAvantGardeStd-Bold.otf");
 }
 
 @font-face {
-  font-family: 'ITCDemi';
-  src: url('../fonts/ITCAvantGardeStd-Demi.otf');
+  font-family: "ITCDemi";
+  src: url("../fonts/ITCAvantGardeStd-Demi.otf");
 }
 
 @font-face {
-  font-family: 'ITCMedium';
-  src: url('../fonts/ITCAvantGardeStd-Md.otf');
+  font-family: "ITCMedium";
+  src: url("../fonts/ITCAvantGardeStd-Md.otf");
 }
 
 // Base styling
@@ -154,8 +154,6 @@ body {
   }
 }
 
-
-
 .hamburger {
   opacity: 0.99;
   display: none;
@@ -170,7 +168,7 @@ body {
   border: none;
   outline: none;
   width: 100%;
-  font-family: 'ITCDemi', sans-serif;
+  font-family: "ITCDemi", sans-serif;
   position: fixed;
   clip-path: inset(0 100% 0 0);
   z-index: 5;
@@ -223,7 +221,7 @@ header.nav-bar {
   padding: 0;
   height: 20vh;
   width: 100vw;
-  font-family: 'ITCRegular', sans-serif;
+  font-family: "ITCRegular", sans-serif;
 
   &.scrolled {
     height: auto;
@@ -301,7 +299,7 @@ header.nav-bar {
   margin-top: 0;
   height: 100vh;
   width: 100%;
-  background: url('../vectors/landing-bg.svg');
+  background: url("../vectors/landing-bg.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right;
@@ -335,7 +333,7 @@ header.nav-bar {
         margin-left: 8.92vw;
         display: grid;
         grid-template-columns: repeat(auto, 1fr);
-        grid-template-areas: 'logo title title title title';
+        grid-template-areas: "logo title title title title";
         grid-gap: 2.92vw;
         align-items: start;
         justify-content: start;
@@ -357,12 +355,12 @@ header.nav-bar {
 
           & .title {
             font-size: 4.5vw;
-            font-family: 'ITCMedium', sans-serif;
+            font-family: "ITCMedium", sans-serif;
           }
 
           & .sub-title {
             font-size: 2.4vw;
-            font-family: 'ITCMedium';
+            font-family: "ITCMedium";
           }
 
           & .button-container {
@@ -382,7 +380,7 @@ header.nav-bar {
               white-space: nowrap;
               color: $textColor;
               background-color: $secondaryColor;
-              font-family: 'ITCMedium';
+              font-family: "ITCMedium";
               justify-content: center;
               vertical-align: center;
               align-items: center;
@@ -439,7 +437,7 @@ header.nav-bar {
 
       & .chevron:before,
       & .chevron:after {
-        content: ' ';
+        content: " ";
         position: absolute;
         top: 0;
         height: 100%;
@@ -465,7 +463,7 @@ header.nav-bar {
   color: $secondaryColor;
   width: 80%;
   margin: 1em auto;
-  font-family: 'ITCRegular', sans-serif;
+  font-family: "ITCRegular", sans-serif;
   cursor: pointer;
 
   a {
@@ -491,12 +489,12 @@ header.nav-bar {
     color: $textColor;
     border-bottom: 1px solid $secondaryColor;
     padding: 1rem;
-    font-family: 'ITCBold', sans-serif;
+    font-family: "ITCBold", sans-serif;
   }
 
   ul {
     margin: 2rem;
-    font-family: 'ITCRegular', sans-serif;
+    font-family: "ITCRegular", sans-serif;
     color: $textColor;
     font-size: 1.25rem;
     line-height: 2rem;
@@ -556,7 +554,7 @@ header.nav-bar {
         line-height: 4.17vw;
         height: 3.58vw;
         color: white;
-        font-family: 'ITCBold', sans-serif;
+        font-family: "ITCBold", sans-serif;
       }
     }
   }
@@ -571,7 +569,7 @@ header.nav-bar {
       font-size: 1.25vw;
       padding: 0 4.17vw;
       color: white;
-      font-family: 'ITCRegular', sans-serif;
+      font-family: "ITCRegular", sans-serif;
 
       p {
         margin: 1.67vw 0;
@@ -579,7 +577,7 @@ header.nav-bar {
     }
 
     & .bottom-caption {
-      font-family: 'ITCBold', sans-serif;
+      font-family: "ITCBold", sans-serif;
       color: $fadedColor;
       font-size: 2vw;
     }
@@ -593,7 +591,6 @@ header.nav-bar {
   @include header;
 
   main {
-
     // border: 1px solid blue;
     & .faq-grid {
       display: grid;
@@ -606,7 +603,6 @@ header.nav-bar {
       overflow: hidden;
 
       & .collapsible {
-
         &.active {
           grid-column: span 2;
         }
@@ -614,7 +610,7 @@ header.nav-bar {
 
       & .collapsible-header {
         @include collapsible;
-        font-family: 'ITCRegular', sans-serif;
+        font-family: "ITCRegular", sans-serif;
 
         &:hover {
           opacity: 0.8;
@@ -636,7 +632,7 @@ header.nav-bar {
       & .collapsible-content {
         overflow: hidden;
         max-height: 0;
-        font-family: 'ITCregular', sans-serif;
+        font-family: "ITCregular", sans-serif;
         background-color: #232323;
         color: $textColor;
         font-size: 1.25vw;
@@ -644,7 +640,7 @@ header.nav-bar {
       }
 
       & .active {
-        &+.collapsible-content {
+        & + .collapsible-content {
           padding: 1.63vw;
         }
 
@@ -655,7 +651,7 @@ header.nav-bar {
 
       & .c-of-c-text {
         @include collapsible;
-        font-family: 'ITCMedium', sans-serif;
+        font-family: "ITCMedium", sans-serif;
         text-align: left;
 
         &:hover {
@@ -700,7 +696,7 @@ header.nav-bar {
 
     & .contact {
       color: $textColor;
-      font-family: 'ITCMedium', sans-serif;
+      font-family: "ITCMedium", sans-serif;
       font-size: 1.25vw;
 
       & .link {
@@ -735,12 +731,12 @@ header.nav-bar {
     & p {
       padding: 0.82vw;
       color: $secondaryColor;
-      font-family: 'ITCDemi', sans-serif;
+      font-family: "ITCDemi", sans-serif;
       font-size: 1.25vw;
 
       & span {
         font-size: 1.25vw;
-        font-family: 'ITCRegular', sans-serif;
+        font-family: "ITCRegular", sans-serif;
         color: white;
       }
     }
@@ -753,7 +749,13 @@ header.nav-bar {
   main {
     @include grid;
     grid-template-columns: repeat(auto-fit, minmax(13vw, 1fr));
+    & .title-sponser {
+      grid-column: 1/-1;
+    }
 
+    & .secondary-sponser {
+      grid-column: span 2;
+    }
     & .grid-element {
       height: 13vw;
       padding: 1rem;
@@ -781,7 +783,7 @@ footer {
   color: white;
   position: relative;
   font-size: 1.25vw;
-  font-family: 'ITCRegular', sans-serif;
+  font-family: "ITCRegular", sans-serif;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -1135,13 +1137,11 @@ footer {
   // Footer
   footer {
     background-color: $fadedColor;
-
   }
 }
 
 // Portrait Devices
 @media screen and (max-width: 600px) {
-
   .page {
     margin: 5rem 0;
   }
@@ -1246,7 +1246,7 @@ footer {
     }
   }
 
-  // aboutPage 
+  // aboutPage
   .aboutPage {
     main {
       & .bottom-caption {
