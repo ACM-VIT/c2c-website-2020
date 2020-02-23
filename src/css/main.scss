@@ -1072,6 +1072,11 @@ footer {
         margin: 0 auto;
         grid-template-columns: auto;
 
+        & .shift-left,
+        .shift-right {
+          width: 100%;
+        }
+
         & .collapsible-header {
           font-size: 0.8rem;
         }
