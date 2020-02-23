@@ -287,20 +287,44 @@ window.onload = () => {
   let templateMain = '';
   const faqGrid = document.querySelector('.faq-grid');
   FAQ_DATA.map(qGroup => {
-    const item = `<div
-      class="collapsible" >
+    const item = `<div class="collapsible">
     <button class="collapsible-header">
       <div class="question-group">
         <span class="question">${qGroup.question}</span>
         <span class="arrow">
-          <img src="./vectors/arrow-green.svg" alt="FAQ Expand" />
+          <img src="./vectors/arrow-green.svg" alt="FAQ Expand"/>
         </span>
       </div>
     </button>
     <div class="collapsible-content">
       <p>${qGroup.answer}</p>
     </div>
-  </div>`;
+  </div>
+  <style>
+ .collapsible-content{
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  color: #4bba83 !important;
+  
+  border-left: thick !important;
+  border-color: #4bba83 !important;
+  overflow: hidden !important;
+  transition: max-height 0.2s ease-out;
+}
+
+.faqPage main .faq-grid .collapsible-header {
+  border-left: solid !important;
+  border-color: #4bba83 !important;
+  
+}
+
+.faqPage main .faq-grid .c-of-c-text{
+  margin-top: 30px !important;
+  border-bottomgncj : solid !important;
+  border-color: #4bba83 !important;
+}
+</style>`;
     templateMain += item;
   });
   templateMain += `<a href="pages/code-of-conduct.html">
@@ -317,33 +341,65 @@ window.onload = () => {
   </a>`;
   faqGrid.innerHTML = templateMain;
 
-  // FAQ Section
-  const colGrp = document.querySelectorAll('.collapsible');
-  colGrp.forEach((collapsible, index) => {
-    const children = collapsible.children;
-    let firstNode;
-    //chlidren 0 is the button
-    //chldren 1 is the content
-    children[0].addEventListener('click', () => {
-      document.querySelector('.faqPage').scrollIntoView(true);
-      firstNode = document.querySelector('.collapsible');
-      children[0].classList.toggle('active');
-      if (
-        window
-          .getComputedStyle(faqGrid)
-          .getPropertyValue('grid-template-columns')
-          .split(' ').length > 1
-      ) {
-        children[1].parentElement.classList.toggle('active');
-      }
-      if (children[0].classList.contains('active')) {
-        swapNodes(firstNode, colGrp[index]);
-        children[1].style.maxHeight = children[1].scrollHeight + 'rem';
+  var acc = document.getElementsByClassName("collapsible-header");
+  var i;
+
+  // for (i = 0; i < acc.length; i++) {
+  //   acc[i].addEventListener("click", function() {
+  //     /* Toggle between adding and removing the "active" class,
+  //     to highlight the button that controls the panel */
+  //     this.classList.toggle("active");
+
+  //     /* Toggle between hiding and showing the active panel */
+  //     var panel = this.nextElementSibling;
+  //     if (panel.style.display === "block") {
+  //       panel.style.display = "none";
+  //     } else {
+  //       panel.style.display = "block";
+  //     }
+  //   });
+  // }
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
       } else {
-        children[1].style.maxHeight = 0;
+        panel.style.maxHeight = panel.scrollHeight + "px";
       }
     });
-  });
+  }
+
+  
+  // FAQ Section
+  // const colGrp = document.querySelectorAll('.collapsible');
+  // colGrp.forEach((collapsible, index) => {
+  //   const children = collapsible.children;
+  //   let firstNode;
+  //   //chlidren 0 is the button
+  //   //chldren 1 is the content
+  //   children[0].addEventListener('click', () => {
+  //     document.querySelector('.faqPage').scrollIntoView(true);
+  //     firstNode = document.querySelector('.collapsible');
+  //     children[0].classList.toggle('active');
+  //     if (
+  //       window
+  //         .getComputedStyle(faqGrid)
+  //         .getPropertyValue('grid-template-columns')
+  //         .split(' ').length > 1
+  //     ) {
+  //       children[1].parentElement.classList.toggle('active');
+  //     }
+  //     if (children[0].classList.contains('active')) {
+  //       swapNodes(firstNode, colGrp[index]);
+  //       children[1].style.maxHeight = children[1].scrollHeight + 'rem';
+  //     } else {
+  //       children[1].style.maxHeight = 0;
+  //     }
+  //   });
+  // });
 
   // Organizers
   const orgDisplay = document.querySelector('.organizers main');
