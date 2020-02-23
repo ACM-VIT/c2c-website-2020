@@ -172,13 +172,13 @@ class sponsor {
 }
 const SPONSOR_DATA = [
   new sponsor('./images/sponsors/github.png', 'https://www.github.com/'),
-  new sponsor('./images/sponsors/devfolio.png', 'https://devfolio.co/'),
-  new sponsor('./images/sponsors/jetbrains.png', 'https://www.jetbrains.com/'),
   new sponsor('./images/sponsors/slack.png', 'https://slack.com/intl/en-in/'),
+  new sponsor('./images/sponsors/devfolio.png', 'https://devfolio.co/'),
   new sponsor('./images/sponsors/fold.png', 'https://fold.money/'),
   new sponsor('./images/sponsors/matic.png', 'https://matic.network/'),
   new sponsor('./images/sponsors/gfg.png', 'https://www.geeksforgeeks.org/'),
   new sponsor('./images/sponsors/cblogo.png', 'https://codingblocks.com/'),
+  new sponsor('./images/sponsors/jetbrains.png', 'https://www.jetbrains.com/'),
   new sponsor(
     './images/sponsors/wolfram.png',
     'https://www.wolfram.com/language/'
@@ -406,12 +406,7 @@ window.onload = () => {
   // Sponsors
   const sponDisplay = document.querySelector('.sponsors main');
   templateMain = '';
-  const classes = [
-    'title-sponser',
-    'secondary-sponser',
-    'secondary-sponser',
-    'secondary-sponser'
-  ];
+  const classes = ['title-sponser', 'secondary-sponser', 'secondary-sponser'];
   SPONSOR_DATA.map((sponsor, index) => {
     let itemClass = index < classes.length ? classes[index] : '';
     const singleItem = ` <div class="grid-element ${itemClass}">
