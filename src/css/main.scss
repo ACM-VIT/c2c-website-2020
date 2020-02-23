@@ -11,19 +11,18 @@ $github-color: #333333;
 //   margin: 5px 10px !important;
 // }
 
-// Mixins
-// @mixin collapsible {
-//   line-height: 2.08vw;
-//   height: 4.58vw;
-//   cursor: pointer;
-//   border: none;
-//   outline: none;
-//   font-size: 1.25vw;
-//   padding: 1.5vw;
-//   background-color: $fadedColor;
-//   color: $textColor;
-//   width: 100%;
-// }
+@mixin collapsible {
+  line-height: 2.08vw;
+  height: 4.58vw;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 1.25vw;
+  padding: 1.5vw;
+  background-color: $fadedColor;
+  color: $textColor;
+  width: 100%;
+}
 
 @mixin header {
   header {
