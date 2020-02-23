@@ -780,7 +780,7 @@ header.nav-bar {
       img {
         max-width: 20vw;
         height: auto;
-        max-height: 10vw;
+        max-height: 7vw;
         margin: 0 auto;
         cursor: pointer;
       }
@@ -1335,6 +1335,31 @@ footer {
       margin-top: 2em;
     }
   }
+
+  .sponsors {
+    main {
+      grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+
+      & .grid-element {
+        grid-column: span 1;
+        min-height: 5rem;
+
+        img {
+          max-height: 3rem;
+          max-width: 5rem;
+        }
+      }
+
+      & .title-sponser {
+        grid-column: 1/-1;
+      }
+
+      & .secondary-sponser {
+        grid-column: 1/-1;
+      }
+    }
+  }
+
 
   // Footer
   footer {
