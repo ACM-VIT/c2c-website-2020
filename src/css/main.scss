@@ -988,10 +988,24 @@ footer {
 
   .sponsors {
     main {
-      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
 
       & .grid-element {
-        min-height: 10rem;
+        grid-column: span 1;
+        min-height: 18rem;
+
+        img {
+          max-height: 10rem;
+          max-width: 18rem;
+        }
+      }
+
+      & .title-sponser {
+        grid-column: 1/-1;
+      }
+
+      & .secondary-sponser {
+        grid-column: 1/-1;
       }
     }
   }
