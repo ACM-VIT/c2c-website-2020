@@ -11,6 +11,7 @@ $github-color: #333333;
 //   margin: 5px 10px !important;
 // }
 
+// Mixins
 @mixin collapsible {
   line-height: 2.08vw;
   height: 4.58vw;
@@ -692,6 +693,7 @@ header.nav-bar {
 
     img {
       width: 1.27vw;
+      cursor: inherit;
     }
   }
 
