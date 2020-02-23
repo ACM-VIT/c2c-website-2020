@@ -341,7 +341,7 @@ window.onload = () => {
 
 .faqPage main .faq-grid .c-of-c-text{
   margin-top: 30px !important;
-  border-bottom: solid !important;
+  border-bottomgncj : solid !important;
   border-color: #4bba83 !important;
 }
 </style>`;
