@@ -300,31 +300,7 @@ window.onload = () => {
       <p>${qGroup.answer}</p>
     </div>
   </div>
-  <style>
- .collapsible-content{
-  padding: 0 18px;
-  background-color: white;
-  max-height: 0;
-  color: #4bba83 !important;
-  
-  border-left: thick !important;
-  border-color: #4bba83 !important;
-  overflow: hidden !important;
-  transition: max-height 0.2s ease-out;
-}
-
-.faqPage main .faq-grid .collapsible-header {
-  border-left: solid !important;
-  border-color: #4bba83 !important;
-  
-}
-
-.faqPage main .faq-grid .c-of-c-text{
-  margin-top: 30px !important;
-  border-bottomgncj : solid !important;
-  border-color: #4bba83 !important;
-}
-</style>`;
+  `;
     templateMain += item;
   });
   templateMain += `<a href="pages/code-of-conduct.html">
@@ -343,22 +319,6 @@ window.onload = () => {
 
   var acc = document.getElementsByClassName("collapsible-header");
   var i;
-
-  // for (i = 0; i < acc.length; i++) {
-  //   acc[i].addEventListener("click", function() {
-  //     /* Toggle between adding and removing the "active" class,
-  //     to highlight the button that controls the panel */
-  //     this.classList.toggle("active");
-
-  //     /* Toggle between hiding and showing the active panel */
-  //     var panel = this.nextElementSibling;
-  //     if (panel.style.display === "block") {
-  //       panel.style.display = "none";
-  //     } else {
-  //       panel.style.display = "block";
-  //     }
-  //   });
-  // }
 
   for (i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function() {
