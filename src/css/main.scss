@@ -595,18 +595,21 @@ header.nav-bar {
   @include header;
 
   main {
+
     // border: 1px solid blue;
     & .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(30vw, 1fr));
-      // border: 1px solid brown;
+      display: flex;
+      min-width: 30vw; // border: 1px solid brown;
       width: 85.5%;
       margin: 2.5vw auto;
       margin-bottom: 2.92vw;
-      grid-gap: 0.17vw 3.34vw;
       overflow: hidden;
+      flex-wrap: wrap;
 
       & .collapsible {
+        width: 49%;
+        margin: 0 auto;
+
         &.active {
           grid-column: span 2;
         }
@@ -647,7 +650,7 @@ header.nav-bar {
       }
 
       & .active {
-        & + .collapsible-content {
+        &+.collapsible-content {
           padding: 1.63vw;
         }
 
@@ -757,6 +760,7 @@ header.nav-bar {
   main {
     @include grid;
     grid-template-columns: repeat(auto-fit, minmax(13vw, 1fr));
+
     & .title-sponser {
       grid-column: 1/-1;
     }
@@ -764,6 +768,7 @@ header.nav-bar {
     & .secondary-sponser {
       grid-column: span 2;
     }
+
     & .grid-element {
       height: 13vw;
       padding: 1rem;
