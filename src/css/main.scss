@@ -765,15 +765,11 @@ header.nav-bar {
     @include grid;
     grid-template-columns: repeat(auto-fit, minmax(13vw, 1fr));
 
-    & .title-sponser {
-      grid-column: 1/-1;
-    }
 
-    & .secondary-sponser {
-      grid-column: span 3;
-    }
 
     & .grid-element {
+      // background-color: red;
+      grid-column: span 2;
       height: 13vw;
       padding: 1rem;
       display: flex;
@@ -782,12 +778,23 @@ header.nav-bar {
       overflow: hidden;
 
       img {
-        max-width: 13vw;
+        max-width: 20vw;
         height: auto;
-        max-height: 10rem;
+        max-height: 10vw;
         margin: 0 auto;
         cursor: pointer;
       }
+    }
+
+    & .title-sponser {
+      grid-column: 1/-1;
+      // background-color: red;
+
+    }
+
+    & .secondary-sponser {
+      grid-column: span 3;
+      // background-color: red;
     }
   }
 }
