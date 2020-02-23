@@ -319,47 +319,41 @@ window.onload = () => {
 
   var acc = document.getElementsByClassName("collapsible-header");
   var i;
-
+  let prev;
+  function expand(ele) {
+    console.log()
+    ele.classList.add("active");
+    var panel = ele.nextElementSibling;
+    // console.log("panel=",panel);
+    panel.style.maxHeight = panel.scrollHeight + "px";
+  }
+  function collapse(ele) {
+    ele.classList.remove("active");
+    var panel = ele.nextElementSibling;
+    panel.style.maxHeight = null;
+  }
   for (i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
+      console.log(this);
+      // this.classList.toggle("active");
+      if(this.classList.contains("active")) {
+        // console.log("inside if", this.classList.contains("active"))
+        collapse(this);
       }
+      // else if(prev)
+      //   collapse(prev);
+      else {
+        expand(this);
+        if(prev && prev!=this)
+          collapse(prev);
+      }
+      
+      // expand(this);
+      // console.log(this);
+      
+      prev = this;
     });
   }
-
-  
-  // FAQ Section
-  // const colGrp = document.querySelectorAll('.collapsible');
-  // colGrp.forEach((collapsible, index) => {
-  //   const children = collapsible.children;
-  //   let firstNode;
-  //   //chlidren 0 is the button
-  //   //chldren 1 is the content
-  //   children[0].addEventListener('click', () => {
-  //     document.querySelector('.faqPage').scrollIntoView(true);
-  //     firstNode = document.querySelector('.collapsible');
-  //     children[0].classList.toggle('active');
-  //     if (
-  //       window
-  //         .getComputedStyle(faqGrid)
-  //         .getPropertyValue('grid-template-columns')
-  //         .split(' ').length > 1
-  //     ) {
-  //       children[1].parentElement.classList.toggle('active');
-  //     }
-  //     if (children[0].classList.contains('active')) {
-  //       swapNodes(firstNode, colGrp[index]);
-  //       children[1].style.maxHeight = children[1].scrollHeight + 'rem';
-  //     } else {
-  //       children[1].style.maxHeight = 0;
-  //     }
-  //   });
-  // });
 
   // Organizers
   const orgDisplay = document.querySelector(".organizers main");
