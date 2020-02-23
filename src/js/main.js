@@ -290,10 +290,12 @@ window.onload = () => {
   });
 
   // Collapsible
-  let templateMain = '';
+  let templateMain = `<div class="shift-left">`;
   const faqGrid = document.querySelector('.faq-grid');
-  FAQ_DATA.map(qGroup => {
-    const item = `<div class="collapsible">
+  const half = FAQ_DATA.length / 2;
+  FAQ_DATA.map((qGroup, index) => {
+    if (index < half) {
+      const item = `<div class="collapsible">
     <button class="collapsible-header">
       <div class="question-group">
         <span class="question">${qGroup.question}</span>
@@ -307,9 +309,31 @@ window.onload = () => {
     </div>
   </div>
   `;
-    templateMain += item;
+      templateMain += item;
+    }
   });
-  templateMain += `<a href="pages/code-of-conduct.html">
+  templateMain += '</div> <div class="shift-right">';
+  FAQ_DATA.map((qGroup, index) => {
+    if (index >= half) {
+      const item = `<div class="collapsible">
+    <button class="collapsible-header">
+      <div class="question-group">
+        <span class="question">${qGroup.question}</span>
+        <span class="arrow">
+          <img src="./vectors/arrow-green.svg" alt="FAQ Expand"/>
+        </span>
+      </div>
+    </button>
+    <div class="collapsible-content">
+      <p>${qGroup.answer}</p>
+    </div>
+  </div>
+  `;
+      templateMain += item;
+    }
+  });
+  templateMain += `</div>
+  <a href="pages/code-of-conduct.html">
     <div class="code-of-conduct">
       <button class="c-of-c-text">
         <div class="c-of-c-collection">

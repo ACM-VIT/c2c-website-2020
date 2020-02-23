@@ -606,9 +606,13 @@ header.nav-bar {
       overflow: hidden;
       flex-wrap: wrap;
 
-      & .collapsible {
+      & .shift-left,
+      .shift-right {
         width: 49%;
         margin: 0 auto;
+      }
+
+      & .collapsible {
 
         &.active {
           grid-column: span 2;
