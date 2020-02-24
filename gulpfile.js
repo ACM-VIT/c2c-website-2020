@@ -85,12 +85,18 @@ gulp.task('compileSass', () =>
     )
 );
 
+// Copy font files
+gulp.task('copyFonts', () =>
+  gulp.src('src/fonts/*').pipe(gulp.dest('dist/fonts'))
+);
+
 // Build task
 gulp.task(
   'default',
   gulp.parallel([
     'buildText',
     'copyHtml',
+    'copyFonts',
     'minifyImages1',
     'minifyImages2',
     'compileSass',
