@@ -20,7 +20,14 @@ gulp.task('copyHtml', () => gulp.src('src/*.html').pipe(gulp.dest('dist')));
 gulp.task('copyPages', () => gulp.src('src/*.html').pipe(gulp.dest('dist')));
 
 // Optimize images
-gulp.task('minifyImages', () =>
+gulp.task('minifyImages1', () =>
+  gulp
+    .src('src/images/*')
+    .pipe(imageMin())
+    .pipe(gulp.dest('dist/images'))
+);
+
+gulp.task('minifyImages2', () =>
   gulp
     .src('src/images/*/*')
     .pipe(imageMin())
@@ -52,11 +59,11 @@ gulp.task('minifySvg', () =>
 
 // browsersync server
 // gulp.task('browserSync', function() {
-  // browserSync.init({
-  //   server: {
-  //     baseDir: 'dist'
-  //   },
-  // })
+// browserSync.init({
+//   server: {
+//     baseDir: 'dist'
+//   },
+// })
 // });
 
 // Sass compiling
@@ -71,9 +78,11 @@ gulp.task('compileSass', () =>
     )
     .pipe(cleanCss({ compability: 'ie8' }))
     .pipe(gulp.dest('dist/css'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
+    .pipe(
+      browserSync.reload({
+        stream: true
+      })
+    )
 );
 
 // Build task
@@ -82,7 +91,8 @@ gulp.task(
   gulp.parallel([
     'buildText',
     'copyHtml',
-    'minifyImages',
+    'minifyImages1',
+    'minifyImages2',
     'compileSass',
     'compileAndMinify',
     'minifySvg'
@@ -97,7 +107,7 @@ gulp.task(
 // })
 // const reload = browserSync.reload;
 
-const reload = gulp.series(['default',browserSync.reload]);
+const reload = gulp.series(['default', browserSync.reload]);
 
 // Watch task
 gulp.task('watch', () => {
@@ -106,10 +116,10 @@ gulp.task('watch', () => {
       baseDir: 'dist'
     }
   });
-  gulp.watch('src/css/*.scss').on('change',reload);
-  gulp.watch('src/*.html').on('change',reload);
-  gulp.watch('src/pages/*.html').on('change',reload);
-  gulp.watch('src/images/*').on('change',reload);
-  gulp.watch('src/js/*.js').on('change',reload);
-  gulp.watch('src/vectors/*.svg').on('change',reload);
+  gulp.watch('src/css/*.scss').on('change', reload);
+  gulp.watch('src/*.html').on('change', reload);
+  gulp.watch('src/pages/*.html').on('change', reload);
+  gulp.watch('src/images/*').on('change', reload);
+  gulp.watch('src/js/*.js').on('change', reload);
+  gulp.watch('src/vectors/*.svg').on('change', reload);
 });
