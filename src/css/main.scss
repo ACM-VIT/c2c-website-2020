@@ -6,7 +6,7 @@ $facebook-color: #3b5998;
 $twitter-color: #50abf1;
 $instagram-color: #de2b7c;
 $github-color: #333333;
-
+$lessFadedColor: #555;
 // button .collapsible-header {
 //   margin: 5px 10px !important;
 // }
@@ -582,7 +582,7 @@ header.nav-bar {
 
     & .bottom-caption {
       font-family: "ITCBold", sans-serif;
-      color: $fadedColor;
+      color: $lessFadedColor;
       font-size: 2vw;
     }
   }
