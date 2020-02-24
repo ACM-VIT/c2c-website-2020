@@ -39,7 +39,7 @@ const FAQ_DATA = [
     'How do I choose my track?',
     'The tracks will be announced soon. Please stay tuned and excited for the big reveal.'
   ),
-  
+
   new faq(
     'Can I start working on my hack before the hackathon?',
     'No, you are not permitted to work on pre-existing projects in the hackathon. To maintain fair standards of judgment you will begin working on your hack after reporting to the venue.'
@@ -352,10 +352,8 @@ window.onload = () => {
   var i;
   let prev;
   function expand(ele) {
-    console.log();
     ele.classList.add('active');
     var panel = ele.nextElementSibling;
-    // console.log("panel=",panel);
     panel.style.maxHeight = panel.scrollHeight + 'px';
   }
   function collapse(ele) {
@@ -366,7 +364,6 @@ window.onload = () => {
   for (i = 0; i < acc.length; i++) {
     acc[i].addEventListener('click', function() {
       // console.log("hi");
-      console.log(this);
       // this.classList.toggle("active");
       if (this.classList.contains('active')) {
         // console.log("inside if", this.classList.contains("active"))
