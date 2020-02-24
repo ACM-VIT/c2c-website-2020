@@ -960,6 +960,12 @@ footer {
       cursor: pointer;
     }
   }
+
+  .sponsors {
+    main {
+      width: 100%;
+    }
+  }
 }
 
 // Small Laptop
@@ -985,31 +991,8 @@ footer {
       }
     }
   }
-
-  .sponsors {
-    main {
-      grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-
-      & .grid-element {
-        grid-column: span 1;
-        min-height: 18rem;
-
-        img {
-          max-height: 10rem;
-          max-width: 18rem;
-        }
-      }
-
-      & .title-sponser {
-        grid-column: 1/-1;
-      }
-
-      & .secondary-sponser {
-        grid-column: 1/-1;
-      }
-    }
-  }
 }
+
 
 // Tablet
 @media screen and (max-width: 768px) {
@@ -1172,8 +1155,27 @@ footer {
     }
 
     main {
+      grid-template-columns: repeat(auto, minmax(5rem, 1fr));
       width: 70%;
       margin: 2em auto;
+
+      & .grid-element {
+        grid-column: span 1;
+        min-height: 5rem;
+
+        img {
+          max-height: 3rem;
+          max-width: 5rem;
+        }
+      }
+
+      & .title-sponser {
+        grid-column: 1/-1;
+      }
+
+      & .secondary-sponser {
+        grid-column: 1/-1;
+      }
     }
   }
 
