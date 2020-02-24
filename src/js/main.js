@@ -12,52 +12,53 @@ const FAQ_DATA = [
     'Students from all over the country are eligible to participate in Code2Create. Everybody is welcome to make a difference.'
   ),
   new faq(
-    'How do I choose my track?',
-    'The tracks will be announced soon. Please stay tuned and excited for the big reveal.'
-  ),
-  new faq(
     'What will the hackathon cost me?',
     "Nothing, it's absolutely free. You cannot put a price on groundbreaking ideas."
-  ),
-  new faq(
-    'Can I start working on my hack before the hackathon?',
-    'No, you are not permitted to work on pre-existing projects in the hackathon. To maintain fair standards of judgment you will begin working on your hack after reporting to the venue.'
   ),
   new faq(
     'Can I implement my idea in hardware?',
     "Sure! There's no bias between sofware and hardware. But you'll have to bring your own hardware."
   ),
   new faq(
-    'What is the qualification criterion for the pitching round?',
-    'There will be a technical inspection on Day 2 of the hackathon. After the inspection, we will shortlist 120 participants. These 120 participants will get a chance to present their respective hacks in the expo for evaluation.'
-  ),
-  new faq(
     'What kind of a hackathon is Code2Create?',
     'Code2Create is a tech-based hackathon.'
+  ),
+  new faq(
+    'How many members can constitute a team?',
+    'There should be a minimum of 2 members and can be up to 5 members in a team.'
+  ),
+  new faq(
+    'What if I get hungry or need internet connection?',
+    'We will provide you with delicious food and beverages at regular intervals (breakfast, lunch, dinner, and snacks). Also, you will be provided with free access to our beloved internet facility, VOLSBB.'
+  ),
+  new faq(
+    'Will there be accommodation for external participants?',
+    'We will not be providing any accommodation. We expect our participants to stay at the venue for the entire duration of the hackathon.'
+  ),
+  new faq(
+    'How do I choose my track?',
+    'The tracks will be announced soon. Please stay tuned and excited for the big reveal.'
+  ),
+  
+  new faq(
+    'Can I start working on my hack before the hackathon?',
+    'No, you are not permitted to work on pre-existing projects in the hackathon. To maintain fair standards of judgment you will begin working on your hack after reporting to the venue.'
+  ),
+  new faq(
+    'What is the qualification criterion for the pitching round?',
+    'There will be two rounds of elimination on Day 2 and Day 3 respectively. The top 6 teams selected after 3rd review on Day 3 will get a chance to present their hack in the expo for final evaluation.'
   ),
   new faq(
     'Is the hackathon only about technology?',
     'We are tech enthusiasts but we believe ‘All work and no play makes Jack a dull boy.’ We have numerous fun activities planned for you.'
   ),
   new faq(
-    'How many members can constitute a team?',
-    'You can have up to 4 members in a team.'
-  ),
-  new faq(
-    'Who will be on the Judging Panel?',
-    'There will be 6 judges forming 3 panels of 2 judges each.'
-  ),
-  new faq(
-    'What if I get hungry or need internet connection?',
-    'Code2Create is a place for innovators to create and make a difference. You will get an opportunity to interact with ingenious minds. In addition, we have cash prizes, licenses, schwags, cloud credits and goodies for the winner. The best app built using the Hasura GraphQL Engine will win an Rs.5000 gift card from Flipkart. Apart from this, we have something special in store for all the participants.'
+    'What will be the judging criteria?',
+    'The judging criteria will be declared after the commencement of the hack.'
   ),
   new faq(
     'How will I benefit from attending this hackathon?',
-    'Code2Create is a place for innovators to create and make a difference. You will get an opportunity to interact with ingenious minds. In addition, we have cash prizes, licenses, schwags, cloud credits and goodies for the winner. The best app built using the Hasura GraphQL Engine will win an Rs.5000 gift card from Flipkart. Apart from this, we have something special in store for all the participants.'
-  ),
-  new faq(
-    'Will there be accommodation for external participants?',
-    'We will not be providing any accommodation. We expect our participants to stay at the venue for the entire duration of the hackathon.'
+    'Code2Create is a place for innovators to create and make a difference. You will get an opportunity to interact with ingenious minds. In addition, we have cash prizes, licenses, schwags, cloud credits and goodies for the winner.'
   ),
   new faq(
     'Will there be travel reimbursements provided?',
