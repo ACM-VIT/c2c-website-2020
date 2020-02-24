@@ -4,12 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="Code2Create is a Hackathon organised by ACM VIT. It is all about designing, building and creating. It is a place where graphic designers, the software developers, app developers and web developers collaborate intensively on software projects."
+    />
+    <meta name="keywords" content="Hackathon, VIT, Coding, Event, ACM" />
+    <meta name="author" content="ACM VIT" />
+    <meta name="theme-color" content="#30303" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="icon" type="image/png" href="./images/c_only.png" />
+    <link rel="apple-touch-icon" href="./images/c_only.png" />
+
     <script
       src="https://kit.fontawesome.com/f26a23afb9.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="icon" type="image/png" href="./vectors/c-only-logo.svg" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link
       rel="apple-touch-icon"
@@ -17,15 +26,45 @@
       href="./vectors/c-only-logo.svg"
     />
     <title>Code2Create</title>
+    <style>
+      .collapsible-content{
+        padding: 0 18px;
+        background-color: white;
+        max-height: 0;
+        color: #4bba83 !important;
+        
+        border-left: thick !important;
+        border-color: #4bba83 !important;
+        overflow: hidden !important;
+        transition: max-height 0.2s ease-out;
+      }
+
+      .faqPage main .faq-grid .collapsible-header {
+        border-left: solid !important;
+        border-color: #4bba83 !important;
+        
+      }
+
+      .faqPage main .faq-grid .c-of-c-text{
+        margin-top: 30px !important;
+        border-bottom : solid !important;
+        border-color: #4bba83 !important;
+      }
+  </style>
   </head>
   <body>
+    <!-- Preloader -->
+    <div class="pre-loader-wrapper">
+      <img src="./images/C2Cgif.gif" height="200px" width="200px" />
+    </div>
+
     <!-- Hamburger Menu -->
+    <div class="icon">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </div>
     <div class="hamburger">
-      <div class="icon">
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
-      </div>
       <main class="link-group">
         <ul class="nav-links">
           <li class="nav-link">
@@ -48,7 +87,7 @@
     <header class="nav-bar">
       <nav>
         <span class="logo">
-          <a href="https://c2c.acmvit.in">
+          <a href="./">
             <img src="./vectors/c-only-logo.svg" alt="logo" />
           </a>
         </span>
@@ -87,10 +126,25 @@
               <span class="sub-title">March 7-9, 2020</span>
               <br />
               <div class="button-container">
-                <button
-                  class="register-button"
-                  id="devfolio-apply-now"
-                ></button>
+                <button class="register-button" id="devfolio-apply-now">
+                  <div class="dev-logo">
+                    <svg
+                      class="logo"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="#fff"
+                      viewBox="0 0 115.46 123.46"
+                      style="height:24px;width:24px;margin-right:8px"
+                    >
+                      <path
+                        d="M115.46 68a55.43 55.43 0 0 1-50.85 55.11S28.12 124 16 123a12.6 12.6 0 0 1-10.09-7.5 15.85 15.85 0 0 0 5.36 1.5c4 .34 10.72.51 20.13.51 13.82 0 28.84-.38 29-.38h.26a60.14 60.14 0 0 0 54.72-52.47c.05 1.05.08 2.18.08 3.34z"
+                      />
+                      <path
+                        d="M110.93 55.87A55.43 55.43 0 0 1 60.08 111s-36.48.92-48.58-.12C5 110.29.15 104.22 0 97.52l.2-83.84C.38 7 5.26.94 11.76.41c12.11-1 48.59.12 48.59.12a55.41 55.41 0 0 1 50.58 55.34z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="text">Apply with Devfolio</div>
+                </button>
               </div>
             </div>
           </div>
@@ -144,7 +198,7 @@
         </div>
       </main>
     </section>
-    <div id="faqs" class="bookmark"><</div>
+    <div id="faqs" class="bookmark"></div>
 
     <!-- FAQ Page -->
     <section class="page faqPage">
@@ -161,7 +215,9 @@
         <div class="contact">
           For any more queries, feel free to reach us at
           <span class="link">
-            <a href="https://outreach.acmvit.in">outreach.acmvit.in</a>
+            <a href="https://mail.google.com/mail/u/0/#inbox?compose=new">
+              outreach.acmvit@gmail.com
+            </a>
           </span>
         </div>
       </footer>
