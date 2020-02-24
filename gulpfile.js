@@ -17,7 +17,7 @@ gulp.task('buildText', async () => {
 
 // Copy html files over
 gulp.task('copyHtml', () => gulp.src('src/*.html').pipe(gulp.dest('dist')));
-gulp.task('copyPages', () => gulp.src('src/*.html').pipe(gulp.dest('dist')));
+gulp.task('copyPages', () => gulp.src('src/*/*.html').pipe(gulp.dest('dist')));
 
 // Optimize images
 gulp.task('minifyImages1', () =>
@@ -96,6 +96,7 @@ gulp.task(
   gulp.parallel([
     'buildText',
     'copyHtml',
+    'copyPages',
     'copyFonts',
     'minifyImages1',
     'minifyImages2',
