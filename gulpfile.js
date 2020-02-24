@@ -90,6 +90,12 @@ gulp.task('copyFonts', () =>
   gulp.src('src/fonts/*').pipe(gulp.dest('dist/fonts'))
 );
 
+// Copy all static files as it is
+
+gulp.task('copyStatic', () => 
+  gulp.src('src/static/**/*').pipe(gulp.dest('dist/static'))
+);
+
 // Build task
 gulp.task(
   'default',
@@ -98,6 +104,7 @@ gulp.task(
     'copyHtml',
     'copyPages',
     'copyFonts',
+    'copyStatic',
     'minifyImages1',
     'minifyImages2',
     'compileSass',

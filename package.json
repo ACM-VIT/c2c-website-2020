@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "build": "gulp",
-    "start": "gulp watch",
+    "start": "gulp && gulp watch",
     "predeploy": "gulp",
     "deploy": "gh-pages -d dist"
   },
