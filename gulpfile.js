@@ -92,7 +92,7 @@ gulp.task('copyFonts', () =>
 
 // Copy all static files as it is
 
-gulp.task('copyStatic', () => 
+gulp.task('copyStatic', () =>
   gulp.src('src/static/**/*').pipe(gulp.dest('dist/static'))
 );
 
