@@ -476,9 +476,8 @@ header.nav-bar {
     display: flex;
   }
 
-  i {
-    font-size: 30px;
-    margin-right: 5px;
+  svg {
+     font-size: 2rem
   }
 }
 
@@ -1201,9 +1200,7 @@ footer {
         font-size: 1rem;
       }
 
-      i {
-        font-size: 15px;
-      }
+      svg{font-size: 15px;}
     }
   }
 

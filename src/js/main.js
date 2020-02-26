@@ -334,7 +334,7 @@ window.onload = () => {
     }
   });
   templateMain += `</div>
-  <a href="/conduct">
+  <a href="./conduct">
     <div class="code-of-conduct">
       <button class="c-of-c-text">
         <div class="c-of-c-collection">
