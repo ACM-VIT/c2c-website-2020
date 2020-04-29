@@ -197,6 +197,7 @@ const SPONSOR_DATA = [
     'https://www.hackerearth.com/'
   ),
   new sponsor('./images/sponsors/glamstud.png', 'https://www.glamstudios.in/'),
+  new sponsor('./images/sponsors/cosmosindia.png', 'https://cosmosindia.network/'),
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
