@@ -12,52 +12,53 @@ const FAQ_DATA = [
     'Students from all over the country are eligible to participate in Code2Create. Everybody is welcome to make a difference.'
   ),
   new faq(
-    'How do I choose my track?',
-    'The tracks will be announced soon. Please stay tuned and excited for the big reveal.'
-  ),
-  new faq(
     'What will the hackathon cost me?',
     "Nothing, it's absolutely free. You cannot put a price on groundbreaking ideas."
-  ),
-  new faq(
-    'Can I start working on my hack before the hackathon?',
-    'No, you are not permitted to work on pre-existing projects in the hackathon. To maintain fair standards of judgment you will begin working on your hack after reporting to the venue.'
   ),
   new faq(
     'Can I implement my idea in hardware?',
     "Sure! There's no bias between sofware and hardware. But you'll have to bring your own hardware."
   ),
   new faq(
-    'What is the qualification criterion for the pitching round?',
-    'There will be a technical inspection on Day 2 of the hackathon. After the inspection, we will shortlist 120 participants. These 120 participants will get a chance to present their respective hacks in the expo for evaluation.'
-  ),
-  new faq(
     'What kind of a hackathon is Code2Create?',
     'Code2Create is a tech-based hackathon.'
+  ),
+  new faq(
+    'How many members can constitute a team?',
+    'There should be a minimum of 2 members and can be up to 5 members in a team.'
+  ),
+  new faq(
+    'What if I get hungry or need internet connection?',
+    'We will provide you with delicious food and beverages at regular intervals (breakfast, lunch, dinner, and snacks). Also, you will be provided with free access to our beloved internet facility, VOLSBB.'
+  ),
+  new faq(
+    'Will there be accommodation for external participants?',
+    'We will not be providing any accommodation. We expect our participants to stay at the venue for the entire duration of the hackathon.'
+  ),
+  new faq(
+    'How do I choose my track?',
+    'The tracks will be announced soon. Please stay tuned and excited for the big reveal.'
+  ),
+
+  new faq(
+    'Can I start working on my hack before the hackathon?',
+    'No, you are not permitted to work on pre-existing projects in the hackathon. To maintain fair standards of judgment you will begin working on your hack after reporting to the venue.'
+  ),
+  new faq(
+    'What is the qualification criterion for the pitching round?',
+    'There will be two rounds of elimination on Day 2 and Day 3 respectively. The top 6 teams selected after 3rd review on Day 3 will get a chance to present their hack in the expo for final evaluation.'
   ),
   new faq(
     'Is the hackathon only about technology?',
     'We are tech enthusiasts but we believe ‘All work and no play makes Jack a dull boy.’ We have numerous fun activities planned for you.'
   ),
   new faq(
-    'How many members can constitute a team?',
-    'You can have up to 4 members in a team.'
-  ),
-  new faq(
-    'Who will be on the Judging Panel?',
-    'There will be 6 judges forming 3 panels of 2 judges each.'
-  ),
-  new faq(
-    'What if I get hungry or need internet connection?',
-    'Code2Create is a place for innovators to create and make a difference. You will get an opportunity to interact with ingenious minds. In addition, we have cash prizes, licenses, schwags, cloud credits and goodies for the winner. The best app built using the Hasura GraphQL Engine will win an Rs.5000 gift card from Flipkart. Apart from this, we have something special in store for all the participants.'
+    'What will be the judging criteria?',
+    'The judging criteria will be declared after the commencement of the hack.'
   ),
   new faq(
     'How will I benefit from attending this hackathon?',
-    'Code2Create is a place for innovators to create and make a difference. You will get an opportunity to interact with ingenious minds. In addition, we have cash prizes, licenses, schwags, cloud credits and goodies for the winner. The best app built using the Hasura GraphQL Engine will win an Rs.5000 gift card from Flipkart. Apart from this, we have something special in store for all the participants.'
-  ),
-  new faq(
-    'Will there be accommodation for external participants?',
-    'We will not be providing any accommodation. We expect our participants to stay at the venue for the entire duration of the hackathon.'
+    'Code2Create is a place for innovators to create and make a difference. You will get an opportunity to interact with ingenious minds. In addition, we have cash prizes, licenses, schwags, cloud credits and goodies for the winner.'
   ),
   new faq(
     'Will there be travel reimbursements provided?',
@@ -172,13 +173,13 @@ class sponsor {
 }
 const SPONSOR_DATA = [
   new sponsor('./images/sponsors/github.png', 'https://www.github.com/'),
-  new sponsor('./images/sponsors/devfolio.png', 'https://devfolio.co/'),
-  new sponsor('./images/sponsors/jetbrains.png', 'https://www.jetbrains.com/'),
   new sponsor('./images/sponsors/slack.png', 'https://slack.com/intl/en-in/'),
+  new sponsor('./images/sponsors/devfolio.png', 'https://devfolio.co/'),
   new sponsor('./images/sponsors/fold.png', 'https://fold.money/'),
   new sponsor('./images/sponsors/matic.png', 'https://matic.network/'),
   new sponsor('./images/sponsors/gfg.png', 'https://www.geeksforgeeks.org/'),
   new sponsor('./images/sponsors/cblogo.png', 'https://codingblocks.com/'),
+  new sponsor('./images/sponsors/jetbrains.png', 'https://www.jetbrains.com/'),
   new sponsor(
     './images/sponsors/wolfram.png',
     'https://www.wolfram.com/language/'
@@ -190,14 +191,26 @@ const SPONSOR_DATA = [
   new sponsor('./images/sponsors/cldsplt.png', 'https://cloudsploit.com/'),
   new sponsor('./images/sponsors/axure.png', 'https://www.axure.com/'),
   new sponsor('./images/sponsors/rsn.png', 'https://rosenfeldmedia.com/'),
-  new sponsor('./images/sponsors/hackerrank.png', 'https://www.hackerrank.com/'),
-  new sponsor('./images/sponsors/orient.png', 'https://www.orientelectric.com/'),
+  new sponsor(
+    './images/sponsors/hackerrank.png',
+    'https://www.hackerrank.com/'
+  ),
+  new sponsor(
+    './images/sponsors/orient.png',
+    'https://www.orientelectric.com/'
+  ),
   new sponsor(
     './images/sponsors/hackereath.png',
     'https://www.hackerearth.com/'
   ),
+<<<<<<< HEAD
   new sponsor('./images/sponsors/glamstud.png', 'https://www.glamstudios.in/'),
   new sponsor('./images/sponsors/cosmosindia.png', 'https://cosmosindia.network/'),
+||||||| 41300c3
+  new sponsor('./images/sponsors/glamstud.png', 'https://www.glamstudios.in/'),
+=======
+  new sponsor('./images/sponsors/glamstud.png', 'https://www.glamstudios.in/')
+>>>>>>> 2fd4e0f61fcbda9156b26121f2a621d1c309e190
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -285,10 +298,12 @@ window.onload = () => {
   });
 
   // Collapsible
-  let templateMain = '';
+  let templateMain = `<div class="shift-left">`;
   const faqGrid = document.querySelector('.faq-grid');
-  FAQ_DATA.map(qGroup => {
-    const item = `<div class="collapsible">
+  const half = FAQ_DATA.length / 2;
+  FAQ_DATA.map((qGroup, index) => {
+    if (index < half) {
+      const item = `<div class="collapsible">
     <button class="collapsible-header">
       <div class="question-group">
         <span class="question">${qGroup.question}</span>
@@ -301,34 +316,32 @@ window.onload = () => {
       <p>${qGroup.answer}</p>
     </div>
   </div>
-  <style>
- .collapsible-content{
-  padding: 0 18px;
-  background-color: white;
-  max-height: 0;
-  color: #4bba83 !important;
-  
-  border-left: thick !important;
-  border-color: #4bba83 !important;
-  overflow: hidden !important;
-  transition: max-height 0.2s ease-out;
-}
-
-.faqPage main .faq-grid .collapsible-header {
-  border-left: solid !important;
-  border-color: #4bba83 !important;
-  
-}
-
-.faqPage main .faq-grid .c-of-c-text{
-  margin-top: 30px !important;
-  border-bottomgncj : solid !important;
-  border-color: #4bba83 !important;
-}
-</style>`;
-    templateMain += item;
+  `;
+      templateMain += item;
+    }
   });
-  templateMain += `<a href="pages/code-of-conduct.html">
+  templateMain += '</div> <div class="shift-right">';
+  FAQ_DATA.map((qGroup, index) => {
+    if (index >= half) {
+      const item = `<div class="collapsible">
+    <button class="collapsible-header">
+      <div class="question-group">
+        <span class="question">${qGroup.question}</span>
+        <span class="arrow">
+          <img src="./vectors/arrow-green.svg" alt="FAQ Expand"/>
+        </span>
+      </div>
+    </button>
+    <div class="collapsible-content">
+      <p>${qGroup.answer}</p>
+    </div>
+  </div>
+  `;
+      templateMain += item;
+    }
+  });
+  templateMain += `</div>
+  <a href="./conduct">
     <div class="code-of-conduct">
       <button class="c-of-c-text">
         <div class="c-of-c-collection">
@@ -342,65 +355,40 @@ window.onload = () => {
   </a>`;
   faqGrid.innerHTML = templateMain;
 
-  var acc = document.getElementsByClassName("collapsible-header");
+  var acc = document.getElementsByClassName('collapsible-header');
   var i;
-
-  // for (i = 0; i < acc.length; i++) {
-  //   acc[i].addEventListener("click", function() {
-  //     /* Toggle between adding and removing the "active" class,
-  //     to highlight the button that controls the panel */
-  //     this.classList.toggle("active");
-
-  //     /* Toggle between hiding and showing the active panel */
-  //     var panel = this.nextElementSibling;
-  //     if (panel.style.display === "block") {
-  //       panel.style.display = "none";
-  //     } else {
-  //       panel.style.display = "block";
-  //     }
-  //   });
-  // }
-
+  let prev;
+  function expand(ele) {
+    ele.classList.add('active');
+    var panel = ele.nextElementSibling;
+    panel.style.maxHeight = panel.scrollHeight + 'px';
+  }
+  function collapse(ele) {
+    ele.classList.remove('active');
+    var panel = ele.nextElementSibling;
+    panel.style.maxHeight = null;
+  }
   for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
+    acc[i].addEventListener('click', function() {
+      // console.log("hi");
+      // this.classList.toggle("active");
+      if (this.classList.contains('active')) {
+        // console.log("inside if", this.classList.contains("active"))
+        collapse(this);
       }
+      // else if(prev)
+      //   collapse(prev);
+      else {
+        expand(this);
+        if (prev && prev != this) collapse(prev);
+      }
+
+      // expand(this);
+      // console.log(this);
+
+      prev = this;
     });
   }
-
-  
-  // FAQ Section
-  // const colGrp = document.querySelectorAll('.collapsible');
-  // colGrp.forEach((collapsible, index) => {
-  //   const children = collapsible.children;
-  //   let firstNode;
-  //   //chlidren 0 is the button
-  //   //chldren 1 is the content
-  //   children[0].addEventListener('click', () => {
-  //     document.querySelector('.faqPage').scrollIntoView(true);
-  //     firstNode = document.querySelector('.collapsible');
-  //     children[0].classList.toggle('active');
-  //     if (
-  //       window
-  //         .getComputedStyle(faqGrid)
-  //         .getPropertyValue('grid-template-columns')
-  //         .split(' ').length > 1
-  //     ) {
-  //       children[1].parentElement.classList.toggle('active');
-  //     }
-  //     if (children[0].classList.contains('active')) {
-  //       swapNodes(firstNode, colGrp[index]);
-  //       children[1].style.maxHeight = children[1].scrollHeight + 'rem';
-  //     } else {
-  //       children[1].style.maxHeight = 0;
-  //     }
-  //   });
-  // });
 
   // Organizers
   const orgDisplay = document.querySelector('.organizers main');
@@ -423,8 +411,10 @@ window.onload = () => {
   // Sponsors
   const sponDisplay = document.querySelector('.sponsors main');
   templateMain = '';
-  SPONSOR_DATA.map(sponsor => {
-    const singleItem = ` <div class="grid-element">
+  const classes = ['title-sponser', 'secondary-sponser', 'secondary-sponser'];
+  SPONSOR_DATA.map((sponsor, index) => {
+    let itemClass = index < classes.length ? classes[index] : '';
+    const singleItem = ` <div class="grid-element ${itemClass}">
       <a href="${sponsor.link}" target="_blank">
         <img src="${sponsor.logo}" alt="Sponsor" />
       </a>

@@ -6,24 +6,24 @@ $facebook-color: #3b5998;
 $twitter-color: #50abf1;
 $instagram-color: #de2b7c;
 $github-color: #333333;
-
+$lessFadedColor: #555;
 // button .collapsible-header {
 //   margin: 5px 10px !important;
 // }
 
 // Mixins
-// @mixin collapsible {
-//   line-height: 2.08vw;
-//   height: 4.58vw;
-//   cursor: pointer;
-//   border: none;
-//   outline: none;
-//   font-size: 1.25vw;
-//   padding: 1.5vw;
-//   background-color: $fadedColor;
-//   color: $textColor;
-//   width: 100%;
-// }
+@mixin collapsible {
+  line-height: 2.08vw;
+  height: 4.58vw;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 1.25vw;
+  padding: 1.5vw;
+  background-color: $fadedColor;
+  color: $textColor;
+  width: 100%;
+}
 
 @mixin header {
   header {
@@ -82,7 +82,7 @@ $github-color: #333333;
 
 * {
   box-sizing: border-box;
-  cursor: default;
+  cursor: inherit;
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
@@ -157,8 +157,6 @@ body {
     }
   }
 }
-
-
 
 .hamburger {
   opacity: 0.99;
@@ -478,9 +476,8 @@ header.nav-bar {
     display: flex;
   }
 
-  i {
-    font-size: 30px;
-    margin-right: 5px;
+  svg {
+     font-size: 2rem
   }
 }
 
@@ -584,8 +581,8 @@ header.nav-bar {
 
     & .bottom-caption {
       font-family: 'ITCBold', sans-serif;
-      color: $fadedColor;
-      font-size: 2vw;
+      color: $lessFadedColor;
+      font-size: 1.8vw;
     }
   }
 }
@@ -597,19 +594,24 @@ header.nav-bar {
   @include header;
 
   main {
-
     // border: 1px solid blue;
     & .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(30vw, 1fr));
-      // border: 1px solid brown;
+      display: flex;
+      min-width: 30vw; // border: 1px solid brown;
       width: 85.5%;
       margin: 2.5vw auto;
       margin-bottom: 2.92vw;
-      grid-gap: 0.17vw 3.34vw;
       overflow: hidden;
+      flex-wrap: wrap;
+
+      & .shift-left,
+      .shift-right {
+        width: 49%;
+        margin: 0 auto;
+      }
 
       & .collapsible {
+        margin-bottom: 3px;
 
         &.active {
           grid-column: span 2;
@@ -648,11 +650,10 @@ header.nav-bar {
         color: $textColor;
         font-size: 1.25vw;
         padding: 0 1.63vw;
-        margin: 
       }
 
       & .active {
-        &+.collapsible-content {
+        & + .collapsible-content {
           padding: 1.63vw;
         }
 
@@ -698,6 +699,7 @@ header.nav-bar {
 
     img {
       width: 1.27vw;
+      cursor: inherit;
     }
   }
 
@@ -763,6 +765,8 @@ header.nav-bar {
     grid-template-columns: repeat(auto-fit, minmax(13vw, 1fr));
 
     & .grid-element {
+      // background-color: red;
+      grid-column: span 2;
       height: 13vw;
       padding: 1rem;
       display: flex;
@@ -771,12 +775,22 @@ header.nav-bar {
       overflow: hidden;
 
       img {
-        max-width: 100%;
+        max-width: 20vw;
         height: auto;
-        max-height: 10rem;
+        max-height: 7vw;
         margin: 0 auto;
         cursor: pointer;
       }
+    }
+
+    & .title-sponser {
+      grid-column: 1/-1;
+      // background-color: red;
+    }
+
+    & .secondary-sponser {
+      grid-column: span 3;
+      // background-color: red;
     }
   }
 }
@@ -867,11 +881,10 @@ footer {
             background-color: $facebook-color;
             color: #ffffff;
             text-align: center;
-
-            i {
-              position: relative;
-              top: calc(50% - 0.84vw);
-            }
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
 
             &:hover {
               background-color: #ffffff;
@@ -885,15 +898,14 @@ footer {
             background-color: $twitter-color;
             color: #ffffff;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
 
             &:hover {
               background-color: #ffffff;
               color: $twitter-color;
-            }
-
-            i {
-              position: relative;
-              top: calc(50% - 0.84vw);
             }
           }
 
@@ -903,15 +915,14 @@ footer {
             background-color: $instagram-color;
             color: #ffffff;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
 
             &:hover {
               background-color: #ffffff;
               color: $instagram-color;
-            }
-
-            i {
-              position: relative;
-              top: calc(50% - 0.84vw);
             }
           }
 
@@ -927,10 +938,10 @@ footer {
               color: $github-color;
             }
 
-            i {
-              position: relative;
-              top: calc(50% - 0.84vw);
-            }
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
           }
         }
       }
@@ -940,6 +951,12 @@ footer {
       width: 60%;
       height: auto;
       cursor: pointer;
+    }
+  }
+
+  .sponsors {
+    main {
+      width: 100%;
     }
   }
 }
@@ -963,16 +980,6 @@ footer {
       grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
 
       img {
-        min-height: 10rem;
-      }
-    }
-  }
-
-  .sponsors {
-    main {
-      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-
-      & .grid-element {
         min-height: 10rem;
       }
     }
@@ -1029,7 +1036,7 @@ footer {
       }
 
       & .bottom-caption {
-        font-size: 3vw;
+        font-size: 2.7vw;
       }
     }
   }
@@ -1060,6 +1067,11 @@ footer {
         width: 70%;
         margin: 0 auto;
         grid-template-columns: auto;
+
+        & .shift-left,
+        .shift-right {
+          width: 100%;
+        }
 
         & .collapsible-header {
           font-size: 0.8rem;
@@ -1135,21 +1147,38 @@ footer {
     }
 
     main {
+      grid-template-columns: repeat(auto, minmax(5rem, 1fr));
       width: 70%;
       margin: 2em auto;
+
+      & .grid-element {
+        grid-column: span 1;
+        min-height: 5rem;
+
+        img {
+          max-height: 3rem;
+          max-width: 5rem;
+        }
+      }
+
+      & .title-sponser {
+        grid-column: 1/-1;
+      }
+
+      & .secondary-sponser {
+        grid-column: 1/-1;
+      }
     }
   }
 
   // Footer
   footer {
     background-color: $fadedColor;
-
   }
 }
 
 // Portrait Devices
 @media screen and (max-width: 600px) {
-
   .page {
     margin: 5rem 0;
   }
@@ -1171,9 +1200,7 @@ footer {
         font-size: 1rem;
       }
 
-      i {
-        font-size: 15px;
-      }
+      svg{font-size: 15px;}
     }
   }
 
@@ -1254,11 +1281,11 @@ footer {
     }
   }
 
-  // aboutPage 
+  // aboutPage
   .aboutPage {
     main {
       & .bottom-caption {
-        font-size: 6vw;
+        font-size: 5vw;
       }
     }
   }
@@ -1301,6 +1328,30 @@ footer {
     }
   }
 
+  .sponsors {
+    main {
+      grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+
+      & .grid-element {
+        grid-column: span 1;
+        min-height: 5rem;
+
+        img {
+          max-height: 3rem;
+          max-width: 5rem;
+        }
+      }
+
+      & .title-sponser {
+        grid-column: 1/-1;
+      }
+
+      & .secondary-sponser {
+        grid-column: 1/-1;
+      }
+    }
+  }
+
   // Footer
   footer {
     font-size: 1rem;
@@ -1320,30 +1371,33 @@ footer {
             height: 2rem;
 
             &.facebook {
+              font-size: 1rem;
+
               i {
                 position: static;
-                font-size: 1rem;
               }
             }
 
             &.twitter {
+              font-size: 1rem;
+
               i {
                 position: static;
-                font-size: 1rem;
               }
             }
 
             &.instagram {
+              font-size: 1rem;
+
               i {
                 position: static;
-                font-size: 1rem;
               }
             }
 
             &.github {
+              font-size: 1rem;
               i {
                 position: static;
-                font-size: 1rem;
               }
             }
           }

@@ -5,7 +5,9 @@
   "main": "gulpfile.js",
   "scripts": {
     "build": "gulp",
-    "start": "gulp watch"
+    "start": "gulp && gulp watch",
+    "predeploy": "gulp",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -31,5 +33,7 @@
     "gulp-svgmin": "^2.2.0",
     "node-sass": "^4.13.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "gh-pages": "^2.2.0"
+  }
 }
