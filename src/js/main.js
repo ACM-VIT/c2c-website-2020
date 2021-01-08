@@ -95,7 +95,7 @@ const ORGANIZER_DATA = [
   new organizer(
     "Kashish Mittal",
     "Web Master",
-    "./images/organizer/Kashish.png"
+    "./images/organizer/Kashish.jpg"
   ),
   new organizer(
     "Shovin Kakaraddi",
@@ -109,7 +109,7 @@ const ORGANIZER_DATA = [
     "./images/organizer/Nimit.jpg"
   ),
   new organizer("Iishi Patel", "Research Lead", "./images/organizer/Iishi.jpg"),
-  new organizer("Devansh Mehta", "App Lead", "./images/organizer/sparsh.jpg"),
+  new organizer("Devansh Mehta", "App Lead", "./images/organizer/Devansh.jpg"),
   new organizer(
     "Garima Bothra",
     "Projects Lead - App",
