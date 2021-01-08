@@ -1,8 +1,8 @@
 // FAQs
 class faq {
   constructor(question, answer) {
-    this.question = question;
-    this.answer = answer;
+    this.question = question
+    this.answer = answer
   }
 }
 
@@ -63,15 +63,15 @@ const FAQ_DATA = [
   new faq(
     'Will there be travel reimbursements provided?',
     'We do not provide reimbursements for external participants for travel expenses.'
-  )
-];
+  ),
+]
 
 // Organizers
 class organizer {
   constructor(name, designation, image) {
-    this.name = name;
-    this.image = image;
-    this.designation = designation;
+    this.name = name
+    this.image = image
+    this.designation = designation
   }
 }
 
@@ -161,14 +161,14 @@ const ORGANIZER_DATA = [
     'Dr. Divya Udayan J',
     'Faculty Coordinator ACM VIT Student Chapter',
     './images/organizer/fc3.jpeg'
-  )
-];
+  ),
+]
 
 // Sponsors
 class sponsor {
   constructor(logo, link) {
-    this.logo = logo;
-    this.link = link;
+    this.logo = logo
+    this.link = link
   }
 }
 const SPONSOR_DATA = [
@@ -203,42 +203,39 @@ const SPONSOR_DATA = [
     './images/sponsors/hackereath.png',
     'https://www.hackerearth.com/'
   ),
-<<<<<<< HEAD
   new sponsor('./images/sponsors/glamstud.png', 'https://www.glamstudios.in/'),
-  new sponsor('./images/sponsors/cosmosindia.png', 'https://cosmosindia.network/'),
-||||||| 41300c3
-  new sponsor('./images/sponsors/glamstud.png', 'https://www.glamstudios.in/'),
-=======
-  new sponsor('./images/sponsors/glamstud.png', 'https://www.glamstudios.in/')
->>>>>>> 2fd4e0f61fcbda9156b26121f2a621d1c309e190
-];
+  new sponsor(
+    './images/sponsors/cosmosindia.png',
+    'https://cosmosindia.network/'
+  ),
+]
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   let devfolioOptions = {
     buttonSelector: '#devfolio-apply-now',
-    key: 'code2create'
-  };
+    key: 'code2create',
+  }
 
-  let script = document.createElement('script');
-  script.src = 'https://apply.devfolio.co';
-  document.head.append(script);
+  let script = document.createElement('script')
+  script.src = 'https://apply.devfolio.co'
+  document.head.append(script)
 
-  script.onload = function() {
-    new Devfolio(devfolioOptions);
-  };
+  script.onload = function () {
+    new Devfolio(devfolioOptions)
+  }
 
-  script.onerror = function() {
+  script.onerror = function () {
     document
       .querySelector(devfolioOptions.buttonSelector)
-      .addEventListener('click', function() {
+      .addEventListener('click', function () {
         window.location.href =
-          'https://devfolio.co/external-apply/' + devfolioOptions.key;
-      });
-  };
-});
+          'https://devfolio.co/external-apply/' + devfolioOptions.key
+      })
+  }
+})
 
 window.onload = () => {
-  document.querySelector('.pre-loader-wrapper').style.display = 'none';
+  document.querySelector('.pre-loader-wrapper').style.display = 'none'
 
   // Navbar Scrolling
   window.onscroll = () => {
@@ -246,61 +243,61 @@ window.onload = () => {
       document.body.scrollTop >= 0 ||
       document.documentElement.scrollTop >= 0
     ) {
-      document.querySelector('header').classList.add('scrolled');
+      document.querySelector('header').classList.add('scrolled')
     }
     if (
       document.body.scrollTop === 0 &&
       document.documentElement.scrollTop === 0
     ) {
-      document.querySelector('header').classList.remove('scrolled');
+      document.querySelector('header').classList.remove('scrolled')
     }
 
     // Active Navbar Links
     if (window.innerWidth >= '768') {
-      document.querySelector('.icon').style.display = 'none';
-      const pos = document.body.scrollTop;
-      const position = document.documentElement.scrollTop;
-      const navHeight = document.querySelector('nav').offsetHeight + 100;
-      const pages = document.querySelectorAll('.page');
-      const navLinks = document.querySelectorAll('.indicator');
+      document.querySelector('.icon').style.display = 'none'
+      const pos = document.body.scrollTop
+      const position = document.documentElement.scrollTop
+      const navHeight = document.querySelector('nav').offsetHeight + 100
+      const pages = document.querySelectorAll('.page')
+      const navLinks = document.querySelectorAll('.indicator')
       pages.forEach((page, index) => {
         if (page.offsetTop === 0) {
-          navLinks.forEach(link => link.classList.remove('active'));
+          navLinks.forEach((link) => link.classList.remove('active'))
         } else {
           if (
             position + navHeight >= pages[index].offsetTop ||
             pos + navHeight >= pages[index].offsetTop
           ) {
-            navLinks.forEach(link => link.classList.remove('active'));
-            navLinks[index - 1].classList.add('active');
+            navLinks.forEach((link) => link.classList.remove('active'))
+            navLinks[index - 1].classList.add('active')
           }
         }
-      });
+      })
     }
-  };
+  }
 
   // Hamburger Menu
-  const hamburger = document.querySelector('.hamburger');
-  const hamIcon = document.querySelector('.icon');
+  const hamburger = document.querySelector('.hamburger')
+  const hamIcon = document.querySelector('.icon')
   hamIcon.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    document.querySelector('.icon').classList.toggle('is-active');
-  });
+    hamburger.classList.toggle('active')
+    document.querySelector('.icon').classList.toggle('is-active')
+  })
   hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    document.querySelector('.icon').classList.toggle('is-active');
-  });
+    hamburger.classList.toggle('active')
+    document.querySelector('.icon').classList.toggle('is-active')
+  })
 
   // Landing Arrow
-  const goBelow = document.querySelector('#go-below');
+  const goBelow = document.querySelector('#go-below')
   goBelow.addEventListener('click', () => {
-    document.querySelector('#about').scrollIntoView(true);
-  });
+    document.querySelector('#about').scrollIntoView(true)
+  })
 
   // Collapsible
-  let templateMain = `<div class="shift-left">`;
-  const faqGrid = document.querySelector('.faq-grid');
-  const half = FAQ_DATA.length / 2;
+  let templateMain = `<div class="shift-left">`
+  const faqGrid = document.querySelector('.faq-grid')
+  const half = FAQ_DATA.length / 2
   FAQ_DATA.map((qGroup, index) => {
     if (index < half) {
       const item = `<div class="collapsible">
@@ -316,11 +313,11 @@ window.onload = () => {
       <p>${qGroup.answer}</p>
     </div>
   </div>
-  `;
-      templateMain += item;
+  `
+      templateMain += item
     }
-  });
-  templateMain += '</div> <div class="shift-right">';
+  })
+  templateMain += '</div> <div class="shift-right">'
   FAQ_DATA.map((qGroup, index) => {
     if (index >= half) {
       const item = `<div class="collapsible">
@@ -336,10 +333,10 @@ window.onload = () => {
       <p>${qGroup.answer}</p>
     </div>
   </div>
-  `;
-      templateMain += item;
+  `
+      templateMain += item
     }
-  });
+  })
   templateMain += `</div>
   <a href="./conduct">
     <div class="code-of-conduct">
@@ -352,48 +349,48 @@ window.onload = () => {
         </div>
       </button>
     </div >
-  </a>`;
-  faqGrid.innerHTML = templateMain;
+  </a>`
+  faqGrid.innerHTML = templateMain
 
-  var acc = document.getElementsByClassName('collapsible-header');
-  var i;
-  let prev;
+  var acc = document.getElementsByClassName('collapsible-header')
+  var i
+  let prev
   function expand(ele) {
-    ele.classList.add('active');
-    var panel = ele.nextElementSibling;
-    panel.style.maxHeight = panel.scrollHeight + 'px';
+    ele.classList.add('active')
+    var panel = ele.nextElementSibling
+    panel.style.maxHeight = panel.scrollHeight + 'px'
   }
   function collapse(ele) {
-    ele.classList.remove('active');
-    var panel = ele.nextElementSibling;
-    panel.style.maxHeight = null;
+    ele.classList.remove('active')
+    var panel = ele.nextElementSibling
+    panel.style.maxHeight = null
   }
   for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener('click', function() {
+    acc[i].addEventListener('click', function () {
       // console.log("hi");
       // this.classList.toggle("active");
       if (this.classList.contains('active')) {
         // console.log("inside if", this.classList.contains("active"))
-        collapse(this);
+        collapse(this)
       }
       // else if(prev)
       //   collapse(prev);
       else {
-        expand(this);
-        if (prev && prev != this) collapse(prev);
+        expand(this)
+        if (prev && prev != this) collapse(prev)
       }
 
       // expand(this);
       // console.log(this);
 
-      prev = this;
-    });
+      prev = this
+    })
   }
 
   // Organizers
-  const orgDisplay = document.querySelector('.organizers main');
-  templateMain = '';
-  ORGANIZER_DATA.map(org => {
+  const orgDisplay = document.querySelector('.organizers main')
+  templateMain = ''
+  ORGANIZER_DATA.map((org) => {
     const singleItem = `<div>
         <img
           src=${org.image}
@@ -403,31 +400,31 @@ window.onload = () => {
           <span> ${org.name}</span><br />
           ${org.designation}
         </p>
-      </div>`;
-    templateMain += singleItem;
-  });
-  orgDisplay.innerHTML = templateMain;
+      </div>`
+    templateMain += singleItem
+  })
+  orgDisplay.innerHTML = templateMain
 
   // Sponsors
-  const sponDisplay = document.querySelector('.sponsors main');
-  templateMain = '';
-  const classes = ['title-sponser', 'secondary-sponser', 'secondary-sponser'];
+  const sponDisplay = document.querySelector('.sponsors main')
+  templateMain = ''
+  const classes = ['title-sponser', 'secondary-sponser', 'secondary-sponser']
   SPONSOR_DATA.map((sponsor, index) => {
-    let itemClass = index < classes.length ? classes[index] : '';
+    let itemClass = index < classes.length ? classes[index] : ''
     const singleItem = ` <div class="grid-element ${itemClass}">
       <a href="${sponsor.link}" target="_blank">
         <img src="${sponsor.logo}" alt="Sponsor" />
       </a>
-    </div>`;
-    templateMain += singleItem;
-  });
+    </div>`
+    templateMain += singleItem
+  })
 
-  sponDisplay.innerHTML = templateMain;
+  sponDisplay.innerHTML = templateMain
 
   // Functions
   const swapNodes = (node1, node2) => {
     node2.nextSibling === node1
       ? node1.parentElement.insertBefore(node2, node1.nextSibling)
-      : node1.parentElement.insertBefore(node2, node1);
-  };
-};
+      : node1.parentElement.insertBefore(node2, node1)
+  }
+}
