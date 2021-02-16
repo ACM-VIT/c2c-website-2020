@@ -76,6 +76,26 @@ class organizer {
 }
 
 const ORGANIZER_DATA = [
+  new organizer(
+    "Prof. Balakrushna Tripathy",
+    "Dean School of Information Technology & Engineering",
+    "./images/organizer/dean_site.jpg"
+  ),
+  new organizer(
+    "Dr. Aswani Kumar Cherukuri",
+    "Faculty Coordinator ACM VIT Student Chapter",
+    "./images/organizer/fc1.png"
+  ),
+  new organizer(
+    "Prof. H.R. Vishwakarma",
+    "Faculty Coordinator ACM VIT Student Chapter",
+    "./images/organizer/fc2.png"
+  ),
+  new organizer(
+    "Dr. Divya Udayan J",
+    "Faculty Coordinator ACM VIT Student Chapter",
+    "./images/organizer/fc3.jpeg"
+  ),
   new organizer("Sarthak Gupta", "Chair", "./images/organizer/Sarthak.jpg"),
   new organizer(
     "Eesha Shetty",
@@ -129,26 +149,6 @@ const ORGANIZER_DATA = [
     "Sriya Reddi",
     "Operations Head",
     "./images/organizer/Sriya.jpg"
-  ),
-  new organizer(
-    "Prof. Balakrushna Tripathy",
-    "Dean School of Information Technology & Engineering",
-    "./images/organizer/dean_site.jpg"
-  ),
-  new organizer(
-    "Dr. Aswani Kumar Cherukuri",
-    "Faculty Coordinator ACM VIT Student Chapter",
-    "./images/organizer/fc1.png"
-  ),
-  new organizer(
-    "Prof. H.R. Vishwakarma",
-    "Faculty Coordinator ACM VIT Student Chapter",
-    "./images/organizer/fc2.png"
-  ),
-  new organizer(
-    "Dr. Divya Udayan J",
-    "Faculty Coordinator ACM VIT Student Chapter",
-    "./images/organizer/fc3.jpeg"
   ),
 ];
 
